@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>UMBRA | Elite Training</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Teko:wght@300;500;700&display=swap');
+
+    :root {
+        --bg-dark: #050505;
+        --accent: #ffffff;
+        --glass: rgba(255, 255, 255, 0.03);
+        --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        background-color: var(--bg-dark);
+        color: #fff;
+        font-family: 'Manrope', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* === FONDO FLUIDO === */
+    .background-glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000 70%);
+    }
+
+    h1, h2, h3 { 
+        font-family: 'Teko', sans-serif; 
+        text-transform: uppercase; 
+        line-height: 0.9;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* === HERO (PRIMERA IMPRESIÓN) === */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    /* Logo flotante y brillante */
+    .hero-logo-container {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        padding: 5px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.2), transparent);
+        margin-bottom: 30px;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-logo-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Título Gigante pero Elegante */
+    .hero h1 {
+        font-size: clamp(4rem, 15vw, 9rem);
+        letter-spacing: -2px;
+        font-weight: 500;
+        background: -webkit-linear-gradient(#fff, #555);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: slideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        color: #888;
+        max-width: 500px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: slideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.5s;
+    }
+
+    /* Botón Premium */
+    .btn-main {
+        position: relative;
+        padding: 18px 50px;
+        background: #fff;
+        color: #000;
+        font-family: 'Teko', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        overflow: hidden;
+        transition: 0.4s;
+        opacity: 0;
+        animation: slideUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.7s;
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); /* Corte estilizado */
+    }
+
+    .btn-main:hover {
+        background: #e0e0e0;
+        letter-spacing: 2px;
+        padding-right: 60px; /* Efecto de movimiento */
+    }
+
+    /* === SECCIONES UNIFICADAS (Glassmorphism) === */
+    .content-block {
+        margin: 50px 0;
+        padding: 60px 40px;
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border);
+        border-radius: 0; /* Bordes rectos para seriedad */
+        position: relative;
+    }
+
+    /* Línea decorativa vertical */
+    .content-block::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 20px;
+        bottom: 20px;
+        width: 2px;
+        background: #fff;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .feature-list li {
+        list-style: none;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        display: flex;
+        justify-content: space-between;
+        color: #aaa;
+    }
+    .feature-list li span { color: #fff; font-weight: 600; }
+
+    /* === PRICING CARDS === */
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: linear-gradient(145deg, #0f0f0f, #050505);
+        padding: 40px;
+        border: 1px solid #222;
+        transition: 0.3s;
+    }
+
+    .card:hover { border-color: #555; transform: translateY(-5px); }
+
+    .card h3 { font-size: 2rem; color: #888; margin-bottom: 10px; }
+    .card .price { font-size: 3.5rem; color: #fff; margin-bottom: 30px; font-weight: 300; font-family: 'Teko'; }
+    .card .price span { font-size: 1rem; color: #555; vertical-align: middle; }
+
+    /* === ANIMACIONES === */
+    @keyframes slideUp {
+        from { transform: translateY(40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 5rem; }
+        .content-block { padding: 40px 20px; }
+        .btn-main { width: 100%; text-align: center; clip-path: none; border-radius: 4px; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-logo-container">
+            <!-- LOGO: Asegúrate de tener logo.jpg -->
+            <img src="logo.jpg" class="hero-logo-img" alt="Umbra">
+        </div>
+
+        <h1>UMBRA<span style="color:#333">.</span></h1>
+        
+        <p>No es otro programa de entrenamiento.<br>Es la ciencia de la adaptación biológica aplicada a tu físico.</p>
+        
+        <a href="https://elfreddca.gumroad.com/l/zusnbh" class="btn-main" target="_blank">
+            Comenzar Protocolo
+        </a>
+        
+        <div style="margin-top: 30px; font-size: 0.8rem; color: #444; opacity: 0; animation: slideUp 1s forwards 1s;">
+            PDF INSTANTÁNEO • ACCESO VITALICIO
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- BLOQUE: EL PROBLEMA -->
+        <div class="content-block">
+            <h2 class="section-title">EL ERROR</h2>
+            <p style="color: #aaa; font-size: 1.1rem; line-height: 1.6; max-width: 800px;">
+                9 de cada 10 personas en el gimnasio están estancadas. Mueven peso, sudan, pero su masa muscular no cambia. ¿Por qué? Porque entrenan por sensación, no por matemáticas. Sin control del <strong>Volumen Mínimo Efectivo (VME)</strong>, solo estás generando fatiga, no tejido.
+            </p>
+        </div>
+
+        <!-- BLOQUE: LA SOLUCIÓN (PDF) -->
+        <div class="content-block" style="border-left: 2px solid #fff; border-right: none; padding-left: 40px;">
+            <h2 class="section-title">EL SISTEMA</h2>
+            <p style="margin-bottom: 30px; color: #888;">Blueprint de 10 Semanas para Hipertrofia.</p>
+            <ul class="feature-list">
+                <li>Semanas 1-4 <span>Fase de Acumulación (VME)</span></li>
+                <li>Semanas 5-8 <span>Intensificación (VMA)</span></li>
+                <li>Semanas 9-10 <span>Overreaching & Descarga</span></li>
+                <li>Formato <span>PDF Digital (Móvil/PC)</span></li>
+            </ul>
+        </div>
+
+        <!-- BLOQUE: PRECIOS -->
+        <div class="pricing-grid" style="margin-bottom: 100px;">
+            <!-- CARD PDF -->
+            <div class="card" style="border: 1px solid #fff;">
+                <h3>PROTOCOL</h3>
+                <div class="price">$33 <span>USD</span></div>
+                <p style="color:#666; margin-bottom:20px;">Manual de ejecución completo.</p>
+                <a href="https://elfreddca.gumroad.com/l/zusnbh" class="btn-main" style="font-size:1.2rem; width:100%; display:block; text-align:center; padding: 15px 0;">Descargar</a>
+            </div>
+
+            <!-- CARD COACHING -->
+            <div class="card" style="opacity: 0.6; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+                <h3>COACHING</h3>
+                <div class="price">$1199 <span>MXN</span></div>
+                <p style="color:#666; margin-bottom:20px;">Supervisión humana 1:1.</p>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=0c93c33d5abc4a96880c6724e8b60475" style="color:#fff; text-decoration:none; font-weight:700; display:block; text-align:center; padding: 15px 0; border: 1px solid #333;">APLICAR</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
