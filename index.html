@@ -65,15 +65,17 @@
     .brand-badge {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 8px 20px;
+        padding: 8px 25px;
         border-radius: 50px;
         margin-bottom: 30px;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(10px);
     }
-    .brand-main { font-family: 'Teko'; font-weight: 700; letter-spacing: 2px; font-size: 1.2rem; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+    .brand-text-group { display: flex; align-items: baseline; gap: 8px; }
+    .brand-main { font-family: 'Teko'; font-weight: 700; letter-spacing: 2px; font-size: 1.4rem; color: #fff; line-height: 1; }
     .brand-sub { font-family: 'Manrope'; font-weight: 300; font-size: 0.9rem; color: #aaa; }
 
     .hero h1 {
@@ -357,8 +359,11 @@
 <section class="hero">
     <!-- Brand Header -->
     <div class="brand-badge">
-        <span class="brand-main">UMBRATRAINING</span>
-        <span class="brand-sub">by freddca</span>
+        <img src="img/logo_icon.jpg" alt="Umbra Logo" class="brand-logo">
+        <div class="brand-text-group">
+            <span class="brand-main">UMBRATRAINING</span>
+            <span class="brand-sub">by freddca</span>
+        </div>
     </div>
 
     <!-- Motivational Headline -->
