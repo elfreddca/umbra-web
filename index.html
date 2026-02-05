@@ -132,6 +132,13 @@
         100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
     }
 
+    /* Green Glow Animation */
+    @keyframes greenPulse {
+        0% { box-shadow: 0 0 10px rgba(51, 255, 51, 0.2); transform: scale(1); }
+        50% { box-shadow: 0 0 30px rgba(51, 255, 51, 0.6); transform: scale(1.05); }
+        100% { box-shadow: 0 0 10px rgba(51, 255, 51, 0.2); transform: scale(1); }
+    }
+
     .btn-hero.gold { 
         background: transparent; 
         color: #D4AF37; 
@@ -472,11 +479,11 @@
     <p>La mayoría entrena "por sensación". Aquí entrenamos con <strong>ciencia</strong>.<br>Sistemas de hipertrofia diseñados para resultados visibles en 10 semanas.</p>
     
     <div class="cta-container">
+        <!-- NEW: Free Resource Button (FIRST & GLOWING) -->
+        <a href="#free-resource" class="btn-hero" style="background: #33ff33; border: none; animation: greenPulse 2s infinite ease-in-out; color:#000;">Regalo Exclusivo 🎁</a>
         <a href="#men" class="btn-hero">Protocolo Hombres</a>
         <a href="#women" class="btn-hero woman">Protocolo Mujeres</a>
         <a href="#coaching-1on1" class="btn-hero gold">Coaching 1:1 Online</a>
-        <!-- NEW: Free Resource Button -->
-        <a href="#free-resource" class="btn-hero" style="background: #33ff33; border: none; box-shadow: 0 0 15px rgba(51, 255, 51, 0.2);">Regalo Exclusivo 🎁</a>
     </div>
 </section>
 
