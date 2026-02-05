@@ -121,9 +121,21 @@
         text-transform: uppercase;
         clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
         transition: 0.3s;
+        border: none;
     }
     .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
     .btn-hero.woman { background: var(--primary-woman); box-shadow: 0 0 20px rgba(255, 142, 199, 0.2); }
+    .btn-hero.gold { 
+        background: transparent; 
+        color: #D4AF37; 
+        border: 1px solid #D4AF37; 
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    }
+    .btn-hero.gold:hover { 
+        background: #D4AF37; 
+        color: #000; 
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); 
+    }
 
     /* === PROBLEM SECTION === */
     .problem-section {
@@ -391,6 +403,7 @@
     <div class="cta-container">
         <a href="#men" class="btn-hero">Protocolo Hombres</a>
         <a href="#women" class="btn-hero woman">Protocolo Mujeres</a>
+        <a href="#coaching-1on1" class="btn-hero gold">Coaching 1:1 Online</a>
     </div>
 </section>
 
@@ -483,8 +496,8 @@
 
     </div>
     
-    <!-- COACHING PREMIUM SECTION -->
-    <div class="coaching-premium">
+    <!-- Coaching Premium Section Anchor -->
+    <div class="coaching-premium" id="coaching-1on1">
         <h3>COACHING ELITE 1:1</h3>
         <div class="sub-headline">No es para todos. Solo para quienes buscan la perfección.</div>
         
