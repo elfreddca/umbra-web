@@ -59,18 +59,38 @@
         align-items: center;
         text-align: center;
         padding: 40px 20px;
+        position: relative;
     }
 
+    .brand-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px 20px;
+        border-radius: 50px;
+        margin-bottom: 30px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+    .brand-main { font-family: 'Teko'; font-weight: 700; letter-spacing: 2px; font-size: 1.2rem; }
+    .brand-sub { font-family: 'Manrope'; font-weight: 300; font-size: 0.9rem; color: #aaa; }
+
     .hero h1 {
-        font-size: clamp(3.5rem, 12vw, 8rem);
+        font-size: clamp(4rem, 15vw, 9rem);
         letter-spacing: -2px;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 20px;
+        line-height: 0.85;
+        text-transform: uppercase;
+    }
+    
+    .hero h1 .line-1 { display: block; color: #fff; }
+    .hero h1 .line-2 { 
+        display: block; 
         background: linear-gradient(180deg, #fff 0%, #666 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        line-height: 1.1; /* Fixes cropped text */
-        padding: 10px 0;
     }
 
     .hero p {
@@ -335,8 +355,17 @@
 <div class="background-glow"></div>
 
 <section class="hero">
-    <!-- Hero Image Updated -->
-    <img src="hero-visual.jpg" alt="UMBRA TRAINING - Deja de adivinar, empieza a crecer" style="max-width: 100%; height: auto; margin-bottom: 20px; border-radius: 10px;">
+    <!-- Brand Header -->
+    <div class="brand-badge">
+        <span class="brand-main">UMBRATRAINING</span>
+        <span class="brand-sub">by freddca</span>
+    </div>
+
+    <!-- Motivational Headline -->
+    <h1>
+        <span class="line-1">TU POTENCIAL</span>
+        <span class="line-2">NO TIENE LÍMITES</span>
+    </h1>
     
     <p>La mayoría entrena "por sensación". Aquí entrenamos con <strong>ciencia</strong>.<br>Sistemas de hipertrofia diseñados para resultados visibles en 10 semanas.</p>
     
