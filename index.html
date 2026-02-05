@@ -125,16 +125,24 @@
     }
     .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
     .btn-hero.woman { background: var(--primary-woman); box-shadow: 0 0 20px rgba(255, 142, 199, 0.2); }
+    /* Gold Glow Animation */
+    @keyframes goldPulse {
+        0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+        50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); border-color: #fff; }
+        100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+    }
+
     .btn-hero.gold { 
-        background: #D4AF37; /* Solid Gold */
-        color: #000; 
+        background: transparent; 
+        color: #D4AF37; 
         border: 1px solid #D4AF37; 
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        animation: goldPulse 2s infinite ease-in-out;
     }
     .btn-hero.gold:hover { 
-        background: #fff; /* White on hover for contrast */
+        background: #D4AF37; 
         color: #000; 
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); 
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8); 
+        animation: none;
     }
 
     /* === PROBLEM SECTION === */
