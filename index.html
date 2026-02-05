@@ -107,63 +107,113 @@
     .problem-section h2 { font-size: 3rem; margin-bottom: 20px; color: #ccc; }
     .problem-section p { max-width: 700px; margin: 0 auto; color: #888; font-size: 1.1rem; }
 
-    /* === CARDS === */
-    .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px;
-        margin: 80px 0;
-    }
-
-    .card {
-        background: #0a0a0a;
-        border: 1px solid #222;
-        padding: 40px;
+    /* === COACHING 1:1 SECTION === */
+    .coaching-premium {
+        background: linear-gradient(145deg, #0a0a0a 0%, #111 100%);
+        border: 1px solid #333;
+        padding: 60px 40px;
+        margin-bottom: 100px;
         position: relative;
-        transition: 0.3s;
+        overflow: hidden;
+        border-radius: 4px;
     }
-    .card:hover { border-color: #444; }
-    .card.woman { border-color: rgba(255, 142, 199, 0.3); }
-    .card.woman:hover { border-color: var(--primary-woman); }
-
-    .card h3 { font-size: 2.5rem; margin-bottom: 10px; }
-    .card .price { font-size: 3rem; font-family: 'Teko'; margin-bottom: 20px; font-weight: 300; }
-    .card .desc { color: #888; margin-bottom: 30px; line-height: 1.5; font-size: 0.95rem; }
     
-    .features li {
-        list-style: none;
-        padding: 10px 0;
-        border-bottom: 1px solid #1a1a1a;
-        color: #bbb;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    /* Gold Accent Glow */
+    .coaching-premium::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 60%);
+        z-index: 0;
+        pointer-events: none;
     }
-    .features li::before { content: "›"; color: #fff; font-weight: bold; }
 
-    .btn-card {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 15px;
-        margin-top: 30px;
-        background: #fff;
-        color: #000;
-        text-decoration: none;
-        font-family: 'Teko';
-        font-size: 1.4rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        transition: 0.3s;
+    .coaching-premium h3 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        color: #fff;
+        position: relative;
+        z-index: 1;
     }
-    .btn-card:hover { background: #ccc; }
-    .woman .btn-card { background: var(--primary-woman); }
-    .woman .btn-card:hover { background: #ff6eb3; }
+
+    .coaching-premium .sub-headline {
+        color: #D4AF37; /* Gold */
+        font-family: 'Teko', sans-serif;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        letter-spacing: 1px;
+    }
+
+    .coaching-premium .desc {
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+        color: #ccc;
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .coaching-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 1;
+        text-align: left;
+    }
+
+    .coaching-item {
+        background: rgba(255,255,255,0.03);
+        padding: 20px;
+        border-left: 2px solid #D4AF37;
+    }
+
+    .coaching-item strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.1rem; }
+    .coaching-item span { color: #888; font-size: 0.9rem; }
+
+    .btn-gold {
+        display: inline-block;
+        padding: 18px 50px;
+        background: #D4AF37;
+        color: #000;
+        font-family: 'Teko';
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        transition: 0.3s;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+    .btn-gold:hover {
+        background: #fff;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+        transform: scale(1.02);
+    }
+    
+    .price-tag {
+        font-size: 3rem;
+        font-family: 'Teko';
+        color: #fff;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
 
     @media (max-width: 768px) {
-        .hero h1 { font-size: 4rem; }
-        .btn-hero { width: 100%; }
+        .coaching-premium { padding: 40px 20px; }
+        .coaching-premium h3 { font-size: 2.8rem; }
+        .btn-gold { width: 100%; padding: 15px 20px; font-size: 1.4rem; }
+        .coaching-grid { grid-template-columns: 1fr; }
     }
 </style>
 </head>
@@ -221,14 +271,39 @@
 
     </div>
     
-    <!-- COACHING -->
-    <div class="card" style="margin-bottom: 100px; text-align: center; border-color: #333;">
-        <h3>COACHING 1:1</h3>
-        <p class="desc" style="max-width: 600px; margin: 0 auto 30px auto;">
-            ¿Quieres que yo lleve el control total? Entrenamiento, nutrición y ajustes semanales personalizados.
+    <!-- COACHING PREMIUM SECTION -->
+    <div class="coaching-premium">
+        <h3>COACHING ELITE 1:1</h3>
+        <div class="sub-headline">No es para todos. Solo para quienes buscan la perfección.</div>
+        
+        <p class="desc">
+            Deja de perder tiempo con rutinas de internet. Yo diseñaré cada repetición, cada gramo de comida y cada ajuste semanal basado en TUS datos biométricos y estilo de vida.
         </p>
-        <div class="price" style="font-size: 2.5rem;">$1,199 MXN <span style="font-size:1rem;color:#666">/ MES</span></div>
-        <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=0c93c33d5abc4a96880c6724e8b60475" class="btn-card" style="max-width: 300px; margin: 0 auto;" target="_blank">APLICAR AL 1:1</a>
+
+        <div class="coaching-grid">
+            <div class="coaching-item">
+                <strong>🧬 Plan 100% Personalizado</strong>
+                <span>Entrenamiento + Nutrición Clínica ajustada a tu objetivo.</span>
+            </div>
+            <div class="coaching-item">
+                <strong>📲 Contacto Directo 24/7</strong>
+                <span>WhatsApp personal para dudas, corrección de técnica y motivación.</span>
+            </div>
+            <div class="coaching-item">
+                <strong>📊 Revisiones Semanales</strong>
+                <span>Ajustes precisos cada semana para garantizar que no te estanques.</span>
+            </div>
+            <div class="coaching-item">
+                <strong>🧠 Acceso a mi Cerebro</strong>
+                <span>Te enseño a pensar como atleta, no solo a mover peso.</span>
+            </div>
+        </div>
+
+        <div class="price-tag">$1,199 MXN <span style="font-size:1.2rem;color:#888;font-family:'Manrope'">/ MES</span></div>
+        
+        <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=0c93c33d5abc4a96880c6724e8b60475" class="btn-gold" target="_blank">APLICAR AHORA</a>
+        
+        <p style="margin-top:20px; color:#666; font-size:0.9rem;">Cupos limitados. Solo acepto 5 nuevos clientes al mes.</p>
     </div>
 
 </div>
