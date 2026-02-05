@@ -147,26 +147,34 @@
     
     .testi-grid {
         display: flex;
-        gap: 30px;
+        gap: 20px;
         overflow-x: auto;
         padding-bottom: 30px;
         scroll-snap-type: x mandatory;
         justify-content: flex-start;
-        padding-left: 20px; /* Offset for better scroll */
+        padding-left: 20px;
+        -webkit-overflow-scrolling: touch; /* Smooth scroll iOS */
+        scrollbar-width: none; /* Firefox hide */
     }
-    /* Hide scrollbar */
-    .testi-grid::-webkit-scrollbar { display: none; }
+    
+    /* Animation for Auto-Scroll Hint (Optional pulse or arrow could be added here) */
     
     .testi-card {
-        min-width: 380px;
-        max-width: 380px;
+        min-width: 85vw; /* Mobile optimization: Card takes most of screen width */
+        max-width: 85vw;
+        scroll-snap-align: center;
         background: #0f0f0f;
         border: 1px solid #222;
         padding: 25px;
         border-radius: 8px;
-        scroll-snap-align: center;
         text-align: left;
         position: relative;
+        flex-shrink: 0; /* Prevent squishing */
+    }
+
+    @media (min-width: 768px) {
+        .testi-card { min-width: 380px; max-width: 380px; }
+        .testi-grid { justify-content: center; flex-wrap: wrap; overflow: visible; padding-left: 0; }
     }
     .testi-card img {
         width: 100%;
@@ -184,6 +192,7 @@
 
     @media (min-width: 1024px) {
         .testi-grid { justify-content: center; flex-wrap: wrap; overflow: visible; }
+        .mobile-hint { display: none !important; }
     }
     @media (max-width: 768px) {
         .testi-card { min-width: 320px; max-width: 320px; }
@@ -393,6 +402,9 @@
 <!-- TESTIMONIALS SECTION UPDATED -->
 <div class="testimonials-section">
     <h2>RESULTADOS REALES</h2>
+    <!-- Auto-scroll hint for mobile users -->
+    <p style="color:#666; font-size:0.8rem; margin-top:-30px; margin-bottom:20px; display:block;" class="mobile-hint">Desliza para ver más →</p>
+    
     <div class="testi-grid">
         
         <!-- Case 1: Mass Gain -->
