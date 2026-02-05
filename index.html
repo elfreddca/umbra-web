@@ -139,50 +139,55 @@
 
     /* === TESTIMONIALS === */
     .testimonials-section {
-        padding: 60px 20px;
+        padding: 80px 20px;
         text-align: center;
         border-bottom: 1px solid var(--border);
     }
-    .testimonials-section h2 { margin-bottom: 50px; font-size: 3rem; color: #fff; }
+    .testimonials-section h2 { margin-bottom: 50px; font-size: 3.5rem; color: #fff; }
     
     .testi-grid {
         display: flex;
-        gap: 20px;
+        gap: 30px;
         overflow-x: auto;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         scroll-snap-type: x mandatory;
-        justify-content: center;
-        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-left: 20px; /* Offset for better scroll */
     }
     /* Hide scrollbar */
     .testi-grid::-webkit-scrollbar { display: none; }
     
     .testi-card {
-        min-width: 300px;
-        max-width: 300px;
+        min-width: 380px;
+        max-width: 380px;
         background: #0f0f0f;
         border: 1px solid #222;
-        padding: 20px;
-        border-radius: 4px;
+        padding: 25px;
+        border-radius: 8px;
         scroll-snap-align: center;
         text-align: left;
+        position: relative;
     }
     .testi-card img {
         width: 100%;
-        height: 350px;
-        object-fit: cover;
+        height: 450px;
+        object-fit: contain;
+        background: #000;
         border-radius: 4px;
-        margin-bottom: 15px;
-        filter: grayscale(100%); /* Aesthetic choice */
+        margin-bottom: 20px;
+        filter: grayscale(0%);
         transition: 0.3s;
     }
-    .testi-card:hover img { filter: grayscale(0%); }
-    .testi-name { font-family: 'Teko'; font-size: 1.5rem; color: #fff; }
-    .testi-result { color: #888; font-size: 0.9rem; margin-bottom: 10px; }
-    .testi-quote { font-style: italic; color: #ccc; font-size: 0.9rem; }
+    .testi-name { font-family: 'Teko'; font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
+    .testi-result { color: #D4AF37; font-weight: bold; font-size: 1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    .testi-quote { font-style: italic; color: #ccc; font-size: 1rem; line-height: 1.5; }
 
+    @media (min-width: 1024px) {
+        .testi-grid { justify-content: center; flex-wrap: wrap; overflow: visible; }
+    }
     @media (max-width: 768px) {
-        .testi-grid { justify-content: flex-start; flex-wrap: nowrap; }
+        .testi-card { min-width: 320px; max-width: 320px; }
+        .testi-card img { height: 400px; }
     }
 
     /* === CARDS === */
@@ -385,29 +390,51 @@
     <p>Vas al gimnasio, sudas, te cansas... pero te ves igual que hace 6 meses. <br><br><strong>No es tu genética. Es tu plan.</strong><br>Sin controlar el Volumen Mínimo Efectivo (VME), solo estás quemando tiempo. UMBRA elimina el azar de la ecuación.</p>
 </div>
 
-<!-- TESTIMONIALS PLACEHOLDER -->
+<!-- TESTIMONIALS SECTION UPDATED -->
 <div class="testimonials-section">
     <h2>RESULTADOS REALES</h2>
     <div class="testi-grid">
-        <!-- Placeholders: Replace src with real client photos -->
+        
+        <!-- Case 1: Mass Gain -->
         <div class="testi-card">
-            <img src="img/client1.jpg" alt="Transformación 1">
-            <div class="testi-name">ALEJANDRO M.</div>
-            <div class="testi-result">Perdió 8kg de grasa / Ganó 3kg músculo</div>
-            <p class="testi-quote">"Nunca pensé que podría comer tanto y seguir bajando de peso. El plan es otro nivel."</p>
+            <img src="img/testi_legs.jpg" alt="Aumento de Masa">
+            <div class="testi-name">FASE DE VOLUMEN</div>
+            <div class="testi-result">🔥 +5KG MASA MAGRA EN 4 SEMANAS</div>
+            <p class="testi-quote">"Pasar de 75kg a 80kg sin ganar grasa en la cintura parecía imposible. La carga progresiva en pierna fue la clave del cambio."</p>
         </div>
+
+        <!-- Case 2: Definition/Abs -->
         <div class="testi-card">
-            <img src="img/client2.jpg" alt="Transformación 2">
-            <div class="testi-name">SOFÍA R.</div>
-            <div class="testi-result">Aumento de Glúteo / Cintura más pequeña</div>
-            <p class="testi-quote">"Mis piernas cambiaron totalmente en 12 semanas. Freddy sabe exactamente qué ajustar."</p>
+            <img src="img/testi_abs.jpg" alt="Definición Abdominal">
+            <div class="testi-name">RECOMPOSICIÓN</div>
+            <div class="testi-result">⚡️ DEFINICIÓN EXTREMA</div>
+            <p class="testi-quote">"Secado completo manteniendo el volumen muscular. Los abdominales salieron a la luz sin pasar hambre extrema."</p>
         </div>
+
+        <!-- Case 3: Female Glute Focus -->
         <div class="testi-card">
-            <img src="img/client3.jpg" alt="Transformación 3">
-            <div class="testi-name">DIEGO L.</div>
-            <div class="testi-result">Preparación Natural (INBA)</div>
-            <p class="testi-quote">"Llegué a tarima con la mejor condición de mi vida. La estrategia de peak week fue perfecta."</p>
+            <img src="img/testi_woman.jpg" alt="Transformación Mujer">
+            <div class="testi-name">ESTÉTICA FEMENINA</div>
+            <div class="testi-result">🍑 CINTURA PEQUEÑA / GLÚTEO FUERTE</div>
+            <p class="testi-quote">"Mi estructura cambió totalmente. El enfoque en glúteo medio y la dieta ajustada me dieron la forma de reloj de arena que buscaba."</p>
         </div>
+
+        <!-- Case 4: Side Profile / Fat Loss -->
+        <div class="testi-card">
+            <img src="img/testi_side.jpg" alt="Pérdida de Grasa">
+            <div class="testi-name">PÉRDIDA DE GRASA</div>
+            <div class="testi-result">📉 ADIÓS GRASA VISCERAL</div>
+            <p class="testi-quote">"Eliminación de grasa rebelde en el abdomen bajo y corrección de postura. El cambio de perfil es brutal."</p>
+        </div>
+
+        <!-- Case 5: V-Shape -->
+        <div class="testi-card">
+            <img src="img/testi_vshape.jpg" alt="V-Taper">
+            <div class="testi-name">ESTÉTICA "V-TAPER"</div>
+            <div class="testi-result">🦍 DORSALES Y HOMBROS</div>
+            <p class="testi-quote">"Construyendo la silueta clásica: Hombros anchos, cintura estrecha. La proporción áurea del culturismo."</p>
+        </div>
+
     </div>
 </div>
 
