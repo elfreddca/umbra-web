@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AURA LIFT | Gymwear Premium México</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;600&family=Manrope:wght@300;500;800&display=swap');
+
+    :root {
+        --bg-dark: #050505;
+        --accent: #fff;
+        --gold: #D4AF37;
+        --red: #ff3333;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        background-color: var(--bg-dark);
+        color: #fff;
+        font-family: 'Manrope', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* === HEADER === */
+    header {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #222;
+        background: rgba(0,0,0,0.9);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .logo { font-family: 'Teko'; font-size: 30px; letter-spacing: 2px; }
+
+    /* === HERO === */
+    .hero {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: radial-gradient(circle at center, #111 0%, #000 100%);
+        padding: 20px;
+    }
+    .hero h1 { font-family: 'Teko'; font-size: 80px; line-height: 0.9; margin-bottom: 20px; text-transform: uppercase; }
+    .hero p { color: #888; max-width: 500px; font-size: 18px; margin-bottom: 40px; }
+    
+    .btn-main {
+        background: #fff; color: #000; font-family: 'Teko'; font-size: 24px; padding: 15px 40px; text-decoration: none; text-transform: uppercase; font-weight: bold;
+        transition: 0.3s;
+    }
+    .btn-main:hover { background: #ccc; transform: scale(1.05); }
+
+    /* === CATALOG === */
+    .catalog { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+    .section-title { font-family: 'Teko'; font-size: 50px; text-align: center; margin-bottom: 50px; }
+
+    .product-grid { display: flex; flex-direction: column; gap: 50px; } /* Mobile First */
+
+    .product-card {
+        background: #0f0f0f;
+        border: 1px solid #222;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 0; /* Reset margin */
+    }
+    
+    .product-gallery {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+    }
+    .product-img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+    
+    .product-info { padding: 30px; }
+    .product-tag { color: var(--gold); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 10px; display: block; }
+    .product-title { font-family: 'Teko'; font-size: 40px; margin-bottom: 10px; line-height: 1; }
+    .product-price { font-size: 24px; color: #fff; font-weight: 300; margin-bottom: 20px; }
+    .product-sizes { display: flex; gap: 10px; margin-bottom: 30px; }
+    .size { border: 1px solid #444; padding: 5px 15px; color: #888; font-size: 14px; }
+    
+    .btn-buy {
+        display: block; width: 100%; text-align: center; background: var(--gold); color: #000;
+        font-family: 'Teko'; font-size: 28px; padding: 15px; text-decoration: none; text-transform: uppercase; font-weight: bold;
+    }
+
+    /* === FOOTER === */
+    footer { padding: 50px 20px; text-align: center; border-top: 1px solid #222; margin-top: 50px; color: #444; font-size: 12px; }
+
+    @media (min-width: 768px) {
+        .product-card { display: flex; align-items: center; }
+        .product-gallery { width: 50%; height: 600px; }
+        .product-info { width: 50%; padding: 60px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">AURA LIFT</div>
+</header>
+
+<section class="hero">
+    <h1>TRAEMOS<br>EL HYPE</h1>
+    <p>Gymshark & YoungLA en México. Sin aduanas. Sin esperas eternas. Stock limitado.</p>
+    <a href="#drop" class="btn-main">VER DROP ACTUAL</a>
+</section>
+
+<section class="catalog" id="drop">
+    <h2 class="section-title">DROP #01: LEGACY</h2>
+
+    <div class="product-grid">
+        
+        <!-- PRODUCT 1: BLACK / ONYX GREY -->
+        <div class="product-card">
+            <div class="product-gallery">
+                <img src="img/pumper_pants_1.jpg" class="product-img">
+                <div style="position:absolute; top:20px; left:20px; background:#fff; color:#000; padding:5px 10px; font-family:'Teko'; font-weight:bold;">PRE-ORDER</div>
+            </div>
+            <div class="product-info">
+                <span class="product-tag">GYMSHARK LEGACY</span>
+                <h3 class="product-title">PUMPER PANTS<br>BLACK / ONYX GREY</h3>
+                <div class="product-price">$1,512 MXN <span style="font-size:14px; color:#666;">(Aparta con $756)</span></div>
+                
+                <p style="color:#aaa; line-height:1.6; margin-bottom:20px;">
+                    El pantalón definitivo para el bombeo. Corte oversized, tela resistente y diseño floral "Blackout" exclusivo.
+                </p>
+
+                <div class="product-sizes">
+                    <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div>
+                </div>
+
+                <!-- WhatsApp Link (Dynamic) -->
+                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20BLACK%20en%20talla..." class="btn-buy">
+                    APARTAR POR WHATSAPP 📲
+                </a>
+                <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
+            </div>
+        </div>
+
+        <!-- PRODUCT 2: STRONG PINK -->
+        <div class="product-card">
+            <div class="product-gallery">
+                <img src="img/pumper_pink_1.jpg" class="product-img">
+                <div style="position:absolute; top:20px; left:20px; background:#fff; color:#000; padding:5px 10px; font-family:'Teko'; font-weight:bold;">PRE-ORDER</div>
+            </div>
+            <div class="product-info">
+                <span class="product-tag" style="color:#ff6eb4;">LIMITED EDITION</span>
+                <h3 class="product-title">PUMPER PANTS<br>STRONG PINK</h3>
+                <div class="product-price">$1,512 MXN <span style="font-size:14px; color:#666;">(Aparta con $756)</span></div>
+                
+                <p style="color:#aaa; line-height:1.6; margin-bottom:20px;">
+                    Para los que no tienen miedo a destacar. El color más agresivo de la colección Legacy. Mismas prestaciones, más actitud.
+                </p>
+
+                <div class="product-sizes">
+                    <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div><div class="size">3XL</div>
+                </div>
+
+                <!-- WhatsApp Link (Dynamic) -->
+                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20PINK%20en%20talla..." class="btn-buy" style="background:#ff6eb4; color:#000;">
+                    APARTAR POR WHATSAPP 📲
+                </a>
+                <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    AURA LIFT © 2026<br>
+    Importación Premium de Ropa Deportiva.
+</footer>
+
+</body>
+</html>
