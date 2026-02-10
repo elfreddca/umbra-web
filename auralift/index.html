@@ -11,7 +11,7 @@
         --bg-dark: #050505;
         --accent: #fff;
         --gold: #D4AF37;
-        --red: #ff3333;
+        --pink: #ff6eb4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -60,37 +60,16 @@
     .catalog { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
     .section-title { font-family: 'Teko'; font-size: 50px; text-align: center; margin-bottom: 50px; }
 
-    .product-grid { display: flex; flex-direction: column; gap: 50px; } /* Mobile First */
+    .product-grid { display: flex; flex-direction: column; gap: 50px; }
 
     .product-card {
         background: #0f0f0f;
         border: 1px solid #222;
         border-radius: 8px;
         overflow: hidden;
-        margin-bottom: 0; /* Reset margin */
+        margin-bottom: 0;
         position: relative;
     }
-
-    /* COLOR SELECTOR STYLES */
-    .color-selector {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-    .color-dot {
-        width: 30px; height: 30px;
-        border-radius: 50%;
-        border: 2px solid #333;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .color-dot:hover, .color-dot.active { border-color: #fff; transform: scale(1.1); }
-    
-    /* Hide/Show Logic */
-    .variant { display: none; }
-    .variant.active { display: block; animation: fadeIn 0.5s; }
-    
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     
     .product-gallery {
         position: relative;
@@ -99,7 +78,10 @@
     }
     .product-img {
         width: 100%; height: 100%; object-fit: cover;
+        display: none; /* Hide all images by default */
+        animation: fadeIn 0.4s ease-in-out;
     }
+    .product-img.active { display: block; } /* Show active */
     
     .product-info { padding: 30px; }
     .product-tag { color: var(--gold); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 10px; display: block; }
@@ -108,10 +90,39 @@
     .product-sizes { display: flex; gap: 10px; margin-bottom: 30px; }
     .size { border: 1px solid #444; padding: 5px 15px; color: #888; font-size: 14px; }
     
-    .btn-buy {
-        display: block; width: 100%; text-align: center; background: var(--gold); color: #000;
-        font-family: 'Teko'; font-size: 28px; padding: 15px; text-decoration: none; text-transform: uppercase; font-weight: bold;
+    /* COLOR SELECTOR */
+    .color-selector {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        align-items: center;
     }
+    .color-label { font-size: 12px; color: #666; text-transform: uppercase; margin-right: 10px; }
+    .color-dot {
+        width: 35px; height: 35px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        cursor: pointer;
+        transition: 0.3s;
+        position: relative;
+    }
+    .color-dot:hover { transform: scale(1.1); }
+    .color-dot.active { border-color: #fff; box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+    /* Dot Colors */
+    .dot-black { background: #111; }
+    .dot-pink { background: #6b1c3a; /* Dark Pink */ }
+
+    /* Buy Buttons (Hidden by default) */
+    .btn-buy {
+        display: none; /* Hidden */
+        width: 100%; text-align: center; background: var(--gold); color: #000;
+        font-family: 'Teko'; font-size: 28px; padding: 15px; text-decoration: none; text-transform: uppercase; font-weight: bold;
+        animation: fadeIn 0.4s;
+    }
+    .btn-buy.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
     /* === FOOTER === */
     footer { padding: 50px 20px; text-align: center; border-top: 1px solid #222; margin-top: 50px; color: #444; font-size: 12px; }
@@ -140,84 +151,62 @@
 
     <div class="product-grid">
         
-        <!-- PRODUCT 1: BLACK / ONYX GREY -->
-        <div class="product-card">
+        <!-- PRODUCT 1: PUMPER PANTS (Hybrid Card) -->
+        <div class="product-card" id="card-pumper">
             <div class="product-gallery">
-                <img src="img/pumper_pants_1.jpg" class="product-img">
+                <!-- Images for Black -->
+                <img src="img/pumper_pants_1.jpg" class="product-img active" data-color="black">
+                <!-- Images for Pink -->
+                <img src="img/pumper_pink_1.jpg" class="product-img" data-color="pink">
+                
                 <div style="position:absolute; top:20px; left:20px; background:#fff; color:#000; padding:5px 10px; font-family:'Teko'; font-weight:bold;">PRE-ORDER</div>
             </div>
             <div class="product-info">
-                <span class="product-tag">GYMSHARK LEGACY</span>
-                <h3 class="product-title">PUMPER PANTS<br>BLACK / ONYX GREY</h3>
+                <span class="product-tag" id="tag-pumper">GYMSHARK LEGACY</span>
+                <h3 class="product-title" id="title-pumper">PUMPER PANTS<br>BLACK / ONYX GREY</h3>
                 <div class="product-price">$1,512 MXN <span style="font-size:14px; color:#666;">(Aparta con $756)</span></div>
                 
-                <p style="color:#aaa; line-height:1.6; margin-bottom:20px;">
-                    El pantalón definitivo para el bombeo. Corte oversized, tela resistente y diseño floral "Blackout" exclusivo.
-                </p>
+                <div class="color-selector">
+                    <span class="color-label">Color:</span>
+                    <div class="color-dot dot-black active" onclick="selectColor('pumper', 'black')"></div>
+                    <div class="color-dot dot-pink" style="background:#8b2e56;" onclick="selectColor('pumper', 'pink')"></div>
+                </div>
 
                 <div class="product-sizes">
                     <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div>
                 </div>
 
-                <!-- WhatsApp Link (Dynamic) -->
-                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20BLACK%20en%20talla..." class="btn-buy">
-                    APARTAR POR WHATSAPP 📲
+                <!-- Btn Black -->
+                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20BLACK%20en%20talla..." class="btn-buy active" id="btn-pumper-black">
+                    APARTAR (NEGRO) 📲
                 </a>
+                <!-- Btn Pink -->
+                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20PINK%20en%20talla..." class="btn-buy" id="btn-pumper-pink" style="background:#ff6eb4; color:#000;">
+                    APARTAR (ROSA) 📲
+                </a>
+
                 <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
             </div>
         </div>
 
-        <!-- PRODUCT 2: STRONG PINK -->
+        <!-- PRODUCT 2: BASELAYER (Static) -->
         <div class="product-card">
             <div class="product-gallery">
-                <img src="img/pumper_pink_1.jpg" class="product-img">
-                <div style="position:absolute; top:20px; left:20px; background:#fff; color:#000; padding:5px 10px; font-family:'Teko'; font-weight:bold;">PRE-ORDER</div>
-            </div>
-            <div class="product-info">
-                <span class="product-tag" style="color:#ff6eb4;">LIMITED EDITION</span>
-                <h3 class="product-title">PUMPER PANTS<br>STRONG PINK</h3>
-                <div class="product-price">$1,512 MXN <span style="font-size:14px; color:#666;">(Aparta con $756)</span></div>
-                
-                <p style="color:#aaa; line-height:1.6; margin-bottom:20px;">
-                    Para los que no tienen miedo a destacar. El color más agresivo de la colección Legacy. Mismas prestaciones, más actitud.
-                </p>
-
-                <div class="product-sizes">
-                    <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div><div class="size">3XL</div>
-                </div>
-
-                <!-- WhatsApp Link (Dynamic) -->
-                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20PINK%20en%20talla..." class="btn-buy" style="background:#ff6eb4; color:#000;">
-                    APARTAR POR WHATSAPP 📲
-                </a>
-                <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
-            </div>
-        </div>
-
-        <!-- PRODUCT 3: ELEMENT BASELAYER (COMPRESSION) -->
-        <div class="product-card">
-            <div class="product-gallery">
-                <img src="img/baselayer_1.jpg" class="product-img">
-                <div style="position:absolute; top:20px; left:20px; background:#000; color:#fff; padding:5px 10px; font-family:'Teko'; font-weight:bold; border:1px solid #fff;">COMPRESSION FIT</div>
+                <img src="img/baselayer_1.jpg" class="product-img active">
+                <div style="position:absolute; top:20px; left:20px; background:#000; color:#fff; padding:5px 10px; font-family:'Teko'; font-weight:bold; border:1px solid #fff;">COMPRESSION</div>
             </div>
             <div class="product-info">
                 <span class="product-tag">GYMSHARK ELEMENT</span>
                 <h3 class="product-title">BASELAYER LONG SLEEVE<br>BLACK / BRAND BLUE</h3>
                 <div class="product-price">$864 MXN <span style="font-size:14px; color:#666;">(Aparta con $432)</span></div>
                 
-                <p style="color:#aaa; line-height:1.6; margin-bottom:20px;">
-                    Segunda piel. Diseñada para mantener el músculo caliente y mostrar el trabajo duro. Logo azul eléctrico en el pecho.
-                </p>
-
                 <div class="product-sizes">
-                    <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div><div class="size">3XL</div>
+                    <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div>
                 </div>
 
-                <!-- WhatsApp Link -->
-                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20la%20Baselayer%20Negra%20en%20talla..." class="btn-buy" style="background:#fff;">
+                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20la%20Baselayer%20Negra%20en%20talla..." class="btn-buy active" style="background:#fff;">
                     APARTAR POR WHATSAPP 📲
                 </a>
-                <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
             </div>
         </div>
 
@@ -228,6 +217,40 @@
     AURA LIFT © 2026<br>
     Importación Premium de Ropa Deportiva.
 </footer>
+
+<script>
+    function selectColor(product, color) {
+        // 1. Update Dots
+        const card = document.getElementById('card-' + product);
+        const dots = card.querySelectorAll('.color-dot');
+        dots.forEach(d => d.classList.remove('active'));
+        // Find clicked dot logic (simplified for demo, assumes order or event target)
+        if(color === 'black') dots[0].classList.add('active');
+        if(color === 'pink') dots[1].classList.add('active');
+
+        // 2. Update Images
+        const imgs = card.querySelectorAll('.product-img');
+        imgs.forEach(img => {
+            img.classList.remove('active');
+            if(img.dataset.color === color) img.classList.add('active');
+        });
+
+        // 3. Update Buttons
+        const btnBlack = document.getElementById('btn-' + product + '-black');
+        const btnPink = document.getElementById('btn-' + product + '-pink');
+        
+        btnBlack.classList.remove('active');
+        btnPink.classList.remove('active');
+
+        if(color === 'black') btnBlack.classList.add('active');
+        if(color === 'pink') btnPink.classList.add('active');
+
+        // 4. Update Title (Optional)
+        const title = document.getElementById('title-' + product);
+        if(color === 'black') title.innerHTML = 'PUMPER PANTS<br>BLACK / ONYX GREY';
+        if(color === 'pink') title.innerHTML = 'PUMPER PANTS<br>STRONG PINK';
+    }
+</script>
 
 </body>
 </html>
