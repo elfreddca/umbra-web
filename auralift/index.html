@@ -68,7 +68,29 @@
         border-radius: 8px;
         overflow: hidden;
         margin-bottom: 0; /* Reset margin */
+        position: relative;
     }
+
+    /* COLOR SELECTOR STYLES */
+    .color-selector {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .color-dot {
+        width: 30px; height: 30px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .color-dot:hover, .color-dot.active { border-color: #fff; transform: scale(1.1); }
+    
+    /* Hide/Show Logic */
+    .variant { display: none; }
+    .variant.active { display: block; animation: fadeIn 0.5s; }
+    
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     
     .product-gallery {
         position: relative;
@@ -166,6 +188,33 @@
 
                 <!-- WhatsApp Link (Dynamic) -->
                 <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20el%20Pumper%20Pants%20PINK%20en%20talla..." class="btn-buy" style="background:#ff6eb4; color:#000;">
+                    APARTAR POR WHATSAPP 📲
+                </a>
+                <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
+            </div>
+        </div>
+
+        <!-- PRODUCT 3: ELEMENT BASELAYER (COMPRESSION) -->
+        <div class="product-card">
+            <div class="product-gallery">
+                <img src="img/baselayer_1.jpg" class="product-img">
+                <div style="position:absolute; top:20px; left:20px; background:#000; color:#fff; padding:5px 10px; font-family:'Teko'; font-weight:bold; border:1px solid #fff;">COMPRESSION FIT</div>
+            </div>
+            <div class="product-info">
+                <span class="product-tag">GYMSHARK ELEMENT</span>
+                <h3 class="product-title">BASELAYER LONG SLEEVE<br>BLACK / BRAND BLUE</h3>
+                <div class="product-price">$980 MXN <span style="font-size:14px; color:#666;">(Aparta con $490)</span></div>
+                
+                <p style="color:#aaa; line-height:1.6; margin-bottom:20px;">
+                    Segunda piel. Diseñada para mantener el músculo caliente y mostrar el trabajo duro. Logo azul eléctrico en el pecho.
+                </p>
+
+                <div class="product-sizes">
+                    <div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div><div class="size">XL</div><div class="size">XXL</div><div class="size">3XL</div>
+                </div>
+
+                <!-- WhatsApp Link -->
+                <a href="https://wa.me/528332051472?text=Hola,%20quiero%20apartar%20la%20Baselayer%20Negra%20en%20talla..." class="btn-buy" style="background:#fff;">
                     APARTAR POR WHATSAPP 📲
                 </a>
                 <p style="text-align:center; font-size:12px; color:#555; margin-top:10px;">Pago seguro: Transferencia / Depósito</p>
