@@ -42,8 +42,10 @@
 
     /* Mega Menu */
     .mega-menu {
-        position: absolute;
-        top: 100%; left: 0; width: 100%;
+        position: fixed; /* Fixed to cover whole screen width */
+        top: 60px; /* Below header */
+        left: 0; 
+        width: 100vw; /* Full Viewport Width */
         background: #0a0a0a;
         border-bottom: 1px solid var(--border);
         display: none;
@@ -51,8 +53,11 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         z-index: 1001;
+        justify-content: center; /* Center content */
     }
     .nav-item:hover .mega-menu { display: grid; }
+    
+    .menu-col { text-align: center; } /* Center text in columns */
     
     .menu-col h4 { font-family: 'Teko'; font-size: 20px; color: var(--gold); margin-bottom: 15px; }
     .menu-col ul { list-style: none; }
