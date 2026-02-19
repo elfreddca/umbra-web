@@ -8,235 +8,203 @@
     @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;500;600&family=Manrope:wght@300;500;700&display=swap');
 
     :root {
-        --bg-dark: #000;
-        --text-main: #fff;
+        --bg-color: #ffffff;
+        --text-main: #000000;
+        --text-light: #555555;
+        --accent: #000000;
+        --border: #e5e5e5;
         --gold: #D4AF37;
-        --gray: #1a1a1a;
-        --border: #333;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
+    body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Manrope', sans-serif; overflow-x: hidden; }
     a { text-decoration: none; color: inherit; }
 
-    /* === HEADER & MEGA MENU === */
+    /* === TOP BAR === */
+    .top-bar { background: #000; color: #fff; text-align: center; padding: 8px; font-size: 12px; font-weight: 600; letter-spacing: 1px; }
+
+    /* === HEADER === */
     header {
-        background: rgba(0,0,0,0.95);
+        background: #fff;
         border-bottom: 1px solid var(--border);
         position: sticky;
         top: 0;
         z-index: 1000;
+        padding: 20px 0;
     }
     
-    .nav-bar {
+    .nav-container {
         display: flex; justify-content: space-between; align-items: center;
-        padding: 15px 30px;
-        max-width: 1400px; margin: 0 auto;
+        max-width: 1400px; margin: 0 auto; padding: 0 20px;
     }
     
-    .logo { font-family: 'Teko'; font-size: 32px; letter-spacing: 2px; font-weight: 600; }
+    .logo { font-family: 'Teko'; font-size: 36px; letter-spacing: 2px; font-weight: 600; color: #000; }
     
-    .nav-links { display: flex; gap: 30px; }
-    .nav-item { font-size: 14px; text-transform: uppercase; font-weight: 700; cursor: pointer; position: relative; padding: 10px 0; }
-    .nav-item:hover { color: var(--gold); }
+    .nav-links { display: flex; gap: 40px; }
+    .nav-item { font-size: 14px; text-transform: uppercase; font-weight: 700; cursor: pointer; color: #333; transition: 0.2s; }
+    .nav-item:hover { color: #000; }
 
-    /* Mega Menu */
-    .mega-menu {
-        position: fixed; /* Fixed to cover whole screen width */
-        top: 60px; /* Below header */
-        left: 0; 
-        width: 100vw; /* Full Viewport Width */
-        background: #0a0a0a;
-        border-bottom: 1px solid var(--border);
-        display: none;
-        padding: 40px;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        z-index: 1001;
-        justify-content: center; /* Center content */
-    }
-    .nav-item:hover .mega-menu { display: grid; }
-    
-    .menu-col { text-align: center; } /* Center text in columns */
-    
-    .menu-col h4 { font-family: 'Teko'; font-size: 20px; color: var(--gold); margin-bottom: 15px; }
-    .menu-col ul { list-style: none; }
-    .menu-col li { margin-bottom: 8px; font-size: 13px; color: #aaa; cursor: pointer; transition: 0.2s; }
-    .menu-col li:hover { color: #fff; transform: translateX(5px); }
+    .nav-icons { display: flex; gap: 20px; font-size: 20px; }
 
-    /* Mobile Menu Icon */
-    .mobile-menu-btn { display: none; font-size: 24px; cursor: pointer; }
-
-    /* === BRANDS BAR === */
-    .brands-bar {
-        display: flex; justify-content: center; gap: 40px; padding: 20px;
-        background: #0a0a0a; border-bottom: 1px solid var(--border);
-        overflow-x: auto;
-    }
-    .brand-logo { font-family: 'Teko'; font-size: 18px; color: #555; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; cursor: pointer; transition: 0.3s; }
-    .brand-logo:hover { color: #fff; }
-    .brand-logo.active { color: #fff; border-bottom: 2px solid var(--gold); }
-
-    /* === HERO === */
+    /* === HERO SLIDER (Static for now) === */
     .hero {
-        height: 80vh;
-        background: url('img/hero_bg.png') no-repeat center center/cover;
+        height: 85vh;
+        background: url('img/hero_bg.png') no-repeat center center/cover; /* Placeholder until new light image */
         position: relative;
-        display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-        padding: 20px;
+        display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+        padding: 0 5%;
     }
-    /* Dark Overlay for Text Readability */
+    /* Light Overlay */
     .hero::before {
         content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.6); z-index: 1;
+        background: rgba(255,255,255,0.1); z-index: 1; /* Lighter overlay */
     }
-    .hero h1, .hero p, .hero-btn { position: relative; z-index: 2; }
-
-    .hero h1 { font-family: 'Teko'; font-size: 90px; line-height: 0.9; margin-bottom: 20px; text-shadow: 0 5px 20px rgba(0,0,0,0.8); }
-    .hero-btn { border: 2px solid #fff; padding: 15px 40px; font-family: 'Teko'; font-size: 24px; text-transform: uppercase; transition: 0.3s; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
-    .hero-btn:hover { background: #fff; color: #000; }
-
-    /* === PRODUCT GRID === */
-    .section-header { text-align: center; margin: 60px 0 40px 0; }
-    .section-title { font-family: 'Teko'; font-size: 40px; }
     
+    .hero-content { position: relative; z-index: 2; max-width: 600px; }
+    .hero-subtitle { font-size: 14px; letter-spacing: 3px; font-weight: bold; margin-bottom: 10px; background: #000; color: #fff; display: inline-block; padding: 5px 10px; }
+    .hero h1 { font-family: 'Teko'; font-size: 80px; line-height: 0.9; margin-bottom: 20px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+    .hero-btn { 
+        background: #fff; color: #000; padding: 15px 40px; font-family: 'Teko'; font-size: 22px; 
+        text-transform: uppercase; font-weight: bold; display: inline-block; transition: 0.3s;
+        border: 2px solid #fff;
+    }
+    .hero-btn:hover { background: transparent; color: #fff; }
+
+    /* === BRANDS STRIP === */
+    .brands-strip {
+        padding: 30px 0; border-bottom: 1px solid var(--border); overflow-x: auto;
+        display: flex; justify-content: center; gap: 60px;
+    }
+    .brand-name { font-family: 'Teko'; font-size: 24px; color: #ccc; transition: 0.3s; cursor: pointer; }
+    .brand-name:hover { color: #000; }
+    .brand-name.active { color: #000; border-bottom: 2px solid #000; }
+
+    /* === CATEGORIES GRID === */
+    .categories {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+        margin-bottom: 50px;
+    }
+    .cat-item {
+        height: 400px; background: #f5f5f5; display: flex; align-items: center; justify-content: center;
+        position: relative; overflow: hidden; cursor: pointer;
+    }
+    .cat-item:hover img { transform: scale(1.05); }
+    .cat-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .cat-overlay {
+        position: absolute; bottom: 30px; left: 30px;
+        background: #fff; padding: 15px 30px;
+    }
+    .cat-title { font-family: 'Teko'; font-size: 28px; margin: 0; line-height: 1; }
+
+    /* === PRODUCT SECTION === */
+    .section-header { text-align: center; margin: 80px 0 40px; }
+    .section-title { font-family: 'Teko'; font-size: 45px; text-transform: uppercase; margin-bottom: 10px; }
+    .section-subtitle { color: var(--text-light); font-size: 16px; }
+
     .product-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1400px; margin: 0 auto; padding: 0 20px;
     }
 
-    .card { background: #0a0a0a; border: 1px solid var(--border); transition: 0.3s; border-radius: 8px; overflow: hidden; }
-    .card:hover { border-color: #555; transform: translateY(-5px); }
+    .card { cursor: pointer; }
+    .card-img-container {
+        position: relative; overflow: hidden; border-radius: 4px; background: #f0f0f0;
+        height: 400px; margin-bottom: 15px;
+    }
+    .card-img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+    .card:hover .card-img { transform: scale(1.03); }
     
-    .card-img { width: 100%; height: 400px; object-fit: cover; }
-    
-    .card-info { padding: 20px; }
-    .card-brand { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-    .card-title { font-family: 'Teko'; font-size: 24px; margin: 5px 0; line-height: 1; }
-    .card-price { font-size: 16px; font-weight: bold; margin-bottom: 15px; }
+    .card-badge {
+        position: absolute; top: 10px; left: 10px;
+        background: #000; color: #fff; font-size: 10px; padding: 4px 8px; font-weight: bold;
+    }
+
+    .card-details { text-align: left; }
+    .card-brand { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+    .card-title { font-family: 'Manrope'; font-weight: 700; font-size: 16px; margin-bottom: 5px; }
+    .card-price { font-family: 'Manrope'; font-weight: 400; font-size: 15px; color: #333; }
     .card-btn {
-        display: block; width: 100%; text-align: center;
-        background: var(--gold); color: #000; font-family: 'Teko'; font-size: 20px;
-        padding: 10px; text-decoration: none; text-transform: uppercase; font-weight: 600;
-        border-radius: 4px;
+        margin-top: 10px; display: block; width: 100%; padding: 10px;
+        border: 1px solid #000; background: transparent; color: #000;
+        text-align: center; font-size: 12px; font-weight: 700; text-transform: uppercase;
+        transition: 0.2s;
     }
+    .card-btn:hover { background: #000; color: #fff; }
 
-    /* === RESPONSIVE === */
+    /* === FOOTER === */
+    footer { background: #f9f9f9; padding: 60px 20px; margin-top: 100px; color: #333; }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto; gap: 40px; }
+    .footer-col h4 { font-family: 'Teko'; font-size: 20px; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; font-size: 14px; color: #666; cursor: pointer; }
+    .footer-col li:hover { color: #000; }
+
     @media (max-width: 768px) {
-        .nav-links { display: none; } /* Mobile menu simplified for now */
-        .mobile-menu-btn { display: block; }
+        .nav-links { display: none; }
         .hero h1 { font-size: 50px; }
-        .product-grid { grid-template-columns: 1fr; }
-        .mega-menu { position: static; display: none; }
+        .categories { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .brands-strip { justify-content: flex-start; padding: 20px; }
     }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<div class="top-bar">ENVÍO GRATIS A TODO MÉXICO EN PEDIDOS +$2,500 🇲🇽</div>
+
 <header>
-    <div class="nav-bar">
+    <div class="nav-container">
         <div class="logo">AURA LIFT</div>
         
         <div class="nav-links">
-            <div class="nav-item">
-                HOMBRES
-                <div class="mega-menu">
-                    <div class="menu-col">
-                        <h4>TOPS</h4>
-                        <ul>
-                            <li>T-Shirts & Tops</li>
-                            <li>Compression Fit</li>
-                            <li>Tank Tops</li>
-                            <li>Oversized</li>
-                            <li>Stringers</li>
-                        </ul>
-                    </div>
-                    <div class="menu-col">
-                        <h4>BOTTOMS</h4>
-                        <ul>
-                            <li>Shorts</li>
-                            <li>Joggers</li>
-                            <li>Underwear</li>
-                        </ul>
-                    </div>
-                    <div class="menu-col">
-                        <h4>OUTERWEAR</h4>
-                        <ul>
-                            <li>Hoodies</li>
-                            <li>Sweatshirts</li>
-                            <li>Jackets</li>
-                        </ul>
-                    </div>
-                    <div class="menu-col">
-                        <h4>EQUIPO</h4>
-                        <ul>
-                            <li>Bolsas</li>
-                            <li>Accesorios</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="nav-item">
-                MUJERES
-                <div class="mega-menu">
-                    <div class="menu-col">
-                        <h4>TOPS</h4>
-                        <ul><li>Sports Bras</li><li>Crop Tops</li><li>Hoodies</li></ul>
-                    </div>
-                    <div class="menu-col">
-                        <h4>BOTTOMS</h4>
-                        <ul><li>Leggings</li><li>Shorts</li><li>Joggers</li></ul>
-                    </div>
-                    <div class="menu-col">
-                        <h4>EQUIPO</h4>
-                        <ul><li>Bolsas</li><li>Bandas</li></ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-item">MARCAS</div>
-            <div class="nav-item">NOVEDADES</div>
+            <div class="nav-item">HOMBRES</div>
+            <div class="nav-item">MUJERES</div>
+            <div class="nav-item">ACCESORIOS</div>
+            <div class="nav-item" style="color:var(--gold);">PRE-ORDER</div>
         </div>
 
-        <div class="mobile-menu-btn">☰</div>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>🛍️</span>
+        </div>
     </div>
 </header>
 
-<!-- BRANDS BAR -->
-<div class="brands-bar">
-    <div class="brand-logo active">GYMSHARK</div>
-    <div class="brand-logo">YOUNGLA</div>
-    <div class="brand-logo">DARC SPORT</div>
-    <div class="brand-logo">VANQUISH</div>
-    <div class="brand-logo">ALO YOGA</div>
-    <div class="brand-logo">CONTROLLED INSANITY</div>
-</div>
-
-<!-- HERO -->
 <section class="hero">
-    <h1>ESTILO.<br>RENDIMIENTO.<br>EXCLUSIVIDAD.</h1>
-    <a href="#featured" class="hero-btn">VER COLECCIÓN</a>
+    <div class="hero-content">
+        <span class="hero-subtitle">NUEVA COLECCIÓN</span>
+        <h1>GYMSHARK<br>LEGACY</h1>
+        <p style="color:#ddd; margin-bottom:30px; font-size:18px;">La esencia del bodybuilding old school con tecnología moderna.</p>
+        <a href="#drop" class="hero-btn">COMPRAR AHORA</a>
+    </div>
 </section>
 
-<!-- PRODUCT GRID -->
-<div class="section-header" id="featured">
-    <h2 class="section-title">GYMSHARK // SELECCIÓN</h2>
+<div class="brands-strip">
+    <div class="brand-name active">GYMSHARK</div>
+    <div class="brand-name">YOUNGLA</div>
+    <div class="brand-name">DARC SPORT</div>
+    <div class="brand-name">VANQUISH</div>
+    <div class="brand-name">ALO</div>
+</div>
+
+<div class="section-header" id="drop">
+    <h2 class="section-title">TRENDING NOW</h2>
+    <p class="section-subtitle">Lo más buscado de la semana</p>
 </div>
 
 <div class="product-grid">
     
     <!-- PRODUCT 1 -->
     <div class="card">
-        <img src="img/pumper_pants_1.jpg" class="card-img">
-        <div class="card-info">
+        <div class="card-img-container">
+            <span class="card-badge">PRE-ORDER</span>
+            <img src="img/pumper_pants_1.jpg" class="card-img">
+        </div>
+        <div class="card-details">
             <div class="card-brand">GYMSHARK</div>
-            <div class="card-title">PUMPER PANTS - BLACK</div>
+            <div class="card-title">Pumper Pants Black/Onyx</div>
             <div class="card-price">$1,512 MXN</div>
             <a href="https://wa.me/528332051472?text=PumperBlack" class="card-btn">VER DETALLES</a>
         </div>
@@ -244,32 +212,70 @@
 
     <!-- PRODUCT 2 -->
     <div class="card">
-        <img src="img/pumper_pink_1.jpg" class="card-img">
-        <div class="card-info">
+        <div class="card-img-container">
+            <span class="card-badge">LIMITED</span>
+            <img src="img/pumper_pink_1.jpg" class="card-img">
+        </div>
+        <div class="card-details">
             <div class="card-brand">GYMSHARK</div>
-            <div class="card-title">PUMPER PANTS - PINK</div>
+            <div class="card-title">Pumper Pants Strong Pink</div>
             <div class="card-price">$1,512 MXN</div>
-            <a href="https://wa.me/528332051472?text=PumperPink" class="card-btn" style="background:#ff6eb4;">VER DETALLES</a>
+            <a href="https://wa.me/528332051472?text=PumperPink" class="card-btn">VER DETALLES</a>
         </div>
     </div>
 
     <!-- PRODUCT 3 -->
     <div class="card">
-        <img src="img/baselayer_1.jpg" class="card-img">
-        <div class="card-info">
+        <div class="card-img-container">
+            <img src="img/baselayer_1.jpg" class="card-img">
+        </div>
+        <div class="card-details">
             <div class="card-brand">GYMSHARK</div>
-            <div class="card-title">ELEMENT BASELAYER</div>
+            <div class="card-title">Element Baselayer Black</div>
             <div class="card-price">$864 MXN</div>
-            <a href="https://wa.me/528332051472?text=Baselayer" class="card-btn" style="background:#fff;">VER DETALLES</a>
+            <a href="https://wa.me/528332051472?text=Baselayer" class="card-btn">VER DETALLES</a>
         </div>
     </div>
 
 </div>
 
-<!-- FOOTER -->
-<footer style="padding:50px; text-align:center; color:#444; border-top:1px solid #222; margin-top:50px;">
-    AURA LIFT © 2026<br>
-    <div style="font-size:10px; margin-top:10px;">Importación Premium - Envíos a todo México</div>
+<!-- CATEGORIES -->
+<div class="section-header">
+    <h2 class="section-title">EXPLORA POR CATEGORÍA</h2>
+</div>
+<div class="categories">
+    <div class="cat-item">
+        <img src="img/pumper_pants_2.jpg" class="cat-img"> <!-- Placeholder image -->
+        <div class="cat-overlay"><h3 class="cat-title">HOMBRES</h3></div>
+    </div>
+    <div class="cat-item">
+        <img src="img/pumper_pink_2.jpg" class="cat-img"> <!-- Placeholder image -->
+        <div class="cat-overlay"><h3 class="cat-title">MUJERES</h3></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo" style="font-size:24px; margin-bottom:10px;">AURA LIFT</div>
+            <p style="font-size:12px; color:#888;">Importación premium de las mejores marcas del mundo fitness.</p>
+        </div>
+        <div class="footer-col">
+            <h4>COMPRAR</h4>
+            <ul><li>Hombres</li><li>Mujeres</li><li>Marcas</li><li>Novedades</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>AYUDA</h4>
+            <ul><li>Envíos</li><li>Devoluciones</li><li>Tallas</li><li>Contacto</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>SÍGUENOS</h4>
+            <ul><li>Instagram</li><li>TikTok</li></ul>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:40px; font-size:10px; color:#aaa; border-top:1px solid #ddd; padding-top:20px;">
+        © 2026 Aura Lift. Todos los derechos reservados.
+    </div>
 </footer>
 
 </body>
