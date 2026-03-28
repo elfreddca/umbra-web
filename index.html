@@ -66,6 +66,10 @@
         overflow-x: hidden;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     .background-glow {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
@@ -515,12 +519,166 @@
     
     <div class="cta-container">
         <!-- STUDENT COACHING BUTTON (RED GLOW) -->
-        <a href="#coaching-1on1" class="btn-hero" style="background: #ff3333; border: none; animation: redGlow 2s infinite ease-in-out; color:#fff;">COACHING ESTUDIANTES</a>
+        <a href="#coaching-block" class="btn-hero" style="background: #ff3333; border: none; animation: redGlow 2s infinite ease-in-out; color:#fff;">COACHING ESTUDIANTES</a>
 
-        <a href="#men" class="btn-hero">Protocolo Hombres</a>
-        <a href="#women" class="btn-hero woman">Protocolo Mujeres</a>
-        <a href="#coaching-1on1" class="btn-hero gold">Coaching 1:1 Online</a>
+        <a href="#protocolos-block" class="btn-hero">Protocolo Hombres</a>
+        <a href="#protocolos-block" class="btn-hero woman">Protocolo Mujeres</a>
+        <a href="#coaching-block" class="btn-hero gold">Coaching 1:1 Online</a>
     </div>
 </section>
 
-<!-- FREE RESOURCE SECTION (MOVED UP) -->
+<!-- === EL PROBLEMA / DIFERENCIADOR === -->
+<section class="problem-section" id="metodologia">
+    <div class="container">
+        <h2>¿Entrenas 6 días y te ves igual?</h2>
+        <p>La mayoría de personas desperdician meses haciendo rutinas genéricas, copiando a influencers y adivinando con su nutrición. En Umbra diseñamos protocolos basados en <strong>ciencia y evidencia</strong> para maximizar tu hipertrofia muscular y cambiar tu composición corporal en 10 semanas garantizadas.</p>
+    </div>
+</section>
+
+<!-- === BLOQUE 1: COACHING SERVICES === -->
+<section class="testimonials-section" id="coaching-block" style="padding: 100px 20px;">
+    <h2>Coaching Online <span style="color:#D4AF37">Élite</span></h2>
+    <p style="color:#aaa; max-width:600px; margin:0 auto 40px auto;">Aceleramos tu progreso con atención personalizada en entrenamiento, nutrición clínica y suplementación.</p>
+    
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+        
+        <!-- Coaching Estudiantes -->
+        <div class="card" style="flex:1; min-width:300px; max-width:400px; text-align:left; border-top: 4px solid #ff3333;">
+            <h3 style="color:#ff3333; margin-bottom:15px; font-size:2.2rem;">Coaching Estudiantes</h3>
+            <p class="desc" style="border-bottom:none; margin-bottom:0;">Para estudiantes que quieren hipertrofia inteligente al mejor costo.</p>
+            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
+                    <span style="font-size:1.2rem; color:#aaa;">Mensual</span>
+                    <span class="price" style="font-size:2.5rem; margin:0;">$799 <span style="font-size:1rem; color:#666;">MXN</span></span>
+                </div>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=5c7677aaf43e4b568efac30a07d44151" class="btn-card" style="margin-top:0; padding:12px; font-size:1.4rem; background:#ff3333; border-color:#ff3333; color:#fff;" target="_blank">Suscribirse Mensual</a>
+            </div>
+            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
+                    <span style="font-size:1.2rem; color:#aaa;">Trimestral</span>
+                    <span class="price" style="font-size:2.5rem; margin:0;">$1,399 <span style="font-size:1rem; color:#666;">MXN</span></span>
+                </div>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=256a005dd39e430499aa9ba71ffb86ca" class="btn-card" style="margin-top:0; padding:12px; font-size:1.4rem; background:transparent; border:1px solid #ff3333; color:#ff3333;" target="_blank">Ahorrar Trimestral</a>
+            </div>
+            <ul class="features">
+                <li>Rutina hipertrofia individual</li>
+                <li>Dieta flexible (macros calculados)</li>
+                <li>Reporte y ajustes quincenales</li>
+                <li>Ideal para presupuesto limitado</li>
+            </ul>
+        </div>
+
+        <!-- Coaching 1:1 Online -->
+        <div class="card" style="flex:1; min-width:300px; max-width:400px; text-align:left; border-top: 4px solid #D4AF37; transform:scale(1.05); z-index:2; box-shadow:0 0 40px rgba(212,175,55,0.15);">
+            <div style="position:absolute; top:-15px; right:20px; background:#D4AF37; color:#000; padding:5px 15px; font-weight:bold; border-radius:15px; font-family:'Teko'; font-size:1.2rem; letter-spacing:1px;">RECOMENDADO</div>
+            <h3 style="color:#D4AF37; margin-bottom:15px; font-size:2.2rem;">Coaching 1:1 VIP</h3>
+            <p class="desc" style="border-bottom:none; margin-bottom:0;">Atención total y comunicación directa para una transformación extrema.</p>
+            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
+                    <span style="font-size:1.2rem; color:#aaa;">Mensual</span>
+                    <span class="price" style="font-size:2.5rem; margin:0;">$1,199 <span style="font-size:1rem; color:#666;">MXN</span></span>
+                </div>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=0c93c33d5abc4a96880c6724e8b60475" class="btn-gold" style="display:block; text-align:center; padding:12px; width:100%; box-sizing:border-box;" target="_blank">Acceso Mensual</a>
+            </div>
+            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
+                    <span style="font-size:1.2rem; color:#aaa;">Trimestral</span>
+                    <span class="price" style="font-size:2.5rem; margin:0;">$2,599 <span style="font-size:1rem; color:#666;">MXN</span></span>
+                </div>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=c31ad1f327f744259504cb22b5d6a713" class="btn-gold" style="display:block; text-align:center; padding:12px; width:100%; background:transparent; border:1px solid #D4AF37; color:#D4AF37; box-shadow:none;" target="_blank">Ahorrar Trimestral</a>
+            </div>
+            <ul class="features">
+                <li>Check-ins y feedback semanal</li>
+                <li>Ajustes de dieta 100% dinámicos</li>
+                <li>Soporte de dudas via WhatsApp/Telegram</li>
+                <li>Evaluación de técnica de ejercicios (Video)</li>
+                <li>Plan de Suplementación y/o Farmacología</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- === BLOQUE 2: PROTOCOLOS / E-COMMERCE === -->
+<section class="free-resources" id="protocolos-block">
+    <h2 style="font-size:3.5rem; margin-bottom:50px; color:#fff; font-family:'Teko'; text-transform:uppercase;">Guías & Protocolos <span style="color:#D4AF37">(PDF)</span></h2>
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+        
+        <!-- Protocolo Hombres -->
+        <div class="resource-card" style="flex:1; min-width:320px; flex-direction:column; padding:0; border:1px solid #fff;">
+            <div class="resource-mockup" style="width:100%; border-right:none; border-bottom:1px solid #222; min-height:250px;">
+                <div class="pdf-cover" style="background:#fff; border-color:#fff;">
+                    <div style="color:#000; font-family:'Teko'; font-size:2rem; line-height:1; text-align:center; font-weight:700;">PROTOCOLO<br>HOMBRES</div>
+                    <div style="color:#666; font-size:0.8rem; margin-top:20px; font-family:'Manrope'; text-transform:uppercase;">Hipertrofia</div>
+                </div>
+            </div>
+            <div class="resource-content" style="width:100%; padding:30px; text-align:center;">
+                <h3 style="font-size:2.5rem; margin-bottom:10px; font-family:'Teko'; text-transform:uppercase; color:#fff;">Protocolo Hombres</h3>
+                <div style="font-family:'Teko'; font-size:3rem; font-weight:600; color:#fff; margin-bottom:15px;">$30 USD</div>
+                <p class="resource-desc" style="text-align:justify; margin-bottom:20px; font-size:1rem;">Rutina especializada de hipertrofia varonil, dividida por frecuencias musculares óptimas para pechos, hombros, brazos y espalda "3D". Entrenamiento estructurado con bases científicas.</p>
+                <!-- OJO FREDDY: Reemplaza este href con tu link real de MercadoPago cuando lo tengas -->
+                <a href="#link-mercadopago-hombres-pendiente" class="btn-download" style="width:100%; box-sizing:border-box;">COMPRAR Y DESCARGAR</a>
+            </div>
+        </div>
+
+        <!-- Protocolo Mujeres -->
+        <div class="resource-card" style="flex:1; min-width:320px; flex-direction:column; padding:0; border:1px solid var(--primary-woman);">
+            <div class="resource-mockup" style="width:100%; border-right:none; border-bottom:1px solid #222; min-height:250px;">
+                <div class="pdf-cover" style="background:var(--primary-woman); border-color:var(--primary-woman);">
+                    <div style="color:#000; font-family:'Teko'; font-size:2rem; line-height:1; text-align:center; font-weight:700;">PROTOCOLO<br>MUJERES</div>
+                    <div style="color:#000; font-size:0.8rem; margin-top:20px; font-family:'Manrope'; text-transform:uppercase; opacity:0.8;">Glúteo & Pierna</div>
+                </div>
+            </div>
+            <div class="resource-content" style="width:100%; padding:30px; text-align:center;">
+                <h3 style="font-size:2.5rem; margin-bottom:10px; color:var(--primary-woman); font-family:'Teko'; text-transform:uppercase;">Protocolo Mujeres</h3>
+                <div style="font-family:'Teko'; font-size:3rem; font-weight:600; color:#fff; margin-bottom:15px;">$30 USD</div>
+                <p class="resource-desc" style="text-align:justify; margin-bottom:20px; font-size:1rem;">Diseño de entrenamiento específico para maximizar el tamaño y firmeza en glúteo e isquiosurales, balanceado con el tren superior sin perder feminidad.</p>
+                <!-- OJO FREDDY: Reemplaza este href con tu link real de MercadoPago cuando lo tengas -->
+                <a href="#link-mercadopago-mujeres-pendiente" class="btn-download" style="background:var(--primary-woman); border-color:var(--primary-woman); color:#000; width:100%; box-sizing:border-box;">COMPRAR Y DESCARGAR</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- === FAQ === -->
+<section style="padding:80px 20px; max-width:800px; margin:0 auto;" id="faq">
+    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:40px; color:#fff;">Prenguntas <span style="color:#ff3333">Frecuentes</span></h2>
+    <style>
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+    <div style="display:flex; flex-direction:column; gap:15px;">
+        <details style="background:#0f0f0f; border:1px solid #222; padding:20px; border-radius:8px; cursor:pointer;">
+            <summary style="font-family:'Teko'; font-size:1.6rem; font-weight:500; color:#fff; outline:none; display:flex; justify-content:space-between; align-items:center;">
+                ¿Necesito experiencia previa para el Coaching? <span style="font-size:1.2rem; color:#D4AF37;">▼</span>
+            </summary>
+            <p style="color:#aaa; font-size:1.1rem; margin-top:15px; line-height:1.6;">No. Nuestros planes están adaptados a tu nivel de experiencia, seas principiante o avanzado. Nos ajustamos a tu biotipo, estilo de vida y al equipo disponible en tu gimnasio.</p>
+        </details>
+        <details style="background:#0f0f0f; border:1px solid #222; padding:20px; border-radius:8px; cursor:pointer;">
+            <summary style="font-family:'Teko'; font-size:1.6rem; font-weight:500; color:#fff; outline:none; display:flex; justify-content:space-between; align-items:center;">
+                ¿Los protocolos (PDF) incluyen dieta? <span style="font-size:1.2rem; color:#D4AF37;">▼</span>
+            </summary>
+            <p style="color:#aaa; font-size:1.1rem; margin-top:15px; line-height:1.6;">Los protocolos PDF son estructuras puras de entrenamiento y sugerencias de progresión. Si buscas un abordaje 100% individualizado y clínico que incluya alimentación calculada, el <b>Coaching 1:1</b> o <b>Coaching Estudiantes</b> es el servicio indicado para ti.</p>
+        </details>
+        <details style="background:#0f0f0f; border:1px solid #222; padding:20px; border-radius:8px; cursor:pointer;">
+            <summary style="font-family:'Teko'; font-size:1.6rem; font-weight:500; color:#fff; outline:none; display:flex; justify-content:space-between; align-items:center;">
+                ¿Qué información solicitan al iniciar? <span style="font-size:1.2rem; color:#D4AF37;">▼</span>
+            </summary>
+            <p style="color:#aaa; font-size:1.1rem; margin-top:15px; line-height:1.6;">Una vez que te suscribes a cualquier plan de Coaching, llenas un cuestionario clínico exhaustivo. Ahí evaluaremos tus medidas, lesiones, hábitos actuales, horarios, preferencias de comida y objetivos precisos.</p>
+        </details>
+    </div>
+</section>
+
+<!-- === FOOTER === -->
+<footer style="text-align:center; padding:40px 20px; border-top:1px solid #222; background:#050505;">
+    <div style="margin-bottom:20px;">
+        <img src="img/logo_icon.jpg" alt="Logo" style="width:50px; border-radius:50%;">
+    </div>
+    <div style="font-family:'Teko'; font-size:2rem; letter-spacing:1px; color:#fff; margin-bottom:10px;">
+        UMBRA TRAINING
+    </div>
+    <p style="color:#666; font-size:0.9rem;">&copy; 2024 UMBRA TRAINING by Freddy Carreño. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
