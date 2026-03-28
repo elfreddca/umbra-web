@@ -509,6 +509,105 @@
     footer .brand { font-family: 'Teko'; font-size: 2rem; letter-spacing: 2px; color: var(--text-primary); margin: 20px 0 10px 0; }
     footer p { color: var(--text-muted); font-size: 0.9rem; }
     
+    /* === ONBOARDING SECTION === */
+    .onboarding-section {
+        padding: 80px 20px;
+        background: var(--bg-primary);
+        text-align: center;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+    .onboarding-section h2 {
+        font-size: 3rem;
+        color: var(--text-primary);
+        margin-bottom: 40px;
+    }
+    .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+        .steps-container {
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+        }
+    }
+    .step-card {
+        background: #0a0a0a;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        border-radius: 12px;
+        padding: 30px 20px;
+        flex: 1;
+        transition: 0.3s ease;
+    }
+    .step-card:hover {
+        border-color: rgba(212, 175, 55, 0.3);
+    }
+    .step-number {
+        background: var(--accent-gold);
+        color: var(--bg-primary);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Teko', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: 0 auto 20px auto;
+    }
+    .step-title {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .step-desc {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* === FLOATING TELEGRAM === */
+    .floating-telegram {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--accent-gold);
+        color: var(--bg-primary);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        z-index: 1000;
+        transition: 0.3s ease;
+        text-decoration: none;
+    }
+    .floating-telegram:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        background: #fff;
+    }
+    .floating-telegram svg {
+        width: 25px;
+        height: 25px;
+    }
+    @media (max-width: 768px) {
+        .floating-telegram {
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+    }
 </style>
 </head>
 <body>
@@ -584,6 +683,28 @@
             </svg>
             <div class="benefit-title">Ecosistema UMBRA APP</div>
             <p class="benefit-desc">Tu progreso, videos de técnica y rutinas personalizadas, nativo para iOS y Android. Todo centralizado en una plataforma de nivel élite.</p>
+        </div>
+    </div>
+</section>
+
+<!-- === PASOS ONBOARDING === -->
+<section class="onboarding-section">
+    <h2>¿CÓMO <span style="color:var(--accent-gold);">FUNCIONA?</span></h2>
+    <div class="steps-container">
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-title">Elige tu Paquete</div>
+            <div class="step-desc">Realiza tu pago de forma rápida y 100% segura mediante Mercado Pago.</div>
+        </div>
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-title">Ficha Clínica</div>
+            <div class="step-desc">Llena un formulario detallado sobre tus medidas, alimentación actual y estilo de vida.</div>
+        </div>
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-title">Acceso y Despegue</div>
+            <div class="step-desc">En 48h tienes tu acceso a UMBRA APP con la estrategia lista para arrancar.</div>
         </div>
     </div>
 </section>
@@ -735,6 +856,14 @@
     <div class="brand">UMBRA TRAINING</div>
     <p>&copy; 2024 UMBRA TRAINING by Freddy Carreño. Todos los derechos reservados.</p>
 </footer>
+
+<!-- === FLOATING TELEGRAM === -->
+<a href="https://t.me/elfreddca" target="_blank" class="floating-telegram" aria-label="Contactar por Telegram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+    </svg>
+</a>
 
 </body>
 </html>
