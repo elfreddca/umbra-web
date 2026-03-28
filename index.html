@@ -49,21 +49,38 @@
     @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Teko:wght@300;500;700&display=swap');
 
     :root {
-        --bg-dark: #050505;
-        --accent: #ffffff;
-        --glass: rgba(255, 255, 255, 0.03);
-        --border: rgba(255, 255, 255, 0.1);
-        --primary-woman: #ff8ec7;
-        --primary-man: #fff;
+        --bg-primary: #000;
+        --bg-secondary: #0a0a0a;
+        --bg-tertiary: #111;
+        --accent-gold: #D4AF37;
+        --accent-gold-soft: #C9A84C;
+        --text-primary: #fff;
+        --text-secondary: #aaa;
+        --text-muted: #666;
+        --border-subtle: rgba(255, 255, 255, 0.1);
+        --border-gold: rgba(212, 175, 55, 0.3);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-        background-color: var(--bg-dark);
-        color: #fff;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
         font-family: 'Manrope', sans-serif;
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: 0.5px;
+    }
+
+    /* Ruido Visual Premium */
+    body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9999;
     }
 
     html {
@@ -73,13 +90,13 @@
     .background-glow {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-        background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000 70%);
+        background: radial-gradient(circle at 50% 30%, #111 0%, #000 70%);
     }
 
     h1, h2, h3 { 
         font-family: 'Teko', sans-serif; 
         text-transform: uppercase; 
-        line-height: 0.9;
+        line-height: 0.85;
         margin: 0;
     }
 
@@ -87,6 +104,8 @@
         max-width: 1100px;
         margin: 0 auto;
         padding: 0 20px;
+        position: relative;
+        z-index: 10;
     }
 
     /* === HERO === */
@@ -99,13 +118,14 @@
         text-align: center;
         padding: 40px 20px;
         position: relative;
+        z-index: 10;
     }
 
     .brand-badge {
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid var(--border-subtle);
         padding: 8px 25px;
         border-radius: 50px;
         margin-bottom: 30px;
@@ -114,393 +134,341 @@
     }
     .brand-logo { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
     .brand-text-group { display: flex; align-items: baseline; gap: 8px; }
-    .brand-main { font-family: 'Teko'; font-weight: 700; letter-spacing: 2px; font-size: 1.4rem; color: #fff; line-height: 1; }
-    .brand-sub { font-family: 'Manrope'; font-weight: 300; font-size: 0.9rem; color: #aaa; }
+    .brand-main { font-family: 'Teko'; font-weight: 700; letter-spacing: 2px; font-size: 1.4rem; color: var(--text-primary); line-height: 1; }
+    .brand-sub { font-family: 'Manrope'; font-weight: 300; font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; }
 
     .hero h1 {
         font-size: clamp(4rem, 15vw, 9rem);
         letter-spacing: -2px;
         font-weight: 700;
         margin-bottom: 20px;
-        line-height: 0.85;
-        text-transform: uppercase;
     }
     
-    .hero h1 .line-1 { display: block; color: #fff; }
+    .hero h1 .line-1 { display: block; color: var(--text-primary); }
     .hero h1 .line-2 { 
         display: block; 
-        background: linear-gradient(180deg, #fff 0%, #666 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--accent-gold);
     }
 
     .hero p {
         font-size: 1.2rem;
-        color: #aaa;
+        color: var(--text-secondary);
         max-width: 600px;
         line-height: 1.6;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     .cta-container {
         display: flex;
-        gap: 20px;
+        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
+        max-width: 800px;
     }
 
     .btn-hero {
-        padding: 15px 40px;
+        padding: 16px 30px;
         font-family: 'Teko', sans-serif;
         font-size: 1.5rem;
         text-decoration: none;
-        color: #000;
-        background: #fff;
-        font-weight: 600;
+        color: var(--text-primary);
+        background: transparent;
+        border: 1px solid var(--border-subtle);
+        font-weight: 500;
         text-transform: uppercase;
-        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-        transition: 0.3s;
-        border: none;
+        letter-spacing: 1px;
+        transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        flex: 1;
+        min-width: 250px;
     }
-    .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
-    .btn-hero.woman { background: var(--primary-woman); box-shadow: 0 0 20px rgba(255, 142, 199, 0.2); }
-    /* Gold Glow Animation */
-    @keyframes goldPulse {
-        0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
-        50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); border-color: #fff; }
-        100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
-    }
-
-    /* Red Glow Animation (Static Intense Glow) */
-    @keyframes redGlow {
-        0% { box-shadow: 0 0 20px rgba(255, 51, 51, 0.6); filter: brightness(120%); border-color: #fff; }
-        50% { box-shadow: 0 0 35px rgba(255, 51, 51, 0.9); filter: brightness(140%); }
-        100% { box-shadow: 0 0 20px rgba(255, 51, 51, 0.6); filter: brightness(120%); border-color: #fff; }
+    .btn-hero:hover { 
+        background: rgba(255,255,255,0.05); 
+        border-color: var(--text-primary);
+        transform: translateY(-2px); 
     }
 
     .btn-hero.gold { 
-        background: transparent; 
-        color: #D4AF37; 
-        border: 1px solid #D4AF37; 
-        animation: goldPulse 2s infinite ease-in-out;
+        background: var(--accent-gold); 
+        color: var(--bg-primary); 
+        border: 1px solid var(--accent-gold);
+        font-weight: 600;
     }
     .btn-hero.gold:hover { 
-        background: #D4AF37; 
-        color: #000; 
-        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8); 
-        animation: none;
+        background: var(--text-primary); 
+        border-color: var(--text-primary);
+        color: var(--bg-primary); 
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
     }
 
     /* === PROBLEM SECTION === */
     .problem-section {
-        padding: 80px 20px;
-        text-align: center;
-        background: rgba(255,255,255,0.02);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-    }
-    
-    .problem-section h2 { font-size: 3rem; margin-bottom: 20px; color: #ccc; }
-    .problem-section p { max-width: 700px; margin: 0 auto; color: #888; font-size: 1.1rem; }
-
-    /* === TESTIMONIALS === */
-    .testimonials-section {
-        padding: 80px 20px;
-        text-align: center;
-        border-bottom: 1px solid var(--border);
-    }
-    .testimonials-section h2 { margin-bottom: 50px; font-size: 3.5rem; color: #fff; }
-    
-    .testi-grid {
-        display: flex;
-        gap: 20px;
-        overflow-x: auto;
-        padding-bottom: 30px;
-        scroll-snap-type: x mandatory;
-        justify-content: flex-start;
-        padding-left: 20px;
-        -webkit-overflow-scrolling: touch; /* Smooth scroll iOS */
-        scrollbar-width: none; /* Firefox hide */
-    }
-    
-    /* Animation for Auto-Scroll Hint (Optional pulse or arrow could be added here) */
-    
-    .testi-card {
-        min-width: 85vw; /* Mobile optimization: Card takes most of screen width */
-        max-width: 85vw;
-        scroll-snap-align: center;
-        background: #0f0f0f;
-        border: 1px solid #222;
-        padding: 25px;
-        border-radius: 8px;
-        text-align: left;
-        position: relative;
-        flex-shrink: 0; /* Prevent squishing */
-    }
-
-    @media (min-width: 768px) {
-        .testi-card { min-width: 380px; max-width: 380px; }
-        .testi-grid { justify-content: center; flex-wrap: wrap; overflow: visible; padding-left: 0; }
-    }
-    .testi-card img {
-        width: 100%;
-        height: 450px;
-        object-fit: contain;
-        background: #000;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        filter: grayscale(0%);
-        transition: 0.3s;
-    }
-    .testi-name { font-family: 'Teko'; font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
-    .testi-result { color: #D4AF37; font-weight: bold; font-size: 1rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-    .testi-quote { font-style: italic; color: #ccc; font-size: 1rem; line-height: 1.5; }
-
-    @media (min-width: 1024px) {
-        .testi-grid { justify-content: center; flex-wrap: wrap; overflow: visible; }
-        .mobile-hint { display: none !important; }
-    }
-    @media (max-width: 768px) {
-        .testi-card { min-width: 320px; max-width: 320px; }
-        .testi-card img { height: 400px; }
-    }
-
-    /* === FREE RESOURCES === */
-    .free-resources {
-        background: linear-gradient(180deg, #050505 0%, #111 100%);
         padding: 100px 20px;
         text-align: center;
-        border-top: 1px solid #222;
-        border-bottom: 1px solid #222;
-        position: relative;
-        overflow: hidden;
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
     }
     
-    /* Neon accent */
-    .free-resources::after {
-        content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
-        background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    .problem-section h2 { font-size: 3.5rem; margin-bottom: 25px; color: var(--text-primary); }
+    .problem-section p { max-width: 700px; margin: 0 auto; color: var(--text-secondary); font-size: 1.2rem; line-height: 1.6; }
+
+    /* === COACHING 1:1 SECTION === */
+    .coaching-premium {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-subtle);
+        padding: 80px 40px;
+        margin: 100px auto;
+        position: relative;
+        max-width: 1000px;
+    }
+    
+    .coaching-premium h3 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        color: var(--text-primary);
     }
 
-    .resource-card {
-        background: #0a0a0a;
-        border: 1px solid #333;
-        max-width: 900px;
-        margin: 0 auto;
+    .coaching-premium .sub-headline {
+        color: var(--accent-gold);
+        font-family: 'Teko', sans-serif;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+    }
+
+    .coaching-premium .desc {
+        max-width: 700px;
+        margin: 0 auto 50px auto;
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    /* === COACHING CARDS === */
+    .coaching-wrapper {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    .resource-content { padding: 40px; text-align: left; }
-    
-    .resource-tag {
-        background: #33ff33; color: #000; font-family: 'Teko'; font-weight: 700;
-        padding: 5px 15px; display: inline-block; font-size: 1.2rem; margin-bottom: 15px;
-        border-radius: 4px;
-    }
-
-    .resource-title { font-size: 3.5rem; line-height: 0.9; margin-bottom: 15px; color: #fff; }
-    .resource-desc { font-size: 1.1rem; color: #aaa; margin-bottom: 30px; line-height: 1.6; }
-    
-    .btn-download {
-        background: #fff; color: #000; font-family: 'Teko'; font-size: 1.8rem; font-weight: 700;
-        padding: 15px 40px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
-        transition: 0.3s; width: 100%; justify-content: center;
-    }
-    .btn-download:hover { background: #ccc; transform: translateY(-2px); }
-
-    .resource-mockup {
-        width: 100%; height: 300px; background: #151515;
-        display: flex; justify-content: center; align-items: center;
-        border-bottom: 1px solid #222;
-        position: relative;
-    }
-    
-    /* PDF Cover Simulation */
-    .pdf-cover {
-        width: 180px; height: 250px; background: #000; border: 1px solid #444;
-        display: flex; flex-direction: column; justify-content: center; align-items: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        transform: rotate(-5deg);
-    }
-
-    @media (min-width: 768px) {
-        .resource-card { flex-direction: row; }
-        .resource-mockup { width: 40%; height: auto; border-bottom: none; border-right: 1px solid #222; min-height: 400px; }
-        .resource-content { width: 60%; padding: 60px; }
-        .btn-download { width: auto; }
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 50px;
     }
 
     .card {
-        background: linear-gradient(145deg, #0f0f0f, #050505);
-        border: 1px solid #222;
-        padding: 40px;
+        background: transparent;
+        border: 1px solid var(--border-subtle);
+        padding: 50px 40px;
         position: relative;
-        transition: 0.3s;
-        border-radius: 8px;
+        transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        text-align: left;
+        flex: 1;
+        min-width: 320px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
     }
-    .card:hover { border-color: #444; transform: translateY(-5px); }
-    .card.woman { border-color: rgba(255, 142, 199, 0.15); }
-    .card.woman:hover { border-color: var(--primary-woman); }
-
-    .card h3 { font-size: 2.8rem; margin-bottom: 5px; color: #fff; letter-spacing: 1px; }
-    .card .price { font-size: 3.5rem; font-family: 'Teko'; margin-bottom: 25px; font-weight: 600; color: #fff; }
-    .card .desc { color: #aaa; margin-bottom: 30px; line-height: 1.6; font-size: 1rem; border-bottom: 1px solid #222; padding-bottom: 20px; }
     
+    @media (max-width: 768px) {
+        .card { padding: 40px 30px; }
+    }
+
+    .card:hover { border-color: rgba(255,255,255,0.3); }
+
+    .card.vip { 
+        border: 1px solid var(--border-gold);
+        background: linear-gradient(180deg, rgba(212,175,55,0.03) 0%, transparent 100%);
+    }
+    .card.vip:hover { border-color: var(--accent-gold); }
+
+    .card-badge {
+        position: absolute;
+        top: -12px;
+        right: 30px;
+        background: var(--text-primary);
+        color: var(--bg-primary);
+        padding: 4px 15px;
+        font-weight: 700;
+        font-family: 'Teko';
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    .card.vip .card-badge {
+        background: var(--accent-gold);
+    }
+
+    .card h3 { font-size: 2.5rem; margin-bottom: 10px; color: var(--text-primary); letter-spacing: 1px; }
+    .card.vip h3 { color: var(--accent-gold); }
+    
+    .card .desc { color: var(--text-muted); margin-bottom: 30px; line-height: 1.5; font-size: 1rem; }
+    
+    .price-block { margin: 20px 0; border-top: 1px solid var(--border-subtle); padding-top: 25px; }
+    .price-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+    .price-row.trimestral { margin-top: 20px; }
+    
+    .price-label { font-size: 1.1rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
+    .price-amount { font-size: 2.8rem; font-family: 'Teko'; margin: 0; color: var(--text-primary); font-weight: 500; }
+    .price-currency { font-size: 1.2rem; color: var(--text-muted); }
+
+    .features { margin-top: 40px; margin-bottom: 30px; flex-grow: 1; }
     .features li {
         list-style: none;
         padding: 12px 0;
-        border-bottom: 1px solid #1a1a1a;
-        color: #ccc;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        color: var(--text-secondary);
         display: flex;
         align-items: center;
         gap: 15px;
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
-    .features li::before { content: "✓"; color: #fff; font-weight: bold; }
+    .features li:last-child { border-bottom: none; }
+    .features li::before { content: "✓"; color: var(--accent-gold); font-weight: bold; }
+
+    .features-footer {
+        font-family: 'Manrope';
+        font-size: 0.95rem;
+        color: var(--accent-gold);
+        font-style: italic;
+        margin-top: 15px;
+        line-height: 1.5;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-subtle);
+    }
 
     .btn-card {
         display: block;
         width: 100%;
         text-align: center;
-        padding: 18px;
-        margin-top: 35px;
-        background: #fff;
-        color: #000;
+        padding: 16px;
+        background: transparent;
+        color: var(--text-primary);
         text-decoration: none;
         font-family: 'Teko';
-        font-size: 1.6rem;
-        font-weight: 700;
+        font-size: 1.5rem;
+        font-weight: 500;
         text-transform: uppercase;
-        border: 1px solid #fff;
+        border: 1px solid var(--border-subtle);
         transition: 0.3s;
-    }
-    .btn-card:hover { background: transparent; color: #fff; }
-    
-    .woman .btn-card { background: var(--primary-woman); border-color: var(--primary-woman); }
-    .woman .btn-card:hover { background: transparent; color: var(--primary-woman); }
-
-    /* === COACHING 1:1 SECTION === */
-    .coaching-premium {
-        background: linear-gradient(145deg, #0a0a0a 0%, #111 100%);
-        border: 1px solid #333;
-        padding: 60px 40px;
-        margin-bottom: 100px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 4px;
-    }
-    
-    /* Gold Accent Glow */
-    .coaching-premium::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 60%);
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    .coaching-premium h3 {
-        font-size: 3.5rem;
-        margin-bottom: 10px;
-        color: #fff;
-        position: relative;
-        z-index: 1;
-    }
-
-    .coaching-premium .sub-headline {
-        color: #D4AF37; /* Gold */
-        font-family: 'Teko', sans-serif;
-        font-size: 1.8rem;
-        text-transform: uppercase;
-        margin-bottom: 30px;
-        position: relative;
-        z-index: 1;
         letter-spacing: 1px;
     }
+    .btn-card:hover { background: var(--text-primary); color: var(--bg-primary); }
+    
+    .btn-card.highlight { background: var(--text-primary); color: var(--bg-primary); border-color: var(--text-primary); }
+    .btn-card.highlight:hover { background: transparent; color: var(--text-primary); }
+    
+    .card.vip .btn-card.highlight { background: var(--accent-gold); color: var(--bg-primary); border-color: var(--accent-gold); }
+    .card.vip .btn-card.highlight:hover { background: transparent; color: var(--accent-gold); }
 
-    .coaching-premium .desc {
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-        color: #ccc;
-        font-size: 1.1rem;
-        position: relative;
-        z-index: 1;
+    /* === FREE RESOURCES / PROTOCOLOS === */
+    .free-resources {
+        background: var(--bg-primary);
+        padding: 120px 20px;
+        text-align: center;
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
     }
 
-    .coaching-grid {
+    .resource-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-bottom: 40px;
-        position: relative;
-        z-index: 1;
-        text-align: left;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
-    .coaching-item {
-        background: rgba(255,255,255,0.03);
-        padding: 20px;
-        border-left: 2px solid #D4AF37;
+    .resource-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        transition: 0.4s;
     }
+    .resource-card:hover { border-color: var(--text-primary); }
 
-    .coaching-item strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.1rem; }
-    .coaching-item span { color: #888; font-size: 0.9rem; }
-
-    .btn-gold {
-        display: inline-block;
-        padding: 18px 50px;
-        background: #D4AF37;
-        color: #000;
-        font-family: 'Teko';
-        font-size: 1.6rem;
-        font-weight: 700;
-        text-decoration: none;
-        text-transform: uppercase;
-        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
-        transition: 0.3s;
-        position: relative;
-        z-index: 1;
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-    }
-    .btn-gold:hover {
-        background: #fff;
-        box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
-        transform: scale(1.02);
+    .resource-mockup {
+        width: 100%;
+        padding: 60px 0;
+        background: rgba(255,255,255,0.02);
+        border-bottom: 1px solid var(--border-subtle);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
-    .price-tag {
-        font-size: 3rem;
+    .pdf-cover {
+        width: 180px; height: 250px; 
+        background: var(--bg-primary); 
+        border: 1px solid var(--text-primary);
+        display: flex; flex-direction: column; justify-content: center; align-items: center;
+        box-shadow: 20px 20px 0px rgba(255,255,255,0.05); /* Minimalist stark shadow */
+        transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .resource-card:hover .pdf-cover { transform: translate(-5px, -5px); box-shadow: 25px 25px 0px rgba(212, 175, 55, 0.1); }
+
+    .resource-content { padding: 40px; display: flex; flex-direction: column; flex-grow: 1; }
+    .resource-title { font-size: 2.5rem; margin-bottom: 10px; color: var(--text-primary); letter-spacing: 1px; }
+    .resource-price { font-family: 'Teko'; font-size: 3rem; font-weight: 500; color: var(--text-primary); margin-bottom: 20px; }
+    .resource-desc { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6; text-align: left; flex-grow: 1; }
+    
+    .btn-download {
+        background: var(--text-primary); color: var(--bg-primary); font-family: 'Teko'; font-size: 1.5rem; font-weight: 600;
+        padding: 16px; text-decoration: none; display: block; width: 100%; transition: 0.3s;
+        border: 1px solid var(--text-primary); text-transform: uppercase; letter-spacing: 1px;
+    }
+    .btn-download:hover { background: transparent; color: var(--text-primary); }
+
+    /* === FAQ === */
+    section#faq {
+        padding: 120px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    section#faq h2 { text-align: center; font-size: 3.5rem; margin-bottom: 50px; color: var(--text-primary); }
+    
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    
+    details {
+        background: transparent;
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 25px 0;
+        cursor: pointer;
+    }
+    
+    summary {
         font-family: 'Teko';
-        color: #fff;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        outline: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 1px;
+    }
+    
+    details p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        margin-top: 20px;
+        line-height: 1.7;
     }
 
-    @media (max-width: 768px) {
-        .coaching-premium { padding: 40px 20px; }
-        .coaching-premium h3 { font-size: 2.8rem; }
-        .btn-gold { width: 100%; padding: 15px 20px; font-size: 1.4rem; }
-        .coaching-grid { grid-template-columns: 1fr; }
+    /* === FOOTER === */
+    footer {
+        text-align: center; padding: 60px 20px; border-top: 1px solid var(--border-subtle); background: var(--bg-primary);
     }
+    footer img { width: 50px; border-radius: 50%; opacity: 0.8; }
+    footer .brand { font-family: 'Teko'; font-size: 2rem; letter-spacing: 2px; color: var(--text-primary); margin: 20px 0 10px 0; }
+    footer p { color: var(--text-muted); font-size: 0.9rem; }
+    
 </style>
 </head>
 <body>
 
-<div class="background-glow"></div>
-
 <section class="hero">
-    <!-- Brand Header -->
     <div class="brand-badge">
         <img src="img/logo_icon.jpg" alt="Umbra Logo" class="brand-logo">
         <div class="brand-text-group">
@@ -509,7 +477,6 @@
         </div>
     </div>
 
-    <!-- Motivational Headline -->
     <h1>
         <span class="line-1">TU POTENCIAL</span>
         <span class="line-2">NO TIENE LÍMITES</span>
@@ -518,16 +485,12 @@
     <p>La mayoría entrena "por sensación". Aquí entrenamos con <strong>ciencia</strong>.<br>Sistemas de hipertrofia diseñados para resultados visibles en 10 semanas.</p>
     
     <div class="cta-container">
-        <!-- STUDENT COACHING BUTTON (RED GLOW) -->
-        <a href="#coaching-block" class="btn-hero" style="background: #ff3333; border: none; animation: redGlow 2s infinite ease-in-out; color:#fff;">COACHING ESTUDIANTES</a>
-
-        <a href="#protocolos-block" class="btn-hero">Protocolo Hombres</a>
-        <a href="#protocolos-block" class="btn-hero woman">Protocolo Mujeres</a>
-        <a href="#coaching-block" class="btn-hero gold">Coaching 1:1 Online</a>
+        <a href="#coaching-block" class="btn-hero gold">Coaching Online</a>
+        <a href="#protocolos-block" class="btn-hero">Guías / Protocolos</a>
     </div>
 </section>
 
-<!-- === EL PROBLEMA / DIFERENCIADOR === -->
+<!-- === EL PROBLEMA === -->
 <section class="problem-section" id="metodologia">
     <div class="container">
         <h2>¿Entrenas 6 días y te ves igual?</h2>
@@ -535,103 +498,115 @@
     </div>
 </section>
 
-<!-- === BLOQUE 1: COACHING SERVICES === -->
-<section class="testimonials-section" id="coaching-block" style="padding: 100px 20px;">
-    <h2>Coaching Online <span style="color:#D4AF37">Élite</span></h2>
-    <p style="color:#aaa; max-width:600px; margin:0 auto 40px auto;">Aceleramos tu progreso con atención personalizada en entrenamiento, nutrición clínica y suplementación.</p>
+<!-- === BLOQUE: COACHING SERVICES === -->
+<section id="coaching-block" style="padding: 100px 20px; text-align: center; border-bottom: 1px solid var(--border-subtle);">
+    <h2 style="font-size:3.5rem; color:var(--text-primary);">Coaching <span style="color:var(--accent-gold);">Élite</span></h2>
+    <p style="color:var(--text-secondary); max-width:600px; margin:20px auto 0 auto; font-size:1.2rem; line-height:1.6;">Atención personalizada en entrenamiento, nutrición clínica y suplementación. Elige tu nivel de soporte.</p>
     
-    <div class="container" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+    <div class="container coaching-wrapper">
         
         <!-- Coaching Estudiantes -->
-        <div class="card" style="flex:1; min-width:300px; max-width:400px; text-align:left; border-top: 4px solid #ff3333;">
-            <h3 style="color:#ff3333; margin-bottom:15px; font-size:2.2rem;">Coaching Estudiantes</h3>
-            <p class="desc" style="border-bottom:none; margin-bottom:0;">Para estudiantes que quieren hipertrofia inteligente al mejor costo.</p>
-            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
-                    <span style="font-size:1.2rem; color:#aaa;">Mensual</span>
-                    <span class="price" style="font-size:2.5rem; margin:0;">$799 <span style="font-size:1rem; color:#666;">MXN</span></span>
+        <div class="card">
+            <h3 style="color:var(--text-primary);">Estudiantes</h3>
+            <p class="desc">Para estudiantes que quieren hipertrofia inteligente al mejor costo.</p>
+            
+            <div class="price-block">
+                <div class="price-row">
+                    <span class="price-label">Mensual</span>
+                    <span class="price-amount">$799 <span class="price-currency">MXN</span></span>
                 </div>
-                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=5c7677aaf43e4b568efac30a07d44151" class="btn-card" style="margin-top:0; padding:12px; font-size:1.4rem; background:#ff3333; border-color:#ff3333; color:#fff;" target="_blank">Suscribirse Mensual</a>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=5c7677aaf43e4b568efac30a07d44151" class="btn-card highlight" target="_blank">Suscribirse Mensual</a>
             </div>
-            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
-                    <span style="font-size:1.2rem; color:#aaa;">Trimestral</span>
-                    <span class="price" style="font-size:2.5rem; margin:0;">$1,399 <span style="font-size:1rem; color:#666;">MXN</span></span>
-                </div>
-                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=256a005dd39e430499aa9ba71ffb86ca" class="btn-card" style="margin-top:0; padding:12px; font-size:1.4rem; background:transparent; border:1px solid #ff3333; color:#ff3333;" target="_blank">Ahorrar Trimestral</a>
+            
+            <div class="price-row trimestral">
+                <span class="price-label">Trimestral</span>
+                <span class="price-amount">$1,399 <span class="price-currency">MXN</span></span>
             </div>
+            <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=256a005dd39e430499aa9ba71ffb86ca" class="btn-card" target="_blank">Ahorrar Trimestral</a>
+            
             <ul class="features">
-                <li>Check-ins y feedback semanal</li>
-                <li>Ajustes de dieta 100% dinámicos</li>
-                <li>Soporte premium vía WhatsApp/Telegram</li>
-                <li>Mismo servicio élite 1:1 (Con Descuento)</li>
+                <li>Acceso a UMBRA APP</li>
+                <li>Plan de Entrenamiento</li>
+                <li>Plan Alimenticio</li>
+                <li>Guía de Suplementación</li>
+                <li>Check-ins semanales</li>
+                <li>Soporte de dudas via Telegram</li>
             </ul>
+            <div class="features-footer">
+                "Todo esto en una sola app y full personalizado a tus tiempos/gustos"
+            </div>
         </div>
 
         <!-- Coaching 1:1 Online -->
-        <div class="card" style="flex:1; min-width:300px; max-width:400px; text-align:left; border-top: 4px solid #D4AF37; transform:scale(1.05); z-index:2; box-shadow:0 0 40px rgba(212,175,55,0.15);">
-            <div style="position:absolute; top:-15px; right:20px; background:#D4AF37; color:#000; padding:5px 15px; font-weight:bold; border-radius:15px; font-family:'Teko'; font-size:1.2rem; letter-spacing:1px;">RECOMENDADO</div>
-            <h3 style="color:#D4AF37; margin-bottom:15px; font-size:2.2rem;">Coaching 1:1 VIP</h3>
-            <p class="desc" style="border-bottom:none; margin-bottom:0;">Atención total y comunicación directa para una transformación extrema.</p>
-            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
-                    <span style="font-size:1.2rem; color:#aaa;">Mensual</span>
-                    <span class="price" style="font-size:2.5rem; margin:0;">$1,199 <span style="font-size:1rem; color:#666;">MXN</span></span>
+        <div class="card vip">
+            <div class="card-badge">VIP ELITE</div>
+            <h3>1:1 Online</h3>
+            <p class="desc">Atención total y comunicación directa para una transformación extrema.</p>
+            
+            <div class="price-block">
+                <div class="price-row">
+                    <span class="price-label">Mensual</span>
+                    <span class="price-amount">$1,199 <span class="price-currency">MXN</span></span>
                 </div>
-                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=0c93c33d5abc4a96880c6724e8b60475" class="btn-gold" style="display:block; text-align:center; padding:12px; width:100%; box-sizing:border-box;" target="_blank">Acceso Mensual</a>
+                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=0c93c33d5abc4a96880c6724e8b60475" class="btn-card highlight" target="_blank">Acceso Mensual</a>
             </div>
-            <div style="margin:20px 0; padding-bottom:20px; border-bottom:1px solid #222;">
-                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
-                    <span style="font-size:1.2rem; color:#aaa;">Trimestral</span>
-                    <span class="price" style="font-size:2.5rem; margin:0;">$2,599 <span style="font-size:1rem; color:#666;">MXN</span></span>
-                </div>
-                <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=c31ad1f327f744259504cb22b5d6a713" class="btn-gold" style="display:block; text-align:center; padding:12px; width:100%; background:transparent; border:1px solid #D4AF37; color:#D4AF37; box-shadow:none;" target="_blank">Ahorrar Trimestral</a>
+            
+            <div class="price-row trimestral">
+                <span class="price-label">Trimestral</span>
+                <span class="price-amount">$2,599 <span class="price-currency">MXN</span></span>
             </div>
+            <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=c31ad1f327f744259504cb22b5d6a713" class="btn-card" target="_blank">Ahorrar Trimestral</a>
+            
             <ul class="features">
-                <li>Check-ins y feedback semanal</li>
-                <li>Ajustes de dieta 100% dinámicos</li>
-                <li>Soporte de dudas via WhatsApp/Telegram</li>
-                <li>Evaluación de técnica de ejercicios (Video)</li>
-                <li>Plan de Suplementación y/o Farmacología</li>
+                <li>Acceso a UMBRA APP</li>
+                <li>Plan de Entrenamiento</li>
+                <li>Plan Alimenticio</li>
+                <li>Guía de Suplementación</li>
+                <li>Check-ins semanales</li>
+                <li>Soporte de dudas via Telegram</li>
             </ul>
+            <div class="features-footer">
+                "Todo esto en una sola app y full personalizado a tus tiempos/gustos"
+            </div>
         </div>
     </div>
 </section>
 
-<!-- === BLOQUE 2: PROTOCOLOS / E-COMMERCE === -->
+<!-- === BLOQUE: PROTOCOLOS / E-COMMERCE === -->
 <section class="free-resources" id="protocolos-block">
-    <h2 style="font-size:3.5rem; margin-bottom:50px; color:#fff; font-family:'Teko'; text-transform:uppercase;">Guías & Protocolos <span style="color:#D4AF37">(PDF)</span></h2>
-    <div class="container" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+    <h2 style="font-size:3.5rem; margin-bottom:50px; color:var(--text-primary); font-family:'Teko'; text-transform:uppercase;">Protocolos <span style="color:var(--text-secondary);">(PDF)</span></h2>
+    
+    <div class="resource-grid">
         
         <!-- Protocolo Hombres -->
-        <div class="resource-card" style="flex:1; min-width:320px; flex-direction:column; padding:0; border:1px solid #fff;">
-            <div class="resource-mockup" style="width:100%; border-right:none; border-bottom:1px solid #222; min-height:250px;">
-                <div class="pdf-cover" style="background:#fff; border-color:#fff;">
-                    <div style="color:#000; font-family:'Teko'; font-size:2rem; line-height:1; text-align:center; font-weight:700;">PROTOCOLO<br>HOMBRES</div>
-                    <div style="color:#666; font-size:0.8rem; margin-top:20px; font-family:'Manrope'; text-transform:uppercase;">Hipertrofia</div>
+        <div class="resource-card">
+            <div class="resource-mockup">
+                <div class="pdf-cover">
+                    <div style="color:var(--bg-primary); font-family:'Teko'; font-size:2rem; line-height:1; font-weight:700;">HOMBRES</div>
+                    <div style="color:var(--text-muted); font-size:0.8rem; margin-top:20px; font-family:'Manrope'; text-transform:uppercase;">Hipertrofia</div>
                 </div>
             </div>
-            <div class="resource-content" style="width:100%; padding:30px; text-align:center;">
-                <h3 style="font-size:2.5rem; margin-bottom:10px; font-family:'Teko'; text-transform:uppercase; color:#fff;">Protocolo Hombres</h3>
-                <div style="font-family:'Teko'; font-size:3rem; font-weight:600; color:#fff; margin-bottom:15px;">$599 MXN</div>
-                <p class="resource-desc" style="text-align:justify; margin-bottom:20px; font-size:1rem;">Rutina especializada de hipertrofia varonil, dividida por frecuencias musculares óptimas para pechos, hombros, brazos y espalda "3D". Entrenamiento estructurado con bases científicas.</p>
-                <a href="https://elfreddca.gumroad.com/l/zusnbh" class="btn-download" style="width:100%; box-sizing:border-box;" target="_blank">COMPRAR EN GUMROAD</a>
+            <div class="resource-content">
+                <h3 class="resource-title">Protocolo Hombres</h3>
+                <div class="resource-price">$599 MXN</div>
+                <p class="resource-desc">Rutina especializada de hipertrofia varonil, dividida por frecuencias musculares óptimas para pechos, hombros, brazos y espalda 3D. Estructurado con bases científicas.</p>
+                <a href="https://elfreddca.gumroad.com/l/zusnbh" class="btn-download" target="_blank">COMPRAR EN GUMROAD</a>
             </div>
         </div>
 
         <!-- Protocolo Mujeres -->
-        <div class="resource-card" style="flex:1; min-width:320px; flex-direction:column; padding:0; border:1px solid var(--primary-woman);">
-            <div class="resource-mockup" style="width:100%; border-right:none; border-bottom:1px solid #222; min-height:250px;">
-                <div class="pdf-cover" style="background:var(--primary-woman); border-color:var(--primary-woman);">
-                    <div style="color:#000; font-family:'Teko'; font-size:2rem; line-height:1; text-align:center; font-weight:700;">PROTOCOLO<br>MUJERES</div>
-                    <div style="color:#000; font-size:0.8rem; margin-top:20px; font-family:'Manrope'; text-transform:uppercase; opacity:0.8;">Glúteo & Pierna</div>
+        <div class="resource-card">
+            <div class="resource-mockup">
+                <div class="pdf-cover">
+                    <div style="color:var(--bg-primary); font-family:'Teko'; font-size:2rem; line-height:1; font-weight:700;">MUJERES</div>
+                    <div style="color:var(--text-muted); font-size:0.8rem; margin-top:20px; font-family:'Manrope'; text-transform:uppercase; opacity:0.8;">Glúteo & Pierna</div>
                 </div>
             </div>
-            <div class="resource-content" style="width:100%; padding:30px; text-align:center;">
-                <h3 style="font-size:2.5rem; margin-bottom:10px; color:var(--primary-woman); font-family:'Teko'; text-transform:uppercase;">Protocolo Mujeres</h3>
-                <div style="font-family:'Teko'; font-size:3rem; font-weight:600; color:#fff; margin-bottom:15px;">$599 MXN</div>
-                <p class="resource-desc" style="text-align:justify; margin-bottom:20px; font-size:1rem;">Diseño de entrenamiento específico para maximizar el tamaño y firmeza en glúteo e isquiosurales, balanceado con el tren superior sin perder feminidad.</p>
-                <a href="https://elfreddca.gumroad.com/l/uezcuf" class="btn-download" style="background:var(--primary-woman); border-color:var(--primary-woman); color:#000; width:100%; box-sizing:border-box;" target="_blank">COMPRAR EN GUMROAD</a>
+            <div class="resource-content">
+                <h3 class="resource-title">Protocolo Mujeres</h3>
+                <div class="resource-price">$599 MXN</div>
+                <p class="resource-desc">Diseño de entrenamiento específico para maximizar el tamaño y firmeza en glúteo e isquiosurales, balanceado con el tren superior sin perder feminidad.</p>
+                <a href="https://elfreddca.gumroad.com/l/uezcuf" class="btn-download" target="_blank">COMPRAR EN GUMROAD</a>
             </div>
         </div>
 
@@ -639,43 +614,36 @@
 </section>
 
 <!-- === FAQ === -->
-<section style="padding:80px 20px; max-width:800px; margin:0 auto;" id="faq">
-    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:40px; color:#fff;">Prenguntas <span style="color:#ff3333">Frecuentes</span></h2>
-    <style>
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-    </style>
-    <div style="display:flex; flex-direction:column; gap:15px;">
-        <details style="background:#0f0f0f; border:1px solid #222; padding:20px; border-radius:8px; cursor:pointer;">
-            <summary style="font-family:'Teko'; font-size:1.6rem; font-weight:500; color:#fff; outline:none; display:flex; justify-content:space-between; align-items:center;">
-                ¿Necesito experiencia previa para el Coaching? <span style="font-size:1.2rem; color:#D4AF37;">▼</span>
+<section id="faq">
+    <h2>Preguntas <span style="color:var(--text-secondary);">Frecuentes</span></h2>
+    
+    <div style="display:flex; flex-direction:column;">
+        <details>
+            <summary>
+                ¿Necesito experiencia previa para el Coaching? <span style="font-size:1.2rem; color:var(--accent-gold);">▼</span>
             </summary>
-            <p style="color:#aaa; font-size:1.1rem; margin-top:15px; line-height:1.6;">No. Nuestros planes están adaptados a tu nivel de experiencia, seas principiante o avanzado. Nos ajustamos a tu biotipo, estilo de vida y al equipo disponible en tu gimnasio.</p>
+            <p>No. Nuestros planes están adaptados a tu nivel de experiencia, seas principiante o avanzado. Nos ajustamos a tu biotipo, estilo de vida y al equipo disponible en tu gimnasio.</p>
         </details>
-        <details style="background:#0f0f0f; border:1px solid #222; padding:20px; border-radius:8px; cursor:pointer;">
-            <summary style="font-family:'Teko'; font-size:1.6rem; font-weight:500; color:#fff; outline:none; display:flex; justify-content:space-between; align-items:center;">
-                ¿Los protocolos (PDF) incluyen dieta? <span style="font-size:1.2rem; color:#D4AF37;">▼</span>
+        <details>
+            <summary>
+                ¿Los protocolos (PDF) incluyen dieta? <span style="font-size:1.2rem; color:var(--accent-gold);">▼</span>
             </summary>
-            <p style="color:#aaa; font-size:1.1rem; margin-top:15px; line-height:1.6;">Los protocolos PDF son estructuras puras de entrenamiento y sugerencias de progresión. Si buscas un abordaje 100% individualizado y clínico que incluya alimentación calculada, el <b>Coaching 1:1</b> o <b>Coaching Estudiantes</b> es el servicio indicado para ti.</p>
+            <p>Los protocolos PDF son estructuras puras de entrenamiento y sugerencias de progresión. Si buscas un abordaje 100% individualizado y clínico que incluya alimentación calculada, el <b>Coaching 1:1</b> o <b>Coaching Estudiantes</b> es el servicio indicado para ti.</p>
         </details>
-        <details style="background:#0f0f0f; border:1px solid #222; padding:20px; border-radius:8px; cursor:pointer;">
-            <summary style="font-family:'Teko'; font-size:1.6rem; font-weight:500; color:#fff; outline:none; display:flex; justify-content:space-between; align-items:center;">
-                ¿Qué información solicitan al iniciar? <span style="font-size:1.2rem; color:#D4AF37;">▼</span>
+        <details>
+            <summary>
+                ¿Qué información solicitan al iniciar? <span style="font-size:1.2rem; color:var(--accent-gold);">▼</span>
             </summary>
-            <p style="color:#aaa; font-size:1.1rem; margin-top:15px; line-height:1.6;">Una vez que te suscribes a cualquier plan de Coaching, llenas un cuestionario clínico exhaustivo. Ahí evaluaremos tus medidas, lesiones, hábitos actuales, horarios, preferencias de comida y objetivos precisos.</p>
+            <p>Una vez que te suscribes a cualquier plan de Coaching, llenas un cuestionario clínico exhaustivo. Ahí evaluaremos tus medidas, lesiones, hábitos actuales, horarios, preferencias de comida y objetivos precisos.</p>
         </details>
     </div>
 </section>
 
 <!-- === FOOTER === -->
-<footer style="text-align:center; padding:40px 20px; border-top:1px solid #222; background:#050505;">
-    <div style="margin-bottom:20px;">
-        <img src="img/logo_icon.jpg" alt="Logo" style="width:50px; border-radius:50%;">
-    </div>
-    <div style="font-family:'Teko'; font-size:2rem; letter-spacing:1px; color:#fff; margin-bottom:10px;">
-        UMBRA TRAINING
-    </div>
-    <p style="color:#666; font-size:0.9rem;">&copy; 2024 UMBRA TRAINING by Freddy Carreño. Todos los derechos reservados.</p>
+<footer>
+    <img src="img/logo_icon.jpg" alt="Logo">
+    <div class="brand">UMBRA TRAINING</div>
+    <p>&copy; 2024 UMBRA TRAINING by Freddy Carreño. Todos los derechos reservados.</p>
 </footer>
 
 </body>
