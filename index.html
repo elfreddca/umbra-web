@@ -201,17 +201,62 @@
         box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
     }
 
-    /* === PROBLEM SECTION === */
-    .problem-section {
+    /* === BENEFITS SECTION === */
+    .benefits-section {
         padding: 100px 20px;
-        text-align: center;
-        background: var(--bg-secondary);
+        background: var(--bg-primary);
         border-top: 1px solid var(--border-subtle);
         border-bottom: 1px solid var(--border-subtle);
     }
-    
-    .problem-section h2 { font-size: 3.5rem; margin-bottom: 25px; color: var(--text-primary); }
-    .problem-section p { max-width: 700px; margin: 0 auto; color: var(--text-secondary); font-size: 1.2rem; line-height: 1.6; }
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .benefit-card {
+        background: #0a0a0a;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        transition: 0.3s ease;
+    }
+    .benefit-card:hover {
+        border-color: rgba(212, 175, 55, 0.3);
+        transform: translateY(-2px);
+    }
+    .benefit-icon {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 25px;
+        color: var(--accent-gold);
+        background: rgba(212, 175, 55, 0.05);
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    .benefit-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 12px;
+    }
+    .benefit-desc {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
 
     /* === COACHING 1:1 SECTION === */
     .coaching-premium {
@@ -490,11 +535,47 @@
     </div>
 </section>
 
-<!-- === EL PROBLEMA === -->
-<section class="problem-section" id="metodologia">
-    <div class="container">
-        <h2>¿Entrenas 6 días y te ves igual?</h2>
-        <p>La mayoría de personas desperdician meses haciendo rutinas genéricas, copiando a influencers y adivinando con su nutrición. En Umbra diseñamos protocolos basados en <strong>ciencia y evidencia</strong> para maximizar tu hipertrofia muscular y cambiar tu composición corporal en 10 semanas garantizadas.</p>
+<!-- === BENEFICIOS ASESORIA === -->
+<section class="benefits-section" id="beneficios">
+    <div class="benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <div class="benefit-title">Entrenamiento Inteligente</div>
+            <p class="benefit-desc">Planes de hipertrofia y autorregulación basados en ciencia. Tu rutina evoluciona y se adapta a tu rendimiento y recuperación en tiempo real.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <div class="benefit-title">Comunicación Directa</div>
+            <p class="benefit-desc">Soporte prioritario vía Telegram. Dejamos los excels estáticos atrás para resolver dudas puntuales en tiempo récord y que tu ejecución nunca falle.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <div class="benefit-title">Check-ins Exactos</div>
+            <p class="benefit-desc">Tu progresión visual y biofeedback dietético deciden nuestra estrategia. Ajustamos tus macros y volumen para que jamás pierdas el tiempo.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <div class="benefit-title">Ecosistema UMBRA APP</div>
+            <p class="benefit-desc">Tu progreso, videos de técnica y rutinas personalizadas, nativo para iOS y Android. Todo centralizado en una plataforma de nivel élite.</p>
+        </div>
     </div>
 </section>
 
