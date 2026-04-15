@@ -1,0 +1,408 @@
+/* 
+   Umbra Training - Digital Protocol Design (V2.0)
+   Estética: Minimalismo Evolucionado / Juvenil / Dark Mode
+*/
+
+:root {
+    --bg-primary: #000;
+    --bg-secondary: #0a0a0a;
+    --accent-gold: #D4AF37;
+    --text-primary: #fff;
+    --text-secondary: #ccc;
+    --text-muted: #888;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --gold-glow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Print-ready settings */
+@media print {
+    @page {
+        margin: 0mm;
+        size: auto;
+    }
+
+    html, body { 
+        background: #000000 !important; 
+        color: #ffffff !important; 
+        -webkit-print-color-adjust: exact !important; 
+        print-color-adjust: exact !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .page-break { page-break-before: always !important; }
+    .no-print { display: none !important; }
+
+    .guide-container { 
+        max-width: 100% !important; 
+        width: 100% !important;
+        box-shadow: none !important; 
+        border: none !important; 
+        background: #000000 !important; 
+        padding: 15mm !important; 
+        margin: 0 !important; 
+    }
+
+    /* Evitar cortes feos entre paginas */
+    .intro-block, .science-box, .content-image, .day-card, .phase-block {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    h1, h2, h3, h4, p, span, li, strong {
+        text-shadow: none !important;
+    }
+
+    .highlight, h2, .brand-accent, .day-card h3, .phase-block h4 {
+        color: #D4AF37 !important;
+    }
+
+    .day-card, .science-box, .phase-block {
+        background-color: #0a0a0a !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .day-card.highlight {
+        border-color: #D4AF37 !important;
+    }
+}
+
+.guide-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: var(--bg-primary);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 6rem;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin: 60px 0 30px;
+    border-left: 4px solid var(--accent-gold);
+    padding-left: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.highlight {
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+/* Blocks */
+.intro-block {
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.intro-block::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--accent-gold);
+}
+
+.science-box {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 4px;
+}
+
+.science-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+/* Image styling */
+.content-image {
+    width: 100%;
+    border: 1px solid var(--border-subtle);
+    margin: 40px 0;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Grid styling for routines */
+.routine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.day-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    border-color: var(--accent-gold);
+}
+
+.day-card.highlight {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: linear-gradient(145deg, var(--bg-secondary) 80%, rgba(212, 175, 55, 0.05));
+    position: relative;
+    overflow: hidden;
+}
+
+.day-card.highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-gold);
+}
+
+.day-card h3 {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+}
+
+.routine-list {
+    list-style: none;
+}
+
+.routine-list li {
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.routine-list li:last-child {
+    border-bottom: none;
+}
+
+/* Footer & Branding */
+.footer {
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.brand-accent {
+    font-family: 'Teko';
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+/* Progression Block within Day Cards */
+.progression-block {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.progression-block h4 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.progression-list {
+    list-style: none;
+}
+
+.progression-list li {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 8px;
+}
+
+.progression-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.progression-list li strong {
+    color: var(--accent-gold);
+    font-family: 'Teko';
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.progression-list li span {
+    text-align: right;
+}
+
+.progression-list li em {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    font-style: normal;
+}
+
+/* Full Width Day Cards & Phases */
+.routine-grid.layout-wide {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.day-card.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.day-card.full-width h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.phases-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .phases-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .phases-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.phase-block {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.phase-block h4 {
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    font-family: 'Teko';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 8px;
+}
+
+.phase-block h4 span {
+    display: block;
+    color: #888;
+    font-size: 0.8rem;
+    font-family: 'Manrope', sans-serif;
+    margin-top: 4px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/* Fix flex layout for routine items inside narrow phase blocks */
+.phase-block .routine-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.phase-block .routine-list li span:first-child {
+    font-size: 0.85rem;
+    color: #eee;
+}
+
+.phase-block .routine-list li span.highlight {
+    align-self: flex-start;
+    margin-top: 4px;
+    font-size: 1rem;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
