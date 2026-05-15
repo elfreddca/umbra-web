@@ -1,332 +1,315 @@
 ﻿<!DOCTYPE html>
-<html lang=es>
+<html lang='es'>
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no>
-<title>UMBRA TRAINING | Coaching Online Elite</title>
-<meta name=description content=Coaching fitness online personalizado. Solo para personas comprometidas. Aplica ahora con Freddy Carreno — Coach certificado en hipertrofia y nutricion.>
-<meta name=author content=Freddy Carreno>
-<meta property=og:title content=UMBRA TRAINING | Aplica al Coaching de Elite>
-<meta property=og:description content=Coaching personalizado basado en ciencia. Solo para personas comprometidas. Aplica ahora.>
-<link rel=preconnect href=https://fonts.googleapis.com>
-<link href=https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Teko:wght@300;500;700&display=swap rel=stylesheet>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'>
+<title>UMBRA TRAINING | Coaching Fitness Online Elite</title>
+<meta name='description' content='Coaching fitness online personalizado basado en ciencia. Solo para personas comprometidas. Aplica con Freddy Carreno.'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Teko:wght@500;700&display=swap' rel='stylesheet'>
 <style>
-:root{--bg:#000;--bg2:#080808;--bg3:#101010;--gold:#D4AF37;--gold2:#E8C840;--text:#fff;--text2:#999;--text3:#555;--border:rgba(255,255,255,0.07);--borderg:rgba(212,175,55,0.25);}
+:root{--bg:#000;--bg2:#080808;--bg3:#101010;--gold:#D4AF37;--text:#fff;--text2:#999;--text3:#555;--border:rgba(255,255,255,0.08);--borderg:rgba(212,175,55,0.25);}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-body::after{content:'';position:fixed;inset:0;opacity:.025;background-image:url(data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E);pointer-events:none;z-index:9999;}
-h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.9;margin:0;}
-.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:10;}
-/* NAVBAR */
-.nav{position:fixed;top:0;left:0;right:0;height:68px;z-index:1000;display:flex;align-items:center;padding:0 30px;transition:.4s;}
+h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.92;margin:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.reveal{opacity:0;transform:translateY(28px);transition:all .75s cubic-bezier(.16,1,.3,1);visibility:hidden;}
+.reveal.active{opacity:1;transform:none;visibility:visible;}
+.delay-1{transition-delay:.1s;}.delay-2{transition-delay:.2s;}.delay-3{transition-delay:.3s;}.delay-4{transition-delay:.4s;}
+.slbl{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+.nav{position:fixed;top:0;left:0;right:0;height:66px;z-index:1000;display:flex;align-items:center;padding:0 30px;transition:.4s;}
 .nav.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1100px;margin:0 auto;}
+.nav-in{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1100px;margin:0 auto;}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo img{width:32px;height:32px;border-radius:50%;object-fit:cover;}
+.nav-logo img{width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0;}
 .nav-logo span{font-family:'Teko';font-size:1.3rem;font-weight:700;letter-spacing:2px;color:#fff;}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
 .nav-links a{text-decoration:none;color:var(--text2);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:.3s;}
 .nav-links a:hover{color:#fff;}
-.nav-cta{background:var(--gold);color:#000!important;padding:8px 20px;font-family:'Teko';font-size:1.05rem;font-weight:700;letter-spacing:1px;transition:.3s!important;}
-.nav-cta:hover{background:#fff!important;}
+.nav-cta{background:var(--gold);color:#000;padding:8px 20px;font-family:'Teko';font-size:1.05rem;font-weight:700;letter-spacing:1px;}
+.nav-cta:hover{background:#fff!important;color:#000!important;}
 @media(max-width:768px){.nav-links{display:none;}.nav{padding:0 20px;}}
-/* HERO */
 .hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 24px 80px;position:relative;overflow:hidden;}
-.hero-glow{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(212,175,55,.06) 0%,transparent 70%);pointer-events:none;}
-.hero>*{opacity:0;transform:translateY(28px);transition:all .9s cubic-bezier(.16,1,.3,1);}
-.brand-badge{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.13);padding:8px 22px;border-radius:50px;margin-bottom:36px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);}
-.brand-badge img{width:26px;height:26px;border-radius:50%;object-fit:cover;}
-.brand-badge .bname{font-family:'Teko';font-weight:700;letter-spacing:3px;font-size:1.2rem;line-height:1;}
-.brand-badge .bsub{font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-left:6px;}
-.hero-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
-.hero h1{font-size:clamp(4rem,15vw,9.5rem);letter-spacing:-2px;font-weight:700;margin-bottom:22px;line-height:.88;}
-.hero h1 .l1{display:block;color:#fff;}
-.hero h1 .l2{display:block;color:var(--gold);}
-.hero-sub{font-size:clamp(.95rem,2.5vw,1.2rem);color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:44px;}
-.btn-apply-main{position:relative;display:inline-flex;align-items:center;gap:12px;padding:18px 46px;background:var(--gold);color:#000;font-family:'Teko';font-size:1.55rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-decoration:none;overflow:hidden;transition:.4s cubic-bezier(.16,1,.3,1);box-shadow:0 0 50px rgba(212,175,55,.2);}
-.btn-apply-main::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:shimmer 2.5s infinite;}
-@keyframes shimmer{to{left:100%;}}
-.btn-apply-main:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(212,175,55,.35);background:#fff;}
-.btn-apply-main svg{width:20px;height:20px;transition:.3s;}
-.btn-apply-main:hover svg{transform:translateX(5px);}
-.hero-trust{margin-top:44px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:.8rem;color:var(--text3);font-weight:600;}
-.trust-item svg{width:14px;height:14px;color:var(--gold);}
-.trust-div{width:1px;height:14px;background:var(--border);}
-/* SECTION UTILS */
-.section-lbl{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
-.section-title{font-size:clamp(2.5rem,5vw,3.8rem);line-height:.92;color:#fff;margin-bottom:18px;}
-.section-sub{font-size:1.05rem;color:var(--text2);line-height:1.7;max-width:580px;}
+.hero-glow{position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(212,175,55,.07) 0%,transparent 70%);pointer-events:none;}
+.hero>*:not(.hero-glow){opacity:0;transform:translateY(28px);transition:all .9s cubic-bezier(.16,1,.3,1);}
+.brand-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.12);padding:7px 20px;border-radius:50px;margin-bottom:32px;background:rgba(255,255,255,.03);}
+.brand-badge img{width:26px;height:26px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;}
+.brand-badge .bn{font-family:'Teko';font-weight:700;letter-spacing:3px;font-size:1.15rem;}
+.brand-badge .bs{font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-left:4px;}
+.hero-eye{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+.hero h1{font-size:clamp(4rem,14vw,9rem);letter-spacing:-2px;font-weight:700;margin-bottom:20px;line-height:.88;}
+.h1-l1{display:block;color:#fff;}
+.h1-l2{display:block;color:var(--gold);}
+.hero-sub{font-size:clamp(.9rem,2.5vw,1.15rem);color:var(--text2);max-width:520px;line-height:1.7;margin-bottom:40px;}
+.btn-apply{position:relative;display:inline-flex;align-items:center;gap:12px;padding:18px 44px;background:var(--gold);color:#000;font-family:'Teko';font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-decoration:none;overflow:hidden;transition:.4s;box-shadow:0 0 50px rgba(212,175,55,.2);}
+.btn-apply::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shim 2.5s infinite;}
+@keyframes shim{to{left:100%;}}
+.btn-apply:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(212,175,55,.35);background:#fff;}
+.btn-apply svg{width:20px;height:20px;transition:.3s;}
+.btn-apply:hover svg{transform:translateX(5px);}
+.hero-trust{margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;}
+.ti{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--text3);font-weight:600;}
+.ti svg{width:13px;height:13px;color:var(--gold);}
+.td{width:1px;height:14px;background:var(--border);}
 </style>
 </head>
 <body>
-<!-- NAVBAR -->
-<nav class=nav id=navbar>
-  <div class=nav-inner>
-    <a href=# class=nav-logo><img src=img/logo_icon.jpg alt=Umbra><span>UMBRA</span></a>
-    <ul class=nav-links>
-      <li><a href=#beneficios>Beneficios</a></li>
-      <li><a href=#planes>Planes</a></li>
-      <li><a href=#resultados>Resultados</a></li>
-      <li><a href=#aplicar class=nav-cta>APLICAR</a></li>
+
+<nav class='nav' id='navbar'>
+  <div class='nav-in'>
+    <a href='#' class='nav-logo'><img src='img/logo_icon.jpg' alt='Umbra' width='32' height='32' style='border-radius:50%;object-fit:cover;'><span>UMBRA</span></a>
+    <ul class='nav-links'>
+      <li><a href='#beneficios'>Beneficios</a></li>
+      <li><a href='#planes'>Planes</a></li>
+      <li><a href='#resultados'>Resultados</a></li>
+      <li><a href='#aplicar' class='nav-cta'>APLICAR</a></li>
     </ul>
   </div>
 </nav>
-<!-- HERO -->
-<section class=hero id=inicio>
-  <div class=hero-glow></div>
-  <div class=brand-badge>
-    <img src=img/logo_icon.jpg alt=Umbra Logo>
-    <span class=bname>UMBRATRAINING</span>
-    <span class=bsub>by freddca</span>
+<section class='hero' id='inicio'>
+  <div class='hero-glow'></div>
+  <div class='brand-badge'>
+    <img src='img/logo_icon.jpg' alt='Logo' width='26' height='26' style='border-radius:50%;object-fit:cover;flex-shrink:0;'>
+    <span class='bn'>UMBRATRAINING</span><span class='bs'>by freddca</span>
   </div>
-  <p class=hero-eyebrow>Coaching Fitness Online — Solo plazas limitadas</p>
-  <h1><span class=l1>TU POTENCIAL</span><span class=l2>NO TIENE LIMITES</span></h1>
-  <p class=hero-sub>Llevas meses en el gym viendote exactamente igual. Sudar no es progresar. Es momento de aplicar <strong>ciencia real</strong> a tu entrenamiento — o seguir adivinando.</p>
-  <a href=#aplicar class=btn-apply-main id=hero-cta>
+  <span class='hero-eye'>Coaching Fitness Online &mdash; Solo plazas limitadas</span>
+  <h1><span class='h1-l1'>TU POTENCIAL</span><span class='h1-l2'>NO TIENE LIMITES</span></h1>
+  <p class='hero-sub'>Llevas meses en el gym viendote exactamente igual. Sudar no es progresar. Es momento de aplicar <strong>ciencia real</strong> a tu entrenamiento &mdash; o seguir adivinando.</p>
+  <a href='#aplicar' class='btn-apply' id='hero-cta'>
     QUIERO APLICAR
-    <svg viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2.5><line x1=5 y1=12 x2=19 y2=12/><polyline points=12 5 19 12 12 19/></svg>
+    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><line x1='5' y1='12' x2='19' y2='12'/><polyline points='12 5 19 12 12 19'/></svg>
   </a>
-  <div class=hero-trust>
-    <span class=trust-item><svg viewBox=0 0 24 24 fill=currentColor><path d=M9 11l3 3L22 4/><path d=M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11/></svg>3 Certificaciones</span>
-    <span class=trust-div></span>
-    <span class=trust-item><svg viewBox=0 0 24 24 fill=currentColor><path d=M9 11l3 3L22 4/><path d=M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11/></svg>UMBRA APP incluida</span>
-    <span class=trust-div></span>
-    <span class=trust-item><svg viewBox=0 0 24 24 fill=currentColor><path d=M9 11l3 3L22 4/><path d=M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11/></svg>Resultados reales</span>
+  <div class='hero-trust'>
+    <span class='ti'>
+      <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><polyline points='20 6 9 17 4 12'/></svg>3 Certificaciones
+    </span>
+    <span class='td'></span>
+    <span class='ti'>
+      <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><polyline points='20 6 9 17 4 12'/></svg>UMBRA APP incluida
+    </span>
+    <span class='td'></span>
+    <span class='ti'>
+      <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><polyline points='20 6 9 17 4 12'/></svg>Resultados comprobados
+    </span>
   </div>
 </section>
+
 <style>
-/* HOW IT WORKS */
-.how-section{padding:100px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
-.how-steps{display:grid;grid-template-columns:1fr;gap:20px;max-width:900px;margin:56px auto 0;}
-@media(min-width:768px){.how-steps{grid-template-columns:repeat(3,1fr);}}
-.how-step{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 28px;text-align:left;transition:.3s;}
-.how-step:hover{border-color:var(--borderg);transform:translateY(-4px);}
-.step-num{width:46px;height:46px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-family:'Teko';font-size:1.7rem;font-weight:700;margin-bottom:22px;}
-.step-title{font-family:'Manrope';font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:10px;}
-.step-desc{color:var(--text2);font-size:.95rem;line-height:1.6;}
-/* BENEFITS */
-.benefits-section{padding:100px 24px;background:var(--bg);}
-.benefits-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:900px;margin:56px auto 0;}
-@media(min-width:768px){.benefits-grid{grid-template-columns:repeat(2,1fr);}}
-.benefit-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;transition:.3s;}
-.benefit-card:hover{border-color:var(--borderg);transform:translateY(-3px);}
-.benefit-icon{width:44px;height:44px;margin-bottom:22px;color:var(--gold);background:rgba(212,175,55,.06);padding:10px;border-radius:10px;border:1px solid rgba(212,175,55,.15);}
-.benefit-title{font-family:'Manrope';font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:10px;}
-.benefit-desc{color:var(--text2);font-size:.97rem;line-height:1.65;}
-/* COACH SECTION */
-.coach-section{padding:100px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);}
-.coach-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:60px;align-items:center;}
-@media(min-width:768px){.coach-inner{grid-template-columns:320px 1fr;}}
-.coach-photo-wrap{position:relative;}
-.coach-photo{width:100%;max-width:320px;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;border:1px solid var(--borderg);}
-.coach-photo-placeholder{width:100%;max-width:320px;aspect-ratio:3/4;background:var(--bg3);border:2px dashed var(--borderg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text3);font-size:.85rem;gap:12px;}
-.coach-badge-wrap{position:absolute;bottom:-20px;right:-10px;background:var(--gold);padding:12px 18px;text-align:center;}
-.coach-badge-wrap .cb-num{font-family:'Teko';font-size:2.2rem;font-weight:700;color:#000;line-height:1;}
-.coach-badge-wrap .cb-text{font-size:.65rem;font-weight:700;letter-spacing:1px;color:#000;text-transform:uppercase;}
-.coach-content{}
-.coach-name{font-size:clamp(2.8rem,6vw,4rem);margin-bottom:6px;}
-.coach-role{font-family:'Manrope';font-size:.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
-.coach-bio{color:var(--text2);font-size:1.05rem;line-height:1.75;margin-bottom:32px;}
-.coach-stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.coach-stat{text-align:center;}
-.coach-stat .cs-val{font-family:'Teko';font-size:2rem;color:var(--gold);font-weight:700;line-height:1;}
-.coach-stat .cs-lbl{font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
-.certs{display:flex;flex-direction:column;gap:10px;}
-.cert-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.12);border-radius:8px;}
-.cert-icon{color:var(--gold);margin-top:2px;flex-shrink:0;}
-.cert-icon svg{width:16px;height:16px;}
-.cert-text{}
-.cert-name{font-size:.9rem;font-weight:700;color:#fff;line-height:1.3;}
-.cert-inst{font-size:.78rem;color:var(--text3);}
-.coach-ig{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:10px 22px;border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:.3s;}
-.coach-ig:hover{border-color:var(--gold);color:var(--gold);}
+.how{padding:90px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.how-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:880px;margin:50px auto 0;}
+@media(min-width:768px){.how-grid{grid-template-columns:repeat(3,1fr);}}
+.how-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:36px 26px;text-align:left;transition:.3s;}
+.how-card:hover{border-color:var(--borderg);transform:translateY(-4px);}
+.snum{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-family:'Teko';font-size:1.6rem;font-weight:700;margin-bottom:20px;}
+.stit{font-family:'Manrope';font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:9px;}
+.sdesc{color:var(--text2);font-size:.93rem;line-height:1.6;}
+.bens{padding:90px 24px;background:var(--bg);}
+.ben-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:880px;margin:50px auto 0;}
+@media(min-width:768px){.ben-grid{grid-template-columns:repeat(2,1fr);}}
+.ben-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:30px;transition:.3s;}
+.ben-card:hover{border-color:var(--borderg);transform:translateY(-3px);}
+.ben-icon{width:42px;height:42px;margin-bottom:20px;color:var(--gold);background:rgba(212,175,55,.06);padding:9px;border-radius:9px;border:1px solid rgba(212,175,55,.15);display:block;}
+.ben-tit{font-family:'Manrope';font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:9px;}
+.ben-desc{color:var(--text2);font-size:.94rem;line-height:1.65;}
 </style>
-<!-- HOW IT WORKS -->
-<section class=how-section reveal id=como-funciona>
-  <div class=container>
-    <span class=section-lbl>El Proceso</span>
-    <h2 class=section-title>Como <span style=color:var(--gold)>Funciona</span></h2>
-    <p class=section-sub style=margin:0 auto;>Sin pagos directos. Primero hablamos, luego construimos tu estrategia.</p>
-    <div class=how-steps>
-      <div class=how-step reveal delay-1>
-        <div class=step-num>1</div>
-        <div class=step-title>Aplica al Coaching</div>
-        <div class=step-desc>Llena el formulario de aplicacion. Me cuentas tu situacion, objetivos y cual plan te interesa.</div>
+<section class='how reveal' id='como-funciona'>
+  <div class='container'>
+    <span class='slbl'>El Proceso</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:16px;'>Como <span style='color:var(--gold)'>Funciona</span></h2>
+    <p style='color:var(--text2);font-size:1.05rem;max-width:540px;margin:0 auto;line-height:1.7;'>Sin pagos directos. Primero hablamos, luego construimos tu estrategia.</p>
+    <div class='how-grid'>
+      <div class='how-card reveal delay-1'>
+        <div class='snum'>1</div>
+        <div class='stit'>Aplica al Coaching</div>
+        <div class='sdesc'>Llena el formulario de aplicacion. Me cuentas tu situacion, objetivos y cual plan te interesa.</div>
       </div>
-      <div class=how-step reveal delay-2>
-        <div class=step-num>2</div>
-        <div class=step-title>Te Contacto Personalmente</div>
-        <div class=step-desc>En menos de 24h te escribo por Telegram para conocer tu caso a fondo y ver si hacemos match.</div>
+      <div class='how-card reveal delay-2'>
+        <div class='snum'>2</div>
+        <div class='stit'>Te Contacto Personalmente</div>
+        <div class='sdesc'>En menos de 24h te escribo por Telegram para conocer tu caso a fondo y ver si hacemos match.</div>
       </div>
-      <div class=how-step reveal delay-3>
-        <div class=step-num>3</div>
-        <div class=step-title>Empieza tu Transformacion</div>
-        <div class=step-desc>Acceso a UMBRA APP en 48h con tu plan de entrenamiento y nutricion listo para arrancar.</div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- BENEFITS -->
-<section class=benefits-section reveal id=beneficios>
-  <div class=container style=text-align:center;>
-    <span class=section-lbl>Lo que incluye</span>
-    <h2 class=section-title>Por que <span style=color:var(--gold)>Umbra</span></h2>
-    <div class=benefits-grid>
-      <div class=benefit-card reveal delay-1>
-        <svg class=benefit-icon viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><polyline points=23 6 13.5 15.5 8.5 10.5 1 18/><polyline points=17 6 23 6 23 12/></svg>
-        <div class=benefit-title>Entrenamiento con Ciencia</div>
-        <p class=benefit-desc>Planes de hipertrofia basados en evidencia, autorregulacion con RIR y sobrecarga progresiva real. Tu rutina evoluciona contigo.</p>
-      </div>
-      <div class=benefit-card reveal delay-2>
-        <svg class=benefit-icon viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><line x1=22 y1=2 x2=11 y2=13/><polygon points=22 2 15 22 11 13 2 9 22 2/></svg>
-        <div class=benefit-title>Soporte Directo por Telegram</div>
-        <p class=benefit-desc>Comunicacion directa conmigo. Resuelvo tus dudas en tiempo real para que tu ejecucion nunca falle.</p>
-      </div>
-      <div class=benefit-card reveal delay-3>
-        <svg class=benefit-icon viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><line x1=4 y1=21 x2=4 y2=14/><line x1=4 y1=10 x2=4 y2=3/><line x1=12 y1=21 x2=12 y2=12/><line x1=12 y1=8 x2=12 y2=3/><line x1=20 y1=21 x2=20 y2=16/><line x1=20 y1=12 x2=20 y2=3/><line x1=1 y1=14 x2=7 y2=14/><line x1=9 y1=8 x2=15 y2=8/><line x1=17 y1=16 x2=23 y2=16/></svg>
-        <div class=benefit-title>Check-ins con Estrategia</div>
-        <p class=benefit-desc>Ajustamos macros y volumen segun tu progreso real. Cada semana tenemos datos concretos para decidir el siguiente paso.</p>
-      </div>
-      <div class=benefit-card reveal delay-4>
-        <svg class=benefit-icon viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><polygon points=12 2 2 7 12 12 22 7 12 2/><polyline points=2 12 12 17 22 12/><polyline points=2 17 12 22 22 17/></svg>
-        <div class=benefit-title>Ecosistema UMBRA APP</div>
-        <p class=benefit-desc>Tu plan de entreno, alimentacion, guia de suplementacion y registro de cargas en una sola app nativa para iOS y Android.</p>
+      <div class='how-card reveal delay-3'>
+        <div class='snum'>3</div>
+        <div class='stit'>Empieza tu Transformacion</div>
+        <div class='sdesc'>Acceso a UMBRA APP en 48h con tu plan de entrenamiento y nutricion personalizado listo para arrancar.</div>
       </div>
     </div>
   </div>
 </section>
-<!-- COACH SECTION -->
-<section class=coach-section reveal id=coach>
-  <div class=container>
-    <div class=coach-inner>
-      <div class=coach-photo-wrap>
-        <div class=coach-photo-placeholder>
-          <svg width=48 height=48 viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg>
-          <span>Foto del Coach</span>
-        </div>
-        <div class=coach-badge-wrap><div class=cb-num>9%</div><div class=cb-text>Body Fat</div></div>
+<section class='bens reveal' id='beneficios'>
+  <div class='container' style='text-align:center;'>
+    <span class='slbl'>Lo que incluye</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:16px;'>Por que <span style='color:var(--gold)'>Umbra</span></h2>
+    <div class='ben-grid'>
+      <div class='ben-card reveal delay-1'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'/><polyline points='17 6 23 6 23 12'/></svg>
+        <div class='ben-tit'>Entrenamiento con Ciencia</div>
+        <p class='ben-desc'>Planes de hipertrofia basados en evidencia, autorregulacion con RIR y sobrecarga progresiva real. Tu rutina evoluciona contigo.</p>
       </div>
-      <div class=coach-content>
-        <h2 class=coach-name>Freddy <span style=color:var(--gold)>Carreno</span></h2>
-        <p class=coach-role>Coach Fitness Online &amp; Creador de Contenido</p>
-        <p class=coach-bio>20 anos, 73kg, 1.70m. Llevo anos estudiando la ciencia detras del cuerpo humano para que no tengas que hacerlo tu. No soy un influencer que vende planes genericos — soy el coach que revisa tu caso y construye una estrategia unica para ti.</p>
-        <div class=coach-stats>
-          <div class=coach-stat><div class=cs-val>73<span style=font-size:1rem>kg</span></div><div class=cs-lbl>Peso Actual</div></div>
-          <div class=coach-stat><div class=cs-val>9<span style=font-size:1rem>%</span></div><div class=cs-lbl>Grasa Corporal</div></div>
-          <div class=coach-stat><div class=cs-val>3</div><div class=cs-lbl>Certificaciones</div></div>
-          <div class=coach-stat><div class=cs-val>20</div><div class=cs-lbl>Anos</div></div>
+      <div class='ben-card reveal delay-2'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='2' x2='11' y2='13'/><polygon points='22 2 15 22 11 13 2 9 22 2'/></svg>
+        <div class='ben-tit'>Soporte Directo por Telegram</div>
+        <p class='ben-desc'>Comunicacion directa conmigo. Resuelvo tus dudas en tiempo real para que tu ejecucion nunca falle.</p>
+      </div>
+      <div class='ben-card reveal delay-3'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='4' y1='21' x2='4' y2='14'/><line x1='4' y1='10' x2='4' y2='3'/><line x1='12' y1='21' x2='12' y2='12'/><line x1='12' y1='8' x2='12' y2='3'/><line x1='20' y1='21' x2='20' y2='16'/><line x1='20' y1='12' x2='20' y2='3'/><line x1='1' y1='14' x2='7' y2='14'/><line x1='9' y1='8' x2='15' y2='8'/><line x1='17' y1='16' x2='23' y2='16'/></svg>
+        <div class='ben-tit'>Check-ins con Estrategia</div>
+        <p class='ben-desc'>Ajustamos macros y volumen segun tu progreso real. Cada semana tenemos datos concretos para decidir el siguiente paso.</p>
+      </div>
+      <div class='ben-card reveal delay-4'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 12 12 17 22 12'/><polyline points='2 17 12 22 22 17'/></svg>
+        <div class='ben-tit'>Ecosistema UMBRA APP</div>
+        <p class='ben-desc'>Tu plan, alimentacion, guia de suplementacion y registro de cargas en una sola app nativa para iOS y Android.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.coach-sec{padding:90px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);}
+.coach-in{max-width:940px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:52px;align-items:center;}
+@media(min-width:768px){.coach-in{grid-template-columns:300px 1fr;}}
+.coach-photo-box{position:relative;max-width:300px;}
+.coach-photo-ph{width:100%;aspect-ratio:3/4;background:var(--bg3);border:2px dashed var(--borderg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text3);font-size:.82rem;gap:10px;}
+.cbadge{position:absolute;bottom:-18px;right:-10px;background:var(--gold);padding:11px 16px;text-align:center;}
+.cbadge .cv{font-family:'Teko';font-size:2rem;font-weight:700;color:#000;line-height:1;}
+.cbadge .cl{font-size:.6rem;font-weight:700;letter-spacing:1px;color:#000;text-transform:uppercase;}
+.coach-nm{font-size:clamp(2.8rem,6vw,4.2rem);margin-bottom:6px;}
+.coach-rl{font-family:'Manrope';font-size:.88rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block;}
+.coach-bio{color:var(--text2);font-size:1rem;line-height:1.75;margin-bottom:28px;}
+.cstats{display:flex;gap:20px;flex-wrap:wrap;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:28px;}
+.cst .csv{font-family:'Teko';font-size:1.9rem;color:var(--gold);font-weight:700;line-height:1;}
+.cst .csl{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.certs{display:flex;flex-direction:column;gap:9px;}
+.cert{display:flex;align-items:flex-start;gap:11px;padding:11px 14px;background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.12);border-radius:7px;}
+.cert svg{width:15px;height:15px;color:var(--gold);flex-shrink:0;margin-top:2px;}
+.cert .cn{font-size:.88rem;font-weight:700;color:#fff;line-height:1.3;}
+.cert .ci{font-size:.75rem;color:var(--text3);}
+.ig-btn{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:9px 20px;border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:.3s;}
+.ig-btn:hover{border-color:var(--gold);color:var(--gold);}
+</style>
+<section class='coach-sec reveal' id='coach'>
+  <div class='container'>
+    <div style='text-align:center;margin-bottom:52px;'>
+      <span class='slbl'>Tu Coach</span>
+      <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);'>Quien <span style='color:var(--gold)'>Soy</span></h2>
+    </div>
+    <div class='coach-in'>
+      <div class='coach-photo-box'>
+        <div class='coach-photo-ph'>
+          <svg width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1'><circle cx='12' cy='8' r='4'/><path d='M4 20c0-4 3.6-7 8-7s8 3 8 7'/></svg>
+          <span>Foto del Coach<br><small style='font-size:.7rem;'>(Sube tu foto al repo)</small></span>
         </div>
-        <div class=certs>
-          <div class=cert-item>
-            <span class=cert-icon><svg viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=8 r=6/><path d=M15.477 12.89L17 22l-5-3-5 3 1.523-9.11/></svg></span>
-            <div class=cert-text><div class=cert-name>Nutricion Fitness y Deportiva</div><div class=cert-inst>Instituto IIAF</div></div>
+        <div class='cbadge'><div class='cv'>9%</div><div class='cl'>Body Fat</div></div>
+      </div>
+      <div>
+        <h2 class='coach-nm'>Freddy <span style='color:var(--gold)'>Carreno</span></h2>
+        <span class='coach-rl'>Coach Fitness Online &amp; Creador de Contenido</span>
+        <p class='coach-bio'>20 anos, 73kg, 1.70m. Llevo anos estudiando la ciencia detras del cuerpo humano para que no tengas que hacerlo tu. No soy un influencer que vende planes genericos &mdash; soy el coach que revisa tu caso y construye una estrategia unica para ti.</p>
+        <div class='cstats'>
+          <div class='cst'><div class='csv'>73<span style='font-size:.9rem'>kg</span></div><div class='csl'>Peso</div></div>
+          <div class='cst'><div class='csv'>9<span style='font-size:.9rem'>%</span></div><div class='csl'>% Grasa</div></div>
+          <div class='cst'><div class='csv'>3</div><div class='csl'>Certifs.</div></div>
+          <div class='cst'><div class='csv'>20</div><div class='csl'>Anos</div></div>
+        </div>
+        <div class='certs'>
+          <div class='cert'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89L17 22l-5-3-5 3 1.523-9.11'/></svg>
+            <div><div class='cn'>Nutricion Fitness y Deportiva</div><div class='ci'>Instituto IIAF</div></div>
           </div>
-          <div class=cert-item>
-            <span class=cert-icon><svg viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=8 r=6/><path d=M15.477 12.89L17 22l-5-3-5 3 1.523-9.11/></svg></span>
-            <div class=cert-text><div class=cert-name>Especialista en Programacion para la Hipertrofia</div><div class=cert-inst>APEKS Performance</div></div>
+          <div class='cert'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89L17 22l-5-3-5 3 1.523-9.11'/></svg>
+            <div><div class='cn'>Especialista en Programacion para la Hipertrofia</div><div class='ci'>APEKS Performance</div></div>
           </div>
-          <div class=cert-item>
-            <span class=cert-icon><svg viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><circle cx=12 cy=8 r=6/><path d=M15.477 12.89L17 22l-5-3-5 3 1.523-9.11/></svg></span>
-            <div class=cert-text><div class=cert-name>Especializacion en Intensificacion de Gluteo</div><div class=cert-inst>Certificacion Especializada</div></div>
+          <div class='cert'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89L17 22l-5-3-5 3 1.523-9.11'/></svg>
+            <div><div class='cn'>Especializacion en Intensificacion de Gluteo</div><div class='ci'>Certificacion Especializada</div></div>
           </div>
         </div>
-        <a href=https://www.instagram.com/el.freddca/ target=_blank class=coach-ig>
-          <svg width=16 height=16 viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><rect x=2 y=2 width=20 height=20 rx=5/><circle cx=12 cy=12 r=4/><circle cx=17.5 cy=6.5 r=.5 fill=currentColor/></svg>
+        <a href='https://www.instagram.com/el.freddca/' target='_blank' class='ig-btn'>
+          <svg width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='5'/><circle cx='12' cy='12' r='4'/><circle cx='17.5' cy='6.5' r='1' fill='currentColor'/></svg>
           @el.freddca
         </a>
       </div>
     </div>
   </div>
 </section>
+
 <style>
-/* PLANS */
-.plans-section{padding:100px 24px;background:var(--bg);text-align:center;border-top:1px solid var(--border);}
-.plans-note{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.08);border:1px solid var(--borderg);padding:10px 20px;border-radius:50px;font-size:.8rem;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:20px;}
-.plans-wrapper{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;max-width:960px;margin:56px auto 0;}
-.plan-card{flex:1;min-width:300px;max-width:440px;background:var(--bg2);border:1px solid var(--border);padding:48px 40px;text-align:left;position:relative;transition:.4s;display:flex;flex-direction:column;}
-.plan-card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-5px);}
-.plan-card.elite{border-color:var(--borderg);background:linear-gradient(160deg,rgba(212,175,55,.05) 0%,transparent 60%);}
-.plan-card.elite:hover{border-color:var(--gold);}
-.plan-badge{position:absolute;top:-13px;right:28px;padding:4px 16px;font-family:'Teko';font-size:1rem;font-weight:700;letter-spacing:1px;}
-.plan-badge.b-std{background:#fff;color:#000;}
-.plan-badge.b-elite{background:var(--gold);color:#000;}
-.plan-name{font-size:2.4rem;margin-bottom:8px;}
-.plan-card.elite .plan-name{color:var(--gold);}
-.plan-desc{color:var(--text3);font-size:.95rem;line-height:1.5;margin-bottom:28px;}
-.plan-price-block{border-top:1px solid var(--border);padding-top:24px;margin-bottom:28px;}
-.plan-price-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
-.plan-price-lbl{font-size:1rem;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
-.plan-price-val{font-family:'Teko';font-size:2.6rem;font-weight:500;}
-.plan-price-usd{font-size:.85rem;color:var(--text3);margin-top:4px;}
-.plan-feats{list-style:none;margin-bottom:32px;flex-grow:1;}
-.plan-feats li{padding:11px 0;border-bottom:1px solid var(--border);color:var(--text2);display:flex;align-items:center;gap:12px;font-size:.97rem;}
-.plan-feats li:last-child{border-bottom:none;}
-.plan-feats li::before{content:✓;color:var(--gold);font-weight:700;flex-shrink:0;}
-.plan-feats li.crossed{opacity:.4;text-decoration:line-through;}
-.plan-feats li.crossed::before{content:✕;color:var(--text3);}
-.btn-plan-apply{display:block;width:100%;padding:16px;text-align:center;font-family:'Teko';font-size:1.45rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.3s;border:2px solid rgba(255,255,255,.15);color:#fff;background:transparent;}
-.btn-plan-apply:hover{background:#fff;color:#000;border-color:#fff;}
-.plan-card.elite .btn-plan-apply{border-color:var(--gold);color:var(--gold);}
-.plan-card.elite .btn-plan-apply:hover{background:var(--gold);color:#000;}
-/* RESULTS */
-.results-section{padding:100px 24px;background:var(--bg2);border-top:1px solid var(--border);}
-.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:960px;margin:56px auto 0;}
-@media(min-width:768px){.results-grid{grid-template-columns:repeat(3,1fr);}}
-.result-card{position:relative;overflow:hidden;background:var(--bg3);border:1px solid var(--border);border-radius:8px;transition:.4s;}
-.result-card:hover{border-color:var(--borderg);transform:scale(1.02);}
-.result-card img{width:100%;height:280px;object-fit:cover;object-position:top;display:block;transition:.4s;}
-.result-card:hover img{transform:scale(1.05);}
-.result-label{position:absolute;bottom:0;left:0;right:0;padding:16px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:.8rem;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;}
+.plans{padding:90px 24px;background:var(--bg);text-align:center;border-top:1px solid var(--border);}
+.plans-note{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.07);border:1px solid var(--borderg);padding:9px 18px;border-radius:50px;font-size:.78rem;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:18px 0 0;}
+.plans-wr{display:flex;flex-wrap:wrap;gap:26px;justify-content:center;max-width:940px;margin:52px auto 0;}
+.pc{flex:1;min-width:290px;max-width:430px;background:var(--bg2);border:1px solid var(--border);padding:44px 36px;text-align:left;position:relative;transition:.4s;display:flex;flex-direction:column;}
+.pc:hover{border-color:rgba(255,255,255,.18);transform:translateY(-5px);}
+.pc.elite{border-color:var(--borderg);background:linear-gradient(160deg,rgba(212,175,55,.05) 0%,transparent 60%);}
+.pc.elite:hover{border-color:var(--gold);}
+.pbadge{position:absolute;top:-12px;right:26px;padding:4px 14px;font-family:'Teko';font-size:.95rem;font-weight:700;letter-spacing:1px;}
+.pbadge.b1{background:#fff;color:#000;}
+.pbadge.b2{background:var(--gold);color:#000;}
+.pc h3{font-size:2.2rem;margin-bottom:8px;}
+.pc.elite h3{color:var(--gold);}
+.pc-desc{color:var(--text3);font-size:.9rem;line-height:1.5;margin-bottom:24px;}
+.pc-price{border-top:1px solid var(--border);padding:20px 0 24px;}
+.pc-price .pval{font-family:'Teko';font-size:2.6rem;font-weight:500;}
+.pc-price .plbl{font-size:.9rem;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;}
+.pc-price .pusd{font-size:.8rem;color:var(--text3);}
+.pc-feats{list-style:none;margin:20px 0 28px;flex-grow:1;}
+.pc-feats li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--text2);display:flex;align-items:center;gap:11px;font-size:.93rem;}
+.pc-feats li:last-child{border-bottom:none;}
+.pc-feats li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.pc-feats li.no{opacity:.4;text-decoration:line-through;}
+.pc-feats li.no::before{content:'✕';color:var(--text3);}
+.btn-pc{display:block;width:100%;padding:15px;text-align:center;font-family:'Teko';font-size:1.4rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.3s;border:2px solid rgba(255,255,255,.14);color:#fff;background:transparent;}
+.btn-pc:hover{background:#fff;color:#000;border-color:#fff;}
+.pc.elite .btn-pc{border-color:var(--gold);color:var(--gold);}
+.pc.elite .btn-pc:hover{background:var(--gold);color:#000;}
+.results{padding:90px 24px;background:var(--bg2);border-top:1px solid var(--border);}
+.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:940px;margin:52px auto 0;}
+@media(min-width:768px){.res-grid{grid-template-columns:repeat(3,1fr);}}
+.rc{position:relative;overflow:hidden;background:var(--bg3);border:1px solid var(--border);border-radius:7px;transition:.4s;}
+.rc:hover{border-color:var(--borderg);transform:scale(1.02);}
+.rc img{width:100%;height:270px;object-fit:cover;object-position:top;display:block;transition:.4s;}
+.rc:hover img{transform:scale(1.05);}
+.rc-lbl{position:absolute;bottom:0;left:0;right:0;padding:14px 12px 12px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:.76rem;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;}
 </style>
-<!-- PLANS -->
-<section class=plans-section reveal id=planes>
-  <div class=container>
-    <span class=section-lbl>Nuestros Planes</span>
-    <h2 class=section-title>Elige tu <span style=color:var(--gold)>Nivel</span></h2>
-    <p class=section-sub style=margin:0 auto 0;>Aplica primero — hablamos y elegimos juntos lo que mas te conviene.</p>
-    <div class=plans-note>
-      <svg width=14 height=14 viewBox=0 0 24 24 fill=currentColor><path d=M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z/></svg>
-      Solo trabajo con personas comprometidas — plazas limitadas
-    </div>
-    <div class=plans-wrapper>
-      <!-- Plan 1 -->
-      <div class=plan-card reveal delay-1>
-        <div class=plan-badge b-std>OPCION 1</div>
-        <h3 class=plan-name>Se tu Propio<br>Coach</h3>
-        <p class=plan-desc>La app hace los ajustes automaticamente segun tus checks. Sin contacto directo conmigo.</p>
-        <div class=plan-price-block>
-          <div class=plan-price-row>
-            <span class=plan-price-lbl>Mensual</span>
-            <span class=plan-price-val> <span style=font-size:1.2rem;color:var(--text3)>MXN</span></span>
-          </div>
-          <div class=plan-price-usd>~ USD / mes</div>
+<section class='plans reveal' id='planes'>
+  <div class='container'>
+    <span class='slbl'>Nuestros Planes</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:12px;'>Elige tu <span style='color:var(--gold)'>Nivel</span></h2>
+    <p style='color:var(--text2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.7;'>Aplica primero &mdash; hablamos y elegimos juntos lo que mas te conviene.</p>
+    <div class='plans-note'>&#9733; Solo trabajo con personas comprometidas &mdash; plazas limitadas</div>
+    <div class='plans-wr'>
+      <div class='pc reveal delay-1'>
+        <div class='pbadge b1'>OPCION 1</div>
+        <h3>Se tu Propio<br>Coach</h3>
+        <p class='pc-desc'>La app ajusta automaticamente segun tus checks. Sin contacto directo conmigo.</p>
+        <div class='pc-price'>
+          <span class='plbl'>Mensual</span>
+          <span class='pval'> <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
+          <div class='pusd'>&sim; USD / mes</div>
         </div>
-        <ul class=plan-feats>
+        <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
           <li>Plan de Entrenamiento (generado por app)</li>
           <li>Plan Alimenticio (generado por app)</li>
           <li>Ajustes automaticos segun tus checks</li>
           <li>Guia de Suplementacion</li>
-          <li class=crossed>Contacto directo con el coach</li>
-          <li class=crossed>Personalizacion manual</li>
+          <li class='no'>Contacto directo con el coach</li>
+          <li class='no'>Personalizacion manual</li>
         </ul>
-        <a href=#aplicar class=btn-plan-apply>Aplicar a Opcion 1</a>
+        <a href='#aplicar' class='btn-pc'>Aplicar a Opcion 1</a>
       </div>
-      <!-- Plan 2 -->
-      <div class=plan-card elite reveal delay-2>
-        <div class=plan-badge b-elite>VIP ELITE</div>
-        <h3 class=plan-name>Coaching <br>1:1 Online</h3>
-        <p class=plan-desc>Atencion total y personalizada. Yo construyo, ajusto y superviso cada detalle de tu proceso.</p>
-        <div class=plan-price-block>
-          <div class=plan-price-row>
-            <span class=plan-price-lbl>Mensual</span>
-            <span class=plan-price-val> <span style=font-size:1.2rem;color:var(--text3)>MXN</span></span>
-          </div>
-          <div class=plan-price-usd>~ USD / mes</div>
+      <div class='pc elite reveal delay-2'>
+        <div class='pbadge b2'>VIP ELITE</div>
+        <h3>Coaching<br>1:1 Online</h3>
+        <p class='pc-desc'>Atencion total y personalizada. Yo construyo, ajusto y superviso cada detalle de tu proceso.</p>
+        <div class='pc-price'>
+          <span class='plbl'>Mensual</span>
+          <span class='pval'> <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
+          <div class='pusd'>&sim; USD / mes</div>
         </div>
-        <ul class=plan-feats>
+        <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
           <li>Plan de Entrenamiento 100% personalizado</li>
           <li>Plan Alimenticio con tus gustos y tiempos</li>
@@ -335,337 +318,237 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
           <li>Soporte directo por Telegram</li>
           <li>Ajustes manuales segun tu progreso</li>
         </ul>
-        <a href=#aplicar class=btn-plan-apply>Aplicar a Coaching 1:1</a>
+        <a href='#aplicar' class='btn-pc'>Aplicar a Coaching 1:1</a>
       </div>
     </div>
   </div>
 </section>
-<!-- RESULTS -->
-<section class=results-section reveal id=resultados>
-  <div class=container style=text-align:center;>
-    <span class=section-lbl>Resultados Reales</span>
-    <h2 class=section-title>Sus <span style=color:var(--gold)>Transformaciones</span></h2>
-    <p class=section-sub style=margin:0 auto;>Resultados de personas reales, comprometidas con el proceso.</p>
-    <div class=results-grid>
-      <div class=result-card reveal delay-1>
-        <img src=img/testi_side.jpg alt=Resultado cliente>
-        <div class=result-label>Gluteos &amp; Piernas</div>
-      </div>
-      <div class=result-card reveal delay-2>
-        <img src=img/testi_abs.jpg alt=Resultado cliente>
-        <div class=result-label>Definicion Abdominal</div>
-      </div>
-      <div class=result-card reveal delay-3>
-        <img src=img/testi_doublebicep.jpg alt=Resultado cliente>
-        <div class=result-label>Masa Muscular</div>
-      </div>
-      <div class=result-card reveal delay-1>
-        <img src=img/testi_vshape.jpg alt=Resultado cliente>
-        <div class=result-label>Espalda V-Shape</div>
-      </div>
-      <div class=result-card reveal delay-2>
-        <img src=img/testi_woman.jpg alt=Resultado cliente>
-        <div class=result-label>Transformacion Femenina</div>
-      </div>
-      <div class=result-card reveal delay-3>
-        <img src=img/testi_legs.jpg alt=Resultado cliente>
-        <div class=result-label>Tren Inferior</div>
-      </div>
+<section class='results reveal' id='resultados'>
+  <div class='container' style='text-align:center;'>
+    <span class='slbl'>Resultados Reales</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:14px;'>Sus <span style='color:var(--gold)'>Transformaciones</span></h2>
+    <p style='color:var(--text2);font-size:1rem;max-width:500px;margin:0 auto;'>Personas reales, comprometidas con el proceso.</p>
+    <div class='res-grid'>
+      <div class='rc reveal delay-1'><img src='img/testi_side.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Gluteos y Piernas</div></div>
+      <div class='rc reveal delay-2'><img src='img/testi_abs.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Definicion</div></div>
+      <div class='rc reveal delay-3'><img src='img/testi_doublebicep.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Masa Muscular</div></div>
+      <div class='rc reveal delay-1'><img src='img/testi_vshape.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Espalda V-Shape</div></div>
+      <div class='rc reveal delay-2'><img src='img/testi_woman.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Transformacion Femenina</div></div>
+      <div class='rc reveal delay-3'><img src='img/testi_legs.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Tren Inferior</div></div>
     </div>
   </div>
 </section>
+
 <style>
-/* FORM */
-.form-section{padding:100px 24px;background:var(--bg);border-top:1px solid var(--border);}
-.form-wrap{max-width:700px;margin:56px auto 0;background:var(--bg2);border:1px solid var(--borderg);padding:52px 44px;}
-@media(max-width:600px){.form-wrap{padding:36px 24px;}}
-.form-steps-indicator{display:flex;gap:0;margin-bottom:40px;border:1px solid var(--border);}
-.fsi{flex:1;padding:12px;text-align:center;font-family:'Teko';font-size:1rem;letter-spacing:1px;color:var(--text3);transition:.3s;cursor:pointer;}
+.form-sec{padding:90px 24px;background:var(--bg);border-top:1px solid var(--border);}
+.form-wrap{max-width:680px;margin:52px auto 0;background:var(--bg2);border:1px solid var(--borderg);padding:48px 40px;}
+@media(max-width:600px){.form-wrap{padding:32px 20px;}}
+.fsi-bar{display:flex;margin-bottom:36px;border:1px solid var(--border);}
+.fsi{flex:1;padding:11px 6px;text-align:center;font-family:'Teko';font-size:.95rem;letter-spacing:1px;color:var(--text3);transition:.3s;}
 .fsi.active{background:var(--gold);color:#000;}
-.fsi.done{background:rgba(212,175,55,.15);color:var(--gold);}
-.form-step{display:none;}
-.form-step.active{display:block;}
-.form-step-title{font-size:2.2rem;margin-bottom:8px;}
-.form-step-desc{color:var(--text2);font-size:.95rem;margin-bottom:30px;line-height:1.6;}
-.form-group{margin-bottom:22px;}
-.form-group label{display:block;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin-bottom:8px;}
-.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:13px 16px;font-family:'Manrope';font-size:1rem;outline:none;transition:.3s;border-radius:4px;}
-.form-group input:focus,.form-group select,.form-group textarea:focus{border-color:var(--borderg);}
-.form-group select{cursor:pointer;}
-.form-group select option{background:#111;}
-.form-group textarea{resize:vertical;min-height:100px;}
-.radio-group{display:flex;flex-direction:column;gap:10px;}
-.radio-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:.3s;}
-.radio-item:hover{border-color:var(--borderg);}
-.radio-item input[type=radio]{accent-color:var(--gold);width:17px;height:17px;}
-.radio-item label{cursor:pointer;font-size:.97rem;color:var(--text2);}
-.radio-item:has(input:checked){border-color:var(--gold);background:rgba(212,175,55,.05);}
-.radio-item:has(input:checked) label{color:#fff;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
-.btn-form-next,.btn-form-back,.btn-form-submit{padding:15px 32px;font-family:'Teko';font-size:1.4rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:.3s;}
-.btn-form-next,.btn-form-submit{background:var(--gold);color:#000;width:100%;margin-top:24px;}
-.btn-form-next:hover,.btn-form-submit:hover{background:#fff;}
-.btn-form-back{background:transparent;border:1px solid var(--border);color:var(--text2);margin-top:12px;width:100%;}
-.btn-form-back:hover{border-color:#fff;color:#fff;}
-.form-success{display:none;text-align:center;padding:40px 0;}
-.form-success .fs-icon{width:70px;height:70px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
-.form-success h3{font-size:2.5rem;margin-bottom:12px;}
-.form-success p{color:var(--text2);line-height:1.7;}
-.commitment-check{display:flex;align-items:flex-start;gap:12px;padding:14px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:6px;}
-.commitment-check input{accent-color:var(--gold);width:18px;height:18px;flex-shrink:0;margin-top:2px;}
-.commitment-check label{font-size:.9rem;color:var(--text2);line-height:1.5;cursor:pointer;}
-/* FAQ */
-.faq-section{padding:100px 24px;max-width:800px;margin:0 auto;}
-.faq-section h2{text-align:center;font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:50px;}
-details{border-bottom:1px solid var(--border);padding:24px 0;cursor:pointer;}
+.fsi.done{background:rgba(212,175,55,.14);color:var(--gold);}
+.fstep{display:none;}
+.fstep.active{display:block;}
+.fstep h3{font-size:2rem;margin-bottom:8px;}
+.fstep-sub{color:var(--text2);font-size:.9rem;margin-bottom:26px;line-height:1.6;}
+.fg{margin-bottom:20px;}
+.fg label{display:block;font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin-bottom:7px;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:12px 15px;font-family:'Manrope';font-size:.97rem;outline:none;transition:.3s;border-radius:3px;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--borderg);}
+.fg select option{background:#111;}
+.fg textarea{resize:vertical;min-height:90px;}
+.rg{display:flex;flex-direction:column;gap:9px;}
+.ri{display:flex;align-items:center;gap:11px;padding:11px 14px;border:1px solid var(--border);border-radius:5px;cursor:pointer;transition:.3s;}
+.ri:hover{border-color:var(--borderg);}
+.ri input{accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;}
+.ri label{cursor:pointer;font-size:.94rem;color:var(--text2);}
+.rg2{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:500px){.frow{grid-template-columns:1fr;}.rg2{grid-template-columns:1fr 1fr;}}
+.btn-fnext,.btn-fback,.btn-fsub{padding:14px 30px;font-family:'Teko';font-size:1.35rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:.3s;width:100%;margin-top:20px;display:block;}
+.btn-fnext,.btn-fsub{background:var(--gold);color:#000;}
+.btn-fnext:hover,.btn-fsub:hover{background:#fff;}
+.btn-fback{background:transparent;border:1px solid var(--border);color:var(--text2);margin-top:10px;}
+.btn-fback:hover{border-color:#fff;color:#fff;}
+.chk-box{display:flex;align-items:flex-start;gap:11px;padding:13px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;}
+.chk-box input{accent-color:var(--gold);width:17px;height:17px;flex-shrink:0;margin-top:2px;}
+.chk-box label{font-size:.87rem;color:var(--text2);line-height:1.5;cursor:pointer;}
+.fsuccess{display:none;text-align:center;padding:36px 0;}
+.fsuc-icon{width:64px;height:64px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.fsuccess h3{font-size:2.2rem;margin-bottom:11px;}
+.fsuccess p{color:var(--text2);line-height:1.7;font-size:.97rem;}
+.faq-sec{padding:90px 24px;max-width:760px;margin:0 auto;}
+.faq-sec h2{text-align:center;font-size:clamp(2.3rem,5vw,3.6rem);margin-bottom:44px;}
+details{border-bottom:1px solid var(--border);padding:22px 0;cursor:pointer;}
 details>summary{list-style:none;}
 details>summary::-webkit-details-marker{display:none;}
-summary{font-family:'Teko';font-size:1.7rem;font-weight:500;color:#fff;outline:none;display:flex;justify-content:space-between;align-items:center;letter-spacing:.5px;}
-details p{color:var(--text2);font-size:1.05rem;margin-top:18px;line-height:1.75;}
-/* FOOTER */
-footer{text-align:center;padding:60px 24px;border-top:1px solid var(--border);background:var(--bg);}
-footer img{width:46px;height:46px;border-radius:50%;opacity:.85;}
-.footer-brand{font-family:'Teko';font-size:1.8rem;letter-spacing:2px;color:#fff;margin:18px 0 8px;}
-footer p{color:var(--text3);font-size:.88rem;}
-.footer-social{display:flex;justify-content:center;gap:16px;margin-top:20px;}
-.footer-social a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text3);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:8px 16px;border:1px solid var(--border);transition:.3s;}
-.footer-social a:hover{border-color:var(--gold);color:var(--gold);}
-/* FLOATING BTN */
-.floating-tg{position:fixed;bottom:28px;right:28px;background:var(--gold);color:#000;padding:10px 20px;border-radius:50px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(212,175,55,.3);z-index:1000;transition:.3s;text-decoration:none;}
-.floating-tg:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(212,175,55,.5);background:#fff;}
-.floating-tg svg{width:19px;height:19px;}
-.floating-tg span{font-family:'Manrope';font-weight:700;font-size:.85rem;white-space:nowrap;}
-@media(max-width:768px){.floating-tg{bottom:20px;right:20px;padding:13px;border-radius:50%;} .floating-tg span{display:none;}}
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:all .75s cubic-bezier(.16,1,.3,1);visibility:hidden;}
-.reveal.active{opacity:1;transform:translateY(0);visibility:visible;}
-.delay-1{transition-delay:.1s;}.delay-2{transition-delay:.2s;}.delay-3{transition-delay:.3s;}.delay-4{transition-delay:.4s;}
+summary{font-family:'Teko';font-size:1.65rem;font-weight:500;color:#fff;outline:none;display:flex;justify-content:space-between;align-items:center;letter-spacing:.5px;}
+details p{color:var(--text2);font-size:1rem;margin-top:16px;line-height:1.75;}
+footer{text-align:center;padding:56px 24px;border-top:1px solid var(--border);background:var(--bg);}
+footer img{width:44px;height:44px;border-radius:50%;object-fit:cover;opacity:.85;display:block;margin:0 auto;}
+.ft-brand{font-family:'Teko';font-size:1.7rem;letter-spacing:2px;color:#fff;margin:16px 0 7px;}
+footer p{color:var(--text3);font-size:.85rem;}
+.ft-social{display:flex;justify-content:center;gap:14px;margin-top:18px;}
+.ft-social a{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--text3);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:7px 14px;border:1px solid var(--border);transition:.3s;}
+.ft-social a:hover{border-color:var(--gold);color:var(--gold);}
+.ftg{position:fixed;bottom:26px;right:26px;background:var(--gold);color:#000;padding:10px 18px;border-radius:50px;display:flex;align-items:center;gap:9px;box-shadow:0 4px 20px rgba(212,175,55,.3);z-index:1000;transition:.3s;text-decoration:none;}
+.ftg:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(212,175,55,.5);background:#fff;}
+.ftg svg{width:18px;height:18px;}
+.ftg span{font-family:'Manrope';font-weight:700;font-size:.82rem;white-space:nowrap;}
+@media(max-width:768px){.ftg{bottom:18px;right:18px;padding:12px;border-radius:50%;}.ftg span{display:none;}}
 </style>
-<!-- FORM -->
-<section class=form-section reveal id=aplicar>
-  <div class=container style=text-align:center;>
-    <span class=section-lbl>Aplica Ahora</span>
-    <h2 class=section-title>Quiero <span style=color:var(--gold)>Conocerte</span></h2>
-    <p class=section-sub style=margin:0 auto 0;max-width:560px;>Solo trabajo con personas comprometidas. Este formulario me ayuda a conocer tu caso y ver si somos el match perfecto.</p>
-    <div class=form-wrap>
-      <!-- Steps Indicator -->
-      <div class=form-steps-indicator>
-        <div class=fsi active id=fsi-1>1. Tu Perfil</div>
-        <div class=fsi id=fsi-2>2. Tu Situacion</div>
-        <div class=fsi id=fsi-3>3. Contacto</div>
+<section class='form-sec reveal' id='aplicar'>
+  <div class='container' style='text-align:center;'>
+    <span class='slbl'>Aplica Ahora</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:12px;'>Quiero <span style='color:var(--gold)'>Conocerte</span></h2>
+    <p style='color:var(--text2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.7;'>Solo trabajo con personas comprometidas. Este formulario me ayuda a conocer tu caso.</p>
+    <div class='form-wrap'>
+      <div class='fsi-bar'>
+        <div class='fsi active' id='fsi1'>1. Tu Perfil</div>
+        <div class='fsi' id='fsi2'>2. Tu Situacion</div>
+        <div class='fsi' id='fsi3'>3. Contacto</div>
       </div>
-      <!-- FORM -->
-      <form id=apply-form action=https://formspree.io/f/XXXXXXXX method=POST>
-        <!-- STEP 1 -->
-        <div class=form-step active id=step-1>
-          <h3 class=form-step-title>Tu <span style=color:var(--gold)>Perfil</span></h3>
-          <p class=form-step-desc>Cuentame quien eres. Todos los campos son importantes.</p>
-          <div class=form-row>
-            <div class=form-group>
-              <label for=nombre>Nombre Completo *</label>
-              <input type=text id=nombre name=nombre placeholder=Tu nombre required>
-            </div>
-            <div class=form-group>
-              <label for=edad>Edad *</label>
-              <input type=number id=edad name=edad placeholder=Ej: 22 min=14 max=60 required>
-            </div>
+      <form id='apply-form' action='https://formspree.io/f/XXXXXXXX' method='POST'>
+        <div class='fstep active' id='fs1'>
+          <h3>Tu <span style='color:var(--gold)'>Perfil</span></h3>
+          <p class='fstep-sub'>Cuentame quien eres. Todos los campos son importantes.</p>
+          <div class='frow'>
+            <div class='fg'><label>Nombre *</label><input type='text' name='nombre' placeholder='Tu nombre completo' required></div>
+            <div class='fg'><label>Edad *</label><input type='number' name='edad' placeholder='Ej: 22' min='14' max='60' required></div>
           </div>
-          <div class=form-row>
-            <div class=form-group>
-              <label for=peso>Peso Actual (kg) *</label>
-              <input type=number id=peso name=peso placeholder=Ej: 75 required>
-            </div>
-            <div class=form-group>
-              <label for=estatura>Estatura (cm) *</label>
-              <input type=number id=estatura name=estatura placeholder=Ej: 175 required>
-            </div>
+          <div class='frow'>
+            <div class='fg'><label>Peso (kg) *</label><input type='number' name='peso' placeholder='Ej: 75' required></div>
+            <div class='fg'><label>Estatura (cm) *</label><input type='number' name='estatura' placeholder='Ej: 175' required></div>
           </div>
-          <div class=form-group>
+          <div class='fg'>
             <label>Objetivo Principal *</label>
-            <div class=radio-group>
-              <div class=radio-item><input type=radio name=objetivo value=Ganar musculo id=obj1 required><label for=obj1>Ganar musculo / Hipertrofia</label></div>
-              <div class=radio-item><input type=radio name=objetivo value=Definicion / Perder grasa id=obj2><label for=obj2>Definicion / Perder grasa</label></div>
-              <div class=radio-item><input type=radio name=objetivo value=Ambos (recomposicion) id=obj3><label for=obj3>Ambos (recomposicion corporal)</label></div>
-              <div class=radio-item><input type=radio name=objetivo value=Objetivo competitivo id=obj4><label for=obj4>Objetivo competitivo</label></div>
+            <div class='rg'>
+              <div class='ri'><input type='radio' name='objetivo' value='Ganar musculo' id='o1' required><label for='o1'>Ganar musculo / Hipertrofia</label></div>
+              <div class='ri'><input type='radio' name='objetivo' value='Definicion' id='o2'><label for='o2'>Definicion / Perder grasa</label></div>
+              <div class='ri'><input type='radio' name='objetivo' value='Recomposicion' id='o3'><label for='o3'>Ambos (recomposicion corporal)</label></div>
+              <div class='ri'><input type='radio' name='objetivo' value='Competitivo' id='o4'><label for='o4'>Objetivo competitivo</label></div>
             </div>
           </div>
-          <button type=button class=btn-form-next onclick=goToStep(2)>Continuar</button>
+          <button type='button' class='btn-fnext' onclick='goStep(2)'>Continuar &rarr;</button>
         </div>
-        <!-- STEP 2 -->
-        <div class=form-step id=step-2>
-          <h3 class=form-step-title>Tu <span style=color:var(--gold)>Situacion</span></h3>
-          <p class=form-step-desc>Necesito entender tu nivel y disponibilidad para darte lo que realmente necesitas.</p>
-          <div class=form-group>
+        <div class='fstep' id='fs2'>
+          <h3>Tu <span style='color:var(--gold)'>Situacion</span></h3>
+          <p class='fstep-sub'>Necesito entender tu nivel y disponibilidad.</p>
+          <div class='fg'>
             <label>Experiencia en el gym *</label>
-            <div class=radio-group>
-              <div class=radio-item><input type=radio name=experiencia value=Principiante (menos de 1 ano) id=exp1 required><label for=exp1>Principiante (menos de 1 ano)</label></div>
-              <div class=radio-item><input type=radio name=experiencia value=Intermedio (1-3 anos) id=exp2><label for=exp2>Intermedio (1-3 anos)</label></div>
-              <div class=radio-item><input type=radio name=experiencia value=Avanzado (3+ anos) id=exp3><label for=exp3>Avanzado (3+ anos)</label></div>
+            <div class='rg'>
+              <div class='ri'><input type='radio' name='exp' value='Principiante' id='e1' required><label for='e1'>Principiante (menos de 1 ano)</label></div>
+              <div class='ri'><input type='radio' name='exp' value='Intermedio' id='e2'><label for='e2'>Intermedio (1-3 anos)</label></div>
+              <div class='ri'><input type='radio' name='exp' value='Avanzado' id='e3'><label for='e3'>Avanzado (3+ anos)</label></div>
             </div>
           </div>
-          <div class=form-group>
-            <label>Dias disponibles para entrenar *</label>
-            <div class=radio-group style=display:grid;grid-template-columns:1fr 1fr;gap:10px;>
-              <div class=radio-item><input type=radio name=dias value=3 dias id=d3 required><label for=d3>3 dias</label></div>
-              <div class=radio-item><input type=radio name=dias value=4 dias id=d4><label for=d4>4 dias</label></div>
-              <div class=radio-item><input type=radio name=dias value=5 dias id=d5><label for=d5>5 dias</label></div>
-              <div class=radio-item><input type=radio name=dias value=6 dias id=d6><label for=d6>6 dias</label></div>
+          <div class='fg'>
+            <label>Dias disponibles *</label>
+            <div class='rg rg2'>
+              <div class='ri'><input type='radio' name='dias' value='3' id='d3' required><label for='d3'>3 dias</label></div>
+              <div class='ri'><input type='radio' name='dias' value='4' id='d4'><label for='d4'>4 dias</label></div>
+              <div class='ri'><input type='radio' name='dias' value='5' id='d5'><label for='d5'>5 dias</label></div>
+              <div class='ri'><input type='radio' name='dias' value='6' id='d6'><label for='d6'>6 dias</label></div>
             </div>
           </div>
-          <div class=form-group>
-            <label>Plan que te interesa *</label>
-            <div class=radio-group>
-              <div class=radio-item><input type=radio name=plan value=Opcion 1 - Se tu propio Coach ( MXN/mes) id=p1 required><label for=p1>Opcion 1 — Se tu propio Coach ( MXN/mes)</label></div>
-              <div class=radio-item><input type=radio name=plan value=Opcion 2 - Coaching 1:1 ( MXN/mes) id=p2><label for=p2>Opcion 2 — Coaching 1:1 Elite ( MXN/mes)</label></div>
+          <div class='fg'>
+            <label>Plan de interes *</label>
+            <div class='rg'>
+              <div class='ri'><input type='radio' name='plan' value='Opcion1-' id='p1' required><label for='p1'>Opcion 1 &mdash; Se tu propio Coach ( MXN/mes)</label></div>
+              <div class='ri'><input type='radio' name='plan' value='Opcion2-' id='p2'><label for='p2'>Opcion 2 &mdash; Coaching 1:1 Elite ( MXN/mes)</label></div>
             </div>
           </div>
-          <div class=form-group>
-            <label for=motivacion>Por que quieres el coaching? *</label>
-            <textarea id=motivacion name=motivacion placeholder=Cuentame que te trajo aqui, que has intentado antes y por que crees que este es el momento... required></textarea>
-          </div>
-          <button type=button class=btn-form-next onclick=goToStep(3)>Continuar</button>
-          <button type=button class=btn-form-back onclick=goToStep(1)>Atras</button>
+          <div class='fg'><label>Por que quieres el coaching? *</label><textarea name='motivacion' placeholder='Cuentame que te trajo aqui, que has intentado antes...' required></textarea></div>
+          <button type='button' class='btn-fnext' onclick='goStep(3)'>Continuar &rarr;</button>
+          <button type='button' class='btn-fback' onclick='goStep(1)'>&larr; Atras</button>
         </div>
-        <!-- STEP 3 -->
-        <div class=form-step id=step-3>
-          <h3 class=form-step-title>Tu <span style=color:var(--gold)>Contacto</span></h3>
-          <p class=form-step-desc>Como te escribo cuando revise tu aplicacion.</p>
-          <div class=form-group>
-            <label for=telegram>Telegram o WhatsApp *</label>
-            <input type=text id=telegram name=telegram placeholder=@usuario o +52 xxx xxx xxxx required>
+        <div class='fstep' id='fs3'>
+          <h3>Tu <span style='color:var(--gold)'>Contacto</span></h3>
+          <p class='fstep-sub'>Asi te escribo cuando revise tu aplicacion.</p>
+          <div class='fg'><label>Telegram o WhatsApp *</label><input type='text' name='contacto' placeholder='@usuario o +52 xxx xxx xxxx' required></div>
+          <div class='fg'><label>Instagram (opcional)</label><input type='text' name='instagram' placeholder='@tuusuario'></div>
+          <div class='fg'>
+            <label>Como nos conociste? *</label>
+            <select name='fuente' required>
+              <option value='' disabled selected>Selecciona una opcion</option>
+              <option>Instagram de Freddy</option>
+              <option>TikTok</option>
+              <option>Recomendacion de un amigo</option>
+              <option>Google</option>
+              <option>Otro</option>
+            </select>
           </div>
-          <div class=form-group>
-            <label for=instagram>Instagram (opcional)</label>
-            <input type=text id=instagram name=instagram placeholder=@tuusuario>
+          <div class='fg'>
+            <div class='chk-box'>
+              <input type='checkbox' id='comp' name='compromiso' required>
+              <label for='comp'>Entiendo que Umbra Training solo trabaja con personas comprometidas. Si no cumplo con el plan, acepto que se puede dar de baja mi membresia sin reembolso.</label>
+            </div>
           </div>
-          <div class=form-group>
-            <label for=como_conociste>Como conociste UMBRA TRAINING? *</label>
-            <select id=como_conociste name=como_conociste required>
-              <option value=" disabled selected>Selecciona una opcion</option>
- <option>Instagram de Freddy</option>
- <option>TikTok</option>
- <option>Recomendacion de un amigo</option>
- <option>Busqueda en Google</option>
- <option>Otro</option>
- </select>
- </div>
- <div class=form-group>
- <div class=commitment-check>
- <input type=checkbox id=compromiso name=compromiso required>
- <label for=compromiso>Entiendo que Umbra Training solo trabaja con personas comprometidas. Si no cumplo con el plan, acepto que se puede dar de baja mi membresia sin reembolso.</label>
- </div>
- </div>
- <button type=submit class=btn-form-submit>Enviar mi Aplicacion</button>
- <button type=button class=btn-form-back onclick=goToStep(2)>Atras</button>
- </div>
- <!-- SUCCESS -->
- <div class=form-success id=form-success>
- <div class=fs-icon><svg width=32 height=32 viewBox=0 0 24 24 fill=none stroke=#000 stroke-width=3><polyline points=20 6 9 17 4 12/></svg></div>
- <h3>Aplicacion Enviada</h3>
- <p>Recibi tu aplicacion. Te escribire por Telegram en menos de 24h para conocer tu caso.<br><br>Mientras tanto, sigueme en Instagram para mas contenido.</p>
- <a href=https://www.instagram.com/el.freddca/ target=_blank style=display:inline-flex;align-items:center;gap:8px;margin-top:24px;color:var(--gold);text-decoration:none;font-weight:700;font-size:.9rem;>
- <svg width=16 height=16 viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><rect x=2 y=2 width=20 height=20 rx=5/><circle cx=12 cy=12 r=4/><circle cx=17.5 cy=6.5 r=.5 fill=currentColor/></svg>
- @el.freddca
- </a>
- </div>
- </form>
- </div>
- </div>
+          <button type='submit' class='btn-fsub'>Enviar mi Aplicacion &#x2713;</button>
+          <button type='button' class='btn-fback' onclick='goStep(2)'>&larr; Atras</button>
+        </div>
+        <div class='fsuccess' id='fsuccess'>
+          <div class='fsuc-icon'><svg width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='#000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg></div>
+          <h3>Aplicacion Enviada &#x2713;</h3>
+          <p>Recibi tu solicitud. Te escribire por Telegram en menos de 24h para conocer tu caso a fondo.<br><br>Mientras tanto, sigueme en Instagram.</p>
+          <a href='https://www.instagram.com/el.freddca/' target='_blank' style='display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--gold);text-decoration:none;font-weight:700;font-size:.88rem;'>
+            <svg width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='5'/><circle cx='12' cy='12' r='4'/></svg>
+            @el.freddca
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
-<!-- FAQ -->
-<section class=faq-section reveal id=faq>
- <h2>Preguntas <span style=color:var(--text3)>Frecuentes</span></h2>
- <details class=reveal delay-1>
- <summary>Necesito experiencia previa? <span style=font-size:1.1rem;color:var(--gold)>▼</span></summary>
- <p>No. Mis planes se adaptan a tu nivel, seas principiante o avanzado. Ajusto todo a tu biotipo, estilo de vida y equipo disponible en tu gym.</p>
- </details>
- <details class=reveal delay-2>
- <summary>Como funciona el proceso de aplicacion? <span style=font-size:1.1rem;color:var(--gold)>▼</span></summary>
- <p>Llenas el formulario de esta pagina → en menos de 24h te escribo por Telegram → hablamos de tu caso → si hay match, procedes con el pago y en 48h tienes acceso a UMBRA APP.</p>
- </details>
- <details class=reveal delay-3>
- <summary>Cuanto tiempo tardan en contactarme? <span style=font-size:1.1rem;color:var(--gold)>▼</span></summary>
- <p>Maximo 24 horas. Reviso cada aplicacion personalmente antes de contactarte.</p>
- </details>
- <details class=reveal delay-4>
- <summary>Que diferencia hay entre los dos planes? <span style=font-size:1.1rem;color:var(--gold)>▼</span></summary>
- <p>La Opcion 1 usa la inteligencia de UMBRA APP para generar y ajustar tus planes automaticamente segun tus checks — sin contacto directo conmigo. La Opcion 2 (1:1) incluye mi atencion directa, ajustes manuales personalizados y soporte por Telegram.</p>
- </details>
+<section class='faq-sec reveal' id='faq'>
+  <h2>Preguntas <span style='color:var(--text3)'>Frecuentes</span></h2>
+  <details class='reveal delay-1'><summary>Necesito experiencia previa? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>No. Mis planes se adaptan a tu nivel, seas principiante o avanzado. Ajusto todo a tu biotipo, estilo de vida y equipo disponible en tu gym.</p></details>
+  <details class='reveal delay-2'><summary>Como funciona el proceso de aplicacion? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Llenas el formulario arriba &rarr; en menos de 24h te escribo por Telegram &rarr; hablamos de tu caso &rarr; si hay match, procedes con el pago y en 48h tienes acceso a UMBRA APP con todo listo.</p></details>
+  <details class='reveal delay-3'><summary>En cuanto tiempo me contactan? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Maximo 24 horas. Reviso cada aplicacion personalmente antes de contactarte.</p></details>
+  <details class='reveal delay-4'><summary>Cual es la diferencia entre los dos planes? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>La Opcion 1 usa la inteligencia de UMBRA APP para generar y ajustar tus planes automaticamente segun tus checks &mdash; sin contacto directo conmigo. La Opcion 2 (1:1 Elite) incluye mi atencion directa, ajustes manuales y soporte por Telegram.</p></details>
 </section>
-<!-- FOOTER -->
-<footer class=reveal>
- <img src=img/logo_icon.jpg alt=Umbra Training>
- <div class=footer-brand>UMBRA TRAINING</div>
- <p>&copy; 2025 UMBRA TRAINING by Freddy Carreno. Todos los derechos reservados.</p>
- <div class=footer-social>
- <a href=https://www.instagram.com/el.freddca/ target=_blank>
- <svg width=15 height=15 viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><rect x=2 y=2 width=20 height=20 rx=5/><circle cx=12 cy=12 r=4/><circle cx=17.5 cy=6.5 r=.5 fill=currentColor/></svg>
- Instagram
- </a>
- <a href=https://t.me/elfreddca target=_blank>
- <svg width=15 height=15 viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><line x1=22 y1=2 x2=11 y2=13/><polygon points=22 2 15 22 11 13 2 9 22 2/></svg>
- Telegram
- </a>
- </div>
+<footer class='reveal'>
+  <img src='img/logo_icon.jpg' alt='Umbra Training' width='44' height='44' style='border-radius:50%;object-fit:cover;display:block;margin:0 auto;'>
+  <div class='ft-brand'>UMBRA TRAINING</div>
+  <p>&copy; 2025 UMBRA TRAINING by Freddy Carreno. Todos los derechos reservados.</p>
+  <div class='ft-social'>
+    <a href='https://www.instagram.com/el.freddca/' target='_blank'>
+      <svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='5'/><circle cx='12' cy='12' r='4'/></svg>Instagram
+    </a>
+    <a href='https://t.me/elfreddca' target='_blank'>
+      <svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><line x1='22' y1='2' x2='11' y2='13'/><polygon points='22 2 15 22 11 13 2 9 22 2'/></svg>Telegram
+    </a>
+  </div>
 </footer>
-<!-- FLOATING TELEGRAM -->
-<a href=https://t.me/elfreddca target=_blank class=floating-tg aria-label=Contactar por Telegram>
- <svg viewBox=0 0 24 24 fill=none stroke=currentColor stroke-width=2><line x1=22 y1=2 x2=11 y2=13/><polygon points=22 2 15 22 11 13 2 9 22 2/></svg>
- <span>Manda DM</span>
+<a href='https://t.me/elfreddca' target='_blank' class='ftg'>
+  <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><line x1='22' y1='2' x2='11' y2='13'/><polygon points='22 2 15 22 11 13 2 9 22 2'/></svg>
+  <span>Manda DM</span>
 </a>
 <script>
-// NAVBAR SCROLL
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
-// HERO ANIMATION
-window.addEventListener('load', () => {
-  document.querySelectorAll('.hero > *').forEach((el, i) => {
-    setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 120 * i);
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>50));
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.hero>*:not(.hero-glow)').forEach((el,i)=>{
+    setTimeout(()=>{el.style.opacity='1';el.style.transform='none';},120*i);
   });
 });
-// SCROLL REVEAL
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-// MULTI-STEP FORM
-function goToStep(n) {
-  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.fsi').forEach((f, i) => {
-    f.classList.remove('active', 'done');
-    if (i + 1 < n) f.classList.add('done');
-    if (i + 1 === n) f.classList.add('active');
-  });
-  document.getElementById('step-' + n).classList.add('active');
-  document.querySelector('.form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active');}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+function goStep(n){
+  document.querySelectorAll('.fstep').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.fsi').forEach((f,i)=>{f.classList.remove('active','done');if(i+1<n)f.classList.add('done');if(i+1===n)f.classList.add('active');});
+  document.getElementById('fs'+n).classList.add('active');
+  document.querySelector('.form-wrap').scrollIntoView({behavior:'smooth',block:'start'});
 }
-// FORM SUBMIT
-document.getElementById('apply-form').addEventListener('submit', async function(e) {
+document.getElementById('apply-form').addEventListener('submit',async function(e){
   e.preventDefault();
-  const btn = this.querySelector('.btn-form-submit');
-  btn.textContent = 'Enviando...';
-  btn.disabled = true;
-  try {
-    const res = await fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      this.style.display = 'none';
-      document.querySelector('.form-steps-indicator').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    } else {
-      btn.textContent = 'Error. Intentalo de nuevo.';
-      btn.disabled = false;
-    }
-  } catch {
-    btn.textContent = 'Error de red. Intentalo de nuevo.';
-    btn.disabled = false;
-  }
+  const btn=this.querySelector('.btn-fsub');
+  btn.textContent='Enviando...';btn.disabled=true;
+  try{
+    const r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+    if(r.ok){this.style.display='none';document.querySelector('.fsi-bar').style.display='none';document.getElementById('fsuccess').style.display='block';}
+    else{btn.textContent='Error. Intentalo de nuevo.';btn.disabled=false;}
+  }catch{btn.textContent='Error de red.';btn.disabled=false;}
 });
 </script>
 </body>
