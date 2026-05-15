@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='es'>
 <head>
 <meta charset='UTF-8'>
@@ -206,12 +206,12 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
       <div>
         <h2 class='coach-nm'>Freddy <span style='color:var(--gold)'>Carreno</span></h2>
         <span class='coach-rl'>Coach Fitness Online &amp; Creador de Contenido</span>
-        <p class='coach-bio'>20 anos, 73kg, 1.70m. Llevo anos estudiando la ciencia detras del cuerpo humano para que no tengas que hacerlo tu. No soy un influencer que vende planes genericos &mdash; soy el coach que revisa tu caso y construye una estrategia unica para ti.</p>
+        <p class='coach-bio'>20 a&ntilde;os, 73kg, 1.70m. Llevo a&ntilde;os estudiando la ciencia detr&aacute;s del cuerpo humano para que no tengas que hacerlo t&uacute;. No soy un influencer que vende planes gen&eacute;ricos &mdash; soy el coach que revisa tu caso y construye una estrategia &uacute;nica para ti.</p>
         <div class='cstats'>
           <div class='cst'><div class='csv'>73<span style='font-size:.9rem'>kg</span></div><div class='csl'>Peso</div></div>
           <div class='cst'><div class='csv'>9<span style='font-size:.9rem'>%</span></div><div class='csl'>% Grasa</div></div>
           <div class='cst'><div class='csv'>3</div><div class='csl'>Certifs.</div></div>
-          <div class='cst'><div class='csv'>20</div><div class='csl'>Anos</div></div>
+          <div class='cst'><div class='csv'>20</div><div class='csl'>A&ntilde;os</div></div>
         </div>
         <div class='certs'>
           <div class='cert'>
@@ -265,13 +265,15 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
 .pc.elite .btn-pc{border-color:var(--gold);color:var(--gold);}
 .pc.elite .btn-pc:hover{background:var(--gold);color:#000;}
 .results{padding:90px 24px;background:var(--bg2);border-top:1px solid var(--border);}
-.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:940px;margin:52px auto 0;}
-@media(min-width:768px){.res-grid{grid-template-columns:repeat(3,1fr);}}
-.rc{position:relative;overflow:hidden;background:var(--bg3);border:1px solid var(--border);border-radius:7px;transition:.4s;}
+.res-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:700px;margin:52px auto 0;}
+@media(min-width:600px){.res-grid{grid-template-columns:repeat(2,1fr);max-width:940px;}}
+@media(min-width:900px){.res-grid{grid-template-columns:repeat(3,1fr);}}
+.rc{position:relative;overflow:hidden;background:var(--bg3);border:1px solid var(--border);border-radius:10px;transition:.4s;}
 .rc:hover{border-color:var(--borderg);transform:scale(1.02);}
-.rc img{width:100%;height:270px;object-fit:cover;object-position:top;display:block;transition:.4s;}
+.rc img{width:100%;height:340px;object-fit:cover;object-position:center;display:block;transition:.4s;}
+@media(min-width:600px){.rc img{height:300px;}}
 .rc:hover img{transform:scale(1.05);}
-.rc-lbl{position:absolute;bottom:0;left:0;right:0;padding:14px 12px 12px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:.76rem;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;}
+.rc-lbl{position:absolute;bottom:0;left:0;right:0;padding:16px 14px 13px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
 </style>
 <section class='plans reveal' id='planes'>
   <div class='container'>
@@ -286,8 +288,8 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         <p class='pc-desc'>La app ajusta automaticamente segun tus checks. Sin contacto directo conmigo.</p>
         <div class='pc-price'>
           <span class='plbl'>Mensual</span>
-          <span class='pval'> <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
-          <div class='pusd'>&sim; USD / mes</div>
+          <span class='pval'>300 <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
+          <div class='pusd'>&sim;17 USD / mes</div>
         </div>
         <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
@@ -306,8 +308,8 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         <p class='pc-desc'>Atencion total y personalizada. Yo construyo, ajusto y superviso cada detalle de tu proceso.</p>
         <div class='pc-price'>
           <span class='plbl'>Mensual</span>
-          <span class='pval'> <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
-          <div class='pusd'>&sim; USD / mes</div>
+          <span class='pval'>999 <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
+          <div class='pusd'>&sim;55 USD / mes</div>
         </div>
         <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
