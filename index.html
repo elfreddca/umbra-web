@@ -312,10 +312,19 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         <div class='pbadge b2'>VIP ELITE</div>
         <h3>Coaching<br>1:1 Online</h3>
         <p class='pc-desc'>Atencion total y personalizada. Yo construyo, ajusto y superviso cada detalle de tu proceso.</p>
-        <div class='pc-price'>
-          <span class='plbl'>Mensual</span>
-          <span class='pval'>999 <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
-          <div class='pusd'>&sim;55 USD / mes</div>
+        <div class='pc-price' style='display:flex; flex-direction:column; gap:8px;'>
+          <div style='display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:8px;'>
+            <span class='plbl' style='margin:0;'>Mensual</span>
+            <span class='pval' style='font-size:1.6rem;'>999 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+          </div>
+          <div style='display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:8px;'>
+            <span class='plbl' style='margin:0;'>Trimestral</span>
+            <span class='pval' style='font-size:1.6rem;'>2,499 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+          </div>
+          <div style='display:flex; justify-content:space-between; align-items:center;'>
+            <span class='plbl' style='margin:0;'>Semestral</span>
+            <span class='pval' style='font-size:1.6rem;'>4,099 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+          </div>
         </div>
         <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
@@ -463,9 +472,17 @@ footer p{color:var(--text3);font-size:.85rem;}
           <div class='fg'>
             <label>Plan de interes *</label>
             <div class='rg'>
-              <div class='ri'><input type='radio' name='plan' value='Opcion1-' id='p1' required><label for='p1'>Opcion 1 &mdash; Se tu propio Coach ( MXN/mes)</label></div>
-              <div class='ri'><input type='radio' name='plan' value='Opcion2-' id='p2'><label for='p2'>Opcion 2 &mdash; Coaching 1:1 Elite ( MXN/mes)</label></div>
+              <div class='ri'><input type='radio' name='plan' value='Opcion 1 - App' id='p1' onchange="document.getElementById('op2-duracion').style.display='none'" required><label for='p1'>Opcion 1 &mdash; Se tu propio Coach ($300 MXN/mes)</label></div>
+              <div class='ri'><input type='radio' name='plan' value='Opcion 2 - Coaching 1:1' id='p2' onchange="document.getElementById('op2-duracion').style.display='block'"><label for='p2'>Opcion 2 &mdash; Coaching 1:1 Elite</label></div>
             </div>
+          </div>
+          <div class='fg' id='op2-duracion' style='display:none; margin-top:10px; padding:16px; background:var(--bg3); border:1px solid var(--borderg); border-radius:6px;'>
+            <label style='color:var(--gold);'>Duracion del plan 1:1</label>
+            <select name='duracion_opcion2' style='margin-top:8px;'>
+              <option value='Mensual ($999 MXN)'>Mensual - $999 MXN</option>
+              <option value='Trimestral ($2,499 MXN)'>Trimestral - $2,499 MXN</option>
+              <option value='Semestral ($4,099 MXN)'>Semestral - $4,099 MXN</option>
+            </select>
           </div>
           <div class='fg'><label>Por que quieres el coaching? *</label><textarea name='motivacion' placeholder='Cuentame que te trajo aqui, que has intentado antes...' required></textarea></div>
           <button type='button' class='btn-fnext' onclick='goStep(3)'>Continuar &rarr;</button>
