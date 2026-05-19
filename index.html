@@ -295,7 +295,7 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         <div class='pc-price'>
           <span class='plbl'>Mensual</span>
           <span class='pval'>300 <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
-          <div class='pusd'>&sim;17 USD / mes</div>
+          <div class='pusd' id='usd-op1'>&sim;17 USD / mes</div>
         </div>
         <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
@@ -315,15 +315,15 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         <div class='pc-price' style='display:flex; flex-direction:column; gap:8px;'>
           <div style='display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:8px;'>
             <span class='plbl' style='margin:0;'>Mensual</span>
-            <span class='pval' style='font-size:1.6rem;'>999 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+            <span class='pval' style='font-size:1.6rem;'>999 <span style='font-size:1rem;color:var(--text3);'>MXN</span> <span id='usd-op2-m' style='font-size:.9rem;color:var(--gold);margin-left:4px;'></span></span>
           </div>
           <div style='display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:8px;'>
             <span class='plbl' style='margin:0;'>Trimestral</span>
-            <span class='pval' style='font-size:1.6rem;'>2,499 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+            <span class='pval' style='font-size:1.6rem;'>2,499 <span style='font-size:1rem;color:var(--text3);'>MXN</span> <span id='usd-op2-t' style='font-size:.9rem;color:var(--gold);margin-left:4px;'></span></span>
           </div>
           <div style='display:flex; justify-content:space-between; align-items:center;'>
             <span class='plbl' style='margin:0;'>Semestral</span>
-            <span class='pval' style='font-size:1.6rem;'>4,099 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+            <span class='pval' style='font-size:1.6rem;'>4,099 <span style='font-size:1rem;color:var(--text3);'>MXN</span> <span id='usd-op2-s' style='font-size:.9rem;color:var(--gold);margin-left:4px;'></span></span>
           </div>
         </div>
         <ul class='pc-feats'>
@@ -548,6 +548,18 @@ footer p{color:var(--text3);font-size:.85rem;}
 </footer>
 
 <script>
+// Live USD Conversion
+fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/mxn.json')
+  .then(res => res.json())
+  .then(data => {
+    const rate = data.mxn.usd;
+    document.getElementById('usd-op1').innerHTML = `&sim;$${Math.round(300 * rate)} USD / mes`;
+    document.getElementById('usd-op2-m').innerHTML = `(~$${Math.round(999 * rate)} USD)`;
+    document.getElementById('usd-op2-t').innerHTML = `(~$${Math.round(2499 * rate)} USD)`;
+    document.getElementById('usd-op2-s').innerHTML = `(~$${Math.round(4099 * rate)} USD)`;
+  })
+  .catch(err => console.log('Error USD:', err));
+
 const nb=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>50));
 window.addEventListener('load',()=>{
