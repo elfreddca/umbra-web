@@ -591,6 +591,16 @@ window.addEventListener('load',()=>{
 const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active');}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 function goStep(n){
+  const currentStep = document.querySelector('.fstep.active');
+  if(currentStep && n > parseInt(currentStep.id.replace('fs',''))) {
+    const inputs = currentStep.querySelectorAll('input[required], textarea[required], select[required]');
+    for(let el of inputs) {
+      if(!el.checkValidity()) {
+        el.reportValidity();
+        return;
+      }
+    }
+  }
   document.querySelectorAll('.fstep').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.fsi').forEach((f,i)=>{f.classList.remove('active','done');if(i+1<n)f.classList.add('done');if(i+1===n)f.classList.add('active');});
   document.getElementById('fs'+n).classList.add('active');
