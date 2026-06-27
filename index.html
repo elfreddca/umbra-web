@@ -277,7 +277,7 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
 @media(min-width:900px){.res-grid{grid-template-columns:repeat(3,1fr);}}
 .rc{position:relative;overflow:hidden;background:var(--bg3);border:1px solid var(--border);border-radius:10px;transition:.4s;}
 .rc:hover{border-color:var(--borderg);transform:scale(1.02);}
-.rc img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;transition:.4s;background:#000;}
+.rc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;display:block;transition:.4s;}
 .rc:hover img{transform:scale(1.05);}
 .rc-lbl{position:absolute;bottom:0;left:0;right:0;padding:16px 14px 13px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
 </style>
@@ -366,7 +366,7 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
     <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:14px;'>Sus <span style='color:var(--gold)'>Transformaciones</span></h2>
     <p style='color:var(--text2);font-size:1rem;max-width:500px;margin:0 auto;'>Personas reales, comprometidas con el proceso.</p>
     <div class='res-grid'>
-      <div class='rc reveal delay-1'><img src='img/prep_competition.jpg' alt='Prep Competition' loading='lazy'><div class='rc-lbl'>PREP COMPETITION</div></div>
+      <div class='rc reveal delay-1'><img src='img/prep_competition.jpg' alt='Prep Competition' loading='lazy' style='object-fit:contain;background:#111;'><div class='rc-lbl'>PREP COMPETITION</div></div>
       <div class='rc reveal delay-1'><img src='img/testi_side.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Definicion</div></div>
       <div class='rc reveal delay-3'><img src='img/testi_doublebicep.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Crecimiento Muscular</div></div>
       <div class='rc reveal delay-1'><img src='img/testi_vshape.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Recomposicion</div></div>
