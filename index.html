@@ -294,8 +294,8 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         <p class='pc-desc'>La app ajusta automaticamente segun tus checks. Sin contacto directo conmigo.</p>
         <div class='pc-price'>
           <span class='plbl'>Mensual</span>
-          <span class='pval'>300 <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
-          <div class='pusd' id='usd-op1'>&sim;17 USD / mes</div>
+          <span class='pval'>599 <span style='font-size:1.2rem;color:var(--text3);'>MXN</span></span>
+          <div class='pusd' id='usd-op1'>&sim;33 USD / mes</div>
         </div>
         <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
@@ -306,7 +306,7 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
           <li class='no'>Contacto directo con el coach</li>
           <li class='no'>Personalizacion manual</li>
         </ul>
-        <a href='#aplicar' class='btn-pc'>Aplicar a Opcion 1</a>
+        <a href='#' id='link-pago-app' class='btn-pc' style='background:var(--gold);color:#000;'>Suscribirse a Opcion 1</a>
       </div>
       <div class='pc elite reveal delay-2'>
         <div class='pbadge b2'>VIP ELITE</div>
@@ -316,11 +316,10 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
           <!-- Mensual -->
           <div style='display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:14px;'>
             <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
-              <span class='plbl' style='margin:0;'>Mensual <span style='background:rgba(212,175,55,0.15);color:var(--gold);padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0;'>-16%</span></span>
-              <span style='text-decoration:line-through; color:var(--text3); font-size:0.9rem; font-weight:600;'>$1,199</span>
+              <span class='plbl' style='margin:0;'>Mensual</span>
             </div>
             <div style='display:flex; justify-content:space-between; align-items:baseline;'>
-              <span class='pval' style='font-size:2rem; line-height:1;'>999 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span class='pval' style='font-size:2rem; line-height:1;'>1,199 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
               <span id='usd-op2-m' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
             </div>
           </div>
@@ -493,14 +492,14 @@ footer p{color:var(--text3);font-size:.85rem;}
           <div class='fg'>
             <label>Plan de interes *</label>
             <div class='rg'>
-              <div class='ri'><input type='radio' name='plan' value='Opcion 1 - App' id='p1' onchange="document.getElementById('op2-duracion').style.display='none'" required><label for='p1'>Opcion 1 &mdash; Se tu propio Coach ($300 MXN/mes)</label></div>
+              <div class='ri'><input type='radio' name='plan' value='Opcion 1 - App' id='p1' onchange="document.getElementById('op2-duracion').style.display='none'" required><label for='p1'>Opcion 1 &mdash; Se tu propio Coach ($599 MXN/mes)</label></div>
               <div class='ri'><input type='radio' name='plan' value='Opcion 2 - Coaching 1:1' id='p2' onchange="document.getElementById('op2-duracion').style.display='block'"><label for='p2'>Opcion 2 &mdash; Coaching 1:1 Elite</label></div>
             </div>
           </div>
           <div class='fg' id='op2-duracion' style='display:none; margin-top:10px; padding:16px; background:var(--bg3); border:1px solid var(--borderg); border-radius:6px;'>
             <label style='color:var(--gold);'>Duracion del plan 1:1</label>
             <select name='duracion_opcion2' style='margin-top:8px;'>
-              <option value='Mensual ($999 MXN)'>Mensual - $999 MXN</option>
+              <option value='Mensual ($1,199 MXN)'>Mensual - $1,199 MXN</option>
               <option value='Trimestral ($2,499 MXN)'>Trimestral - $2,499 MXN</option>
               <option value='Semestral ($4,099 MXN)'>Semestral - $4,099 MXN</option>
             </select>
@@ -575,8 +574,8 @@ fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenci
   .then(res => res.json())
   .then(data => {
     const rate = data.mxn.usd;
-    document.getElementById('usd-op1').innerHTML = `&sim;$${Math.round(300 * rate)} USD / mes`;
-    document.getElementById('usd-op2-m').innerHTML = `(~$${Math.round(999 * rate)} USD)`;
+    document.getElementById('usd-op1').innerHTML = `&sim;$${Math.round(599 * rate)} USD / mes`;
+    document.getElementById('usd-op2-m').innerHTML = `(~$${Math.round(1199 * rate)} USD)`;
     document.getElementById('usd-op2-t').innerHTML = `(~$${Math.round(2499 * rate)} USD)`;
     document.getElementById('usd-op2-s').innerHTML = `(~$${Math.round(4099 * rate)} USD)`;
   })
