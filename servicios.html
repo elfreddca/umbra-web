@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<title>Freddy Carreño | Coaching Fitness Online Elite</title>
+<meta name='description' content='Coaching fitness online personalizado basado en ciencia. Solo para personas comprometidas. Aplica con Freddy Carreno.'>
+<meta property='og:title' content='Freddy Carreño | Coaching Fitness Online Elite'>
+<meta property='og:description' content='Coaching fitness online personalizado basado en ciencia. Solo para personas comprometidas. Aplica con Freddy Carreno.'>
+<meta property='og:image' content='https://byfreddca-umbra-web-xi.vercel.app/img/logo_icon.jpg'>
+<meta property='og:url' content='https://byfreddca-umbra-web-xi.vercel.app/servicios.html'>
+<meta property='og:type' content='website'>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Teko:wght@500;700&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#141414;--bg2:#1C1C1C;--bg3:#242424;--gold:#D4AF37;--gold2:#E8C840;--text:#F0EDE8;--text2:#A8A8A8;--text3:#666;--border:rgba(255,255,255,0.09);--borderg:rgba(212,175,55,0.28);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.92;margin:0;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.reveal{opacity:0;transform:translateY(28px);transition:all .75s cubic-bezier(.16,1,.3,1);visibility:hidden;}
+.reveal.active{opacity:1;transform:none;visibility:visible;}
+.delay-1{transition-delay:.1s;}.delay-2{transition-delay:.2s;}.delay-3{transition-delay:.3s;}.delay-4{transition-delay:.4s;}
+.slbl{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+.nav{position:fixed;top:0;left:0;right:0;height:66px;z-index:1000;display:flex;align-items:center;padding:0 30px;transition:.4s;}
+.nav.scrolled{background:rgba(0,0,0,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1100px;margin:0 auto;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.nav-logo span{font-family:'Teko';font-size:1.3rem;font-weight:700;letter-spacing:2px;color:#fff;}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text2);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:.3s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:var(--gold);color:#000;padding:8px 20px;font-family:'Teko';font-size:1.05rem;font-weight:700;letter-spacing:1px;}
+.nav-cta:hover{background:#fff!important;color:#000!important;}
+@media(max-width:768px){.nav-links{display:none;}.nav{padding:0 20px;}}
+.hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 24px 80px;position:relative;overflow:hidden;}
+.hero-glow{position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(212,175,55,.07) 0%,transparent 70%);pointer-events:none;}
+.hero>*:not(.hero-glow){opacity:0;transform:translateY(28px);transition:all .9s cubic-bezier(.16,1,.3,1);}
+.brand-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.12);padding:7px 20px;border-radius:50px;margin-bottom:32px;background:rgba(255,255,255,.03);}
+.brand-badge img{width:26px;height:26px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;}
+.brand-badge .bn{font-family:'Teko';font-weight:700;letter-spacing:3px;font-size:1.15rem;}
+.brand-badge .bs{font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-left:4px;}
+.hero-eye{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+.hero h1{font-size:clamp(4rem,14vw,9rem);letter-spacing:-2px;font-weight:700;margin-bottom:20px;line-height:.88;}
+.h1-l1{display:block;color:#fff;}
+.h1-l2{display:block;color:var(--gold);}
+.hero-sub{font-size:clamp(.9rem,2.5vw,1.15rem);color:var(--text2);max-width:520px;line-height:1.7;margin-bottom:40px;}
+.btn-apply{position:relative;display:inline-flex;align-items:center;gap:12px;padding:18px 44px;background:var(--gold);color:#000;font-family:'Teko';font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-decoration:none;overflow:hidden;transition:.4s;box-shadow:0 0 50px rgba(212,175,55,.2);}
+.btn-apply::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shim 2.5s infinite;}
+@keyframes shim{to{left:100%;}}
+.btn-apply:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(212,175,55,.35);background:#fff;}
+.btn-apply svg{width:20px;height:20px;transition:.3s;}
+.btn-apply:hover svg{transform:translateX(5px);}
+.hero-trust{margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;}
+.ti{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--text3);font-weight:600;}
+.ti svg{width:13px;height:13px;color:var(--gold);}
+.td{width:1px;height:14px;background:var(--border);}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FWDD702DH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FWDD702DH');
+</script>
+</head>
+<body>
+
+<nav class='nav' id='navbar'>
+  <div class='nav-in'>
+    <a href='index.html' class='nav-logo'><img src='img/logo_icon.jpg' alt='Freddy Carreño' width='32' height='32' style='border-radius:50%;object-fit:cover;'><span>FREDDY CARREÑO</span></a>
+    <ul class='nav-links'>
+      <li><a href='index.html#guias'>Guías PDF</a></li>
+      <li><a href='#beneficios'>Beneficios</a></li>
+      <li><a href='#planes'>Planes</a></li>
+      <li><a href='#resultados'>Resultados</a></li>
+      <li><a href='https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A' class='nav-cta' target='_blank'>APLICAR</a></li>
+    </ul>
+  </div>
+</nav>
+<section class='hero' id='inicio'>
+  <div class='hero-glow'></div>
+  <div class='brand-badge'>
+    <img src='img/logo_icon.jpg' alt='Logo' width='26' height='26' style='border-radius:50%;object-fit:cover;flex-shrink:0;'>
+    <span class='bn'>FREDDY CARREÑO</span><span class='bs'>@el.freddca</span>
+  </div>
+  <span class='hero-eye'>Coaching Fitness Online &mdash; Solo plazas limitadas</span>
+  <h1><span class='h1-l1'>TU ULTIMA</span><span class='h1-l2'>TRANSFORMACION FISICA</span></h1>
+  <p class='hero-sub'>Te ayudo a construir <strong>el fisico que realmente quieres</strong> sin perder mas el tiempo. Sudar no es progresar.</p>
+
+  <div class='hero-trust'>
+    <span class='ti'>
+      <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><polyline points='20 6 9 17 4 12'/></svg>3 Certificaciones
+    </span>
+    <span class='td'></span>
+    <span class='ti'>
+      <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><polyline points='20 6 9 17 4 12'/></svg>App de coaching incluida
+    </span>
+    <span class='td'></span>
+    <span class='ti'>
+      <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5'><polyline points='20 6 9 17 4 12'/></svg>Resultados comprobados
+    </span>
+  </div>
+</section>
+
+<section class='results reveal' id='resultados'>
+  <div class='container' style='text-align:center;'>
+    <span class='slbl'>Resultados Reales</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:14px;'>Sus <span style='color:var(--gold)'>Transformaciones</span></h2>
+    <p style='color:var(--text2);font-size:1rem;max-width:500px;margin:0 auto;'>Personas reales, comprometidas con el proceso.</p>
+    <div class='res-grid'>
+      <div class='rc reveal delay-1'><img src='img/prep_competition.jpg' alt='Prep Vibes' loading='lazy' style='object-fit:cover;object-position:top;'><div class='rc-lbl'>PREP VIBES</div></div>
+      <div class='rc reveal delay-1'><img src='img/testi_side.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Definicion</div></div>
+      <div class='rc reveal delay-3'><img src='img/testi_doublebicep.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Crecimiento Muscular</div></div>
+      <div class='rc reveal delay-1'><img src='img/testi_vshape.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Recomposicion</div></div>
+      <div class='rc reveal delay-2'><img src='img/testi_woman.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Transformacion Femenina</div></div>
+      <div class='rc reveal delay-3'><img src='img/testi_legs.jpg' alt='Resultado' loading='lazy'><div class='rc-lbl'>Quema de Grasa</div></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.how{padding:90px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.how-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:880px;margin:50px auto 0;}
+@media(min-width:768px){.how-grid{grid-template-columns:repeat(3,1fr);}}
+.how-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:36px 26px;text-align:left;transition:.3s;}
+.how-card:hover{border-color:var(--borderg);transform:translateY(-4px);}
+.snum{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#000;display:flex;align-items:center;justify-content:center;font-family:'Teko';font-size:1.6rem;font-weight:700;margin-bottom:20px;}
+.stit{font-family:'Manrope';font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:9px;}
+.sdesc{color:var(--text2);font-size:.93rem;line-height:1.6;}
+.bens{padding:90px 24px;background:var(--bg);}
+.ben-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:880px;margin:50px auto 0;}
+@media(min-width:768px){.ben-grid{grid-template-columns:repeat(2,1fr);}}
+.ben-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:30px;transition:.3s;}
+.ben-card:hover{border-color:var(--borderg);transform:translateY(-3px);}
+.ben-icon{width:42px;height:42px;margin-bottom:20px;color:var(--gold);background:rgba(212,175,55,.06);padding:9px;border-radius:9px;border:1px solid rgba(212,175,55,.15);display:block;}
+.ben-tit{font-family:'Manrope';font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:9px;}
+.ben-desc{color:var(--text2);font-size:.94rem;line-height:1.65;}
+</style>
+<section class='how reveal' id='como-funciona'>
+  <div class='container'>
+    <span class='slbl'>El Proceso</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:16px;'>Como <span style='color:var(--gold)'>Funciona</span></h2>
+    <p style='color:var(--text2);font-size:1.05rem;max-width:540px;margin:0 auto;line-height:1.7;'>Sin pagos directos. Primero hablamos, luego construimos tu estrategia.</p>
+    <div class='how-grid'>
+      <div class='how-card reveal delay-1'>
+        <div class='snum'>1</div>
+        <div class='stit'>Aplica al Coaching</div>
+        <div class='sdesc'>Me escribes por WhatsApp. Me cuentas tu situacion, tus objetivos y cual plan te interesa.</div>
+      </div>
+      <div class='how-card reveal delay-2'>
+        <div class='snum'>2</div>
+        <div class='stit'>Te Contacto Personalmente</div>
+        <div class='sdesc'>En menos de 24h te respondo para conocer tu caso a fondo y ver si hacemos match.</div>
+      </div>
+      <div class='how-card reveal delay-3'>
+        <div class='snum'>3</div>
+        <div class='stit'>Empieza tu Transformacion</div>
+        <div class='sdesc'>Acceso a tu app en 48h con tu plan de entrenamiento y nutricion personalizado listo para arrancar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class='bens reveal' id='beneficios'>
+  <div class='container' style='text-align:center;'>
+    <span class='slbl'>Lo que incluye</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:16px;'>Por que <span style='color:var(--gold)'>Conmigo</span></h2>
+    <div class='ben-grid'>
+      <div class='ben-card reveal delay-1'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'/><polyline points='17 6 23 6 23 12'/></svg>
+        <div class='ben-tit'>Entrenamiento con Ciencia</div>
+        <p class='ben-desc'>Planes de hipertrofia basados en evidencia, autorregulacion con RIR y sobrecarga progresiva real. Tu rutina evoluciona contigo.</p>
+      </div>
+      <div class='ben-card reveal delay-2'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='2' x2='11' y2='13'/><polygon points='22 2 15 22 11 13 2 9 22 2'/></svg>
+        <div class='ben-tit'>Soporte Directo por Telegram</div>
+        <p class='ben-desc'>Comunicacion directa conmigo. Resuelvo tus dudas en tiempo real para que tu ejecucion nunca falle.</p>
+      </div>
+      <div class='ben-card reveal delay-3'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='4' y1='21' x2='4' y2='14'/><line x1='4' y1='10' x2='4' y2='3'/><line x1='12' y1='21' x2='12' y2='12'/><line x1='12' y1='8' x2='12' y2='3'/><line x1='20' y1='21' x2='20' y2='16'/><line x1='20' y1='12' x2='20' y2='3'/><line x1='1' y1='14' x2='7' y2='14'/><line x1='9' y1='8' x2='15' y2='8'/><line x1='17' y1='16' x2='23' y2='16'/></svg>
+        <div class='ben-tit'>Check-ins con Estrategia</div>
+        <p class='ben-desc'>Ajustamos macros y volumen segun tu progreso real. Cada semana tenemos datos concretos para decidir el siguiente paso.</p>
+      </div>
+      <div class='ben-card reveal delay-4'>
+        <svg class='ben-icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 12 12 17 22 12'/><polyline points='2 17 12 22 22 17'/></svg>
+        <div class='ben-tit'>Tu App de Coaching</div>
+        <p class='ben-desc'>Tu plan, alimentacion, guia de suplementacion y registro de cargas en una sola app nativa para iOS y Android.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+.plans{padding:90px 24px;background:var(--bg);text-align:center;border-top:1px solid var(--border);}
+.plans-note{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.07);border:1px solid var(--borderg);padding:9px 18px;border-radius:50px;font-size:.78rem;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:18px 0 0;}
+.plans-wr{display:flex;flex-wrap:wrap;gap:26px;justify-content:center;max-width:940px;margin:52px auto 0;}
+.pc{flex:1;min-width:290px;max-width:430px;background:var(--bg2);border:1px solid var(--border);padding:44px 36px;text-align:left;position:relative;transition:.4s;display:flex;flex-direction:column;}
+.pc:hover{border-color:rgba(255,255,255,.18);transform:translateY(-5px);}
+.pc.elite{border-color:var(--borderg);background:linear-gradient(160deg,rgba(212,175,55,.05) 0%,transparent 60%);}
+.pc.elite:hover{border-color:var(--gold);}
+.pbadge{position:absolute;top:-12px;right:26px;padding:4px 14px;font-family:'Teko';font-size:.95rem;font-weight:700;letter-spacing:1px;}
+.pbadge.b1{background:#fff;color:#000;}
+.pbadge.b2{background:var(--gold);color:#000;}
+.pc h3{font-size:2.2rem;margin-bottom:8px;}
+.pc.elite h3{color:var(--gold);}
+.pc-desc{color:var(--text3);font-size:.9rem;line-height:1.5;margin-bottom:24px;}
+.pc-price{border-top:1px solid var(--border);padding:20px 0 24px;}
+.pc-price .pval{font-family:'Teko';font-size:2.6rem;font-weight:500;}
+.pc-price .plbl{font-size:.9rem;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;}
+.pc-price .pusd{font-size:.8rem;color:var(--text3);}
+.pc-feats{list-style:none;margin:20px 0 28px;flex-grow:1;}
+.pc-feats li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--text2);display:flex;align-items:center;gap:11px;font-size:.93rem;}
+.pc-feats li:last-child{border-bottom:none;}
+.pc-feats li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.pc-feats li.no{opacity:.4;text-decoration:line-through;}
+.pc-feats li.no::before{content:'✕';color:var(--text3);}
+.btn-pc{display:block;width:100%;padding:15px;text-align:center;font-family:'Teko';font-size:1.4rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:.3s;border:2px solid rgba(255,255,255,.14);color:#fff;background:transparent;}
+.btn-pc:hover{background:#fff;color:#000;border-color:#fff;}
+.pc.elite .btn-pc{border-color:var(--gold);color:var(--gold);}
+.pc.elite .btn-pc:hover{background:var(--gold);color:#000;}
+.results{padding:90px 24px;background:var(--bg2);border-top:1px solid var(--border);}
+.res-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:700px;margin:52px auto 0;}
+@media(min-width:600px){.res-grid{grid-template-columns:repeat(2,1fr);max-width:940px;}}
+@media(min-width:900px){.res-grid{grid-template-columns:repeat(3,1fr);}}
+.rc{position:relative;overflow:hidden;background:var(--bg3);border:1px solid var(--border);border-radius:10px;transition:.4s;}
+.rc:hover{border-color:var(--borderg);transform:scale(1.02);}
+.rc img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;display:block;transition:.4s;}
+.rc:hover img{transform:scale(1.05);}
+.rc-lbl{position:absolute;bottom:0;left:0;right:0;padding:16px 14px 13px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;}
+</style>
+
+<section class='plans reveal' id='planes'>
+  <div class='container'>
+    <span class='slbl'>Nuestros Planes</span>
+    <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:12px;'>Elige tu <span style='color:var(--gold)'>Nivel</span></h2>
+    <p style='color:var(--text2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.7;'>Aplica primero &mdash; hablamos y elegimos juntos lo que mas te conviene.</p>
+    <div class='plans-note'>&#9733; Solo trabajo con personas comprometidas &mdash; plazas limitadas</div>
+    <div class='plans-wr'>
+
+      <div class='pc elite reveal delay-2'>
+        <div class='pbadge b2'>VIP ELITE</div>
+        <h3>Coaching<br>1:1 Online</h3>
+        <p class='pc-desc'>Atencion total y personalizada. Yo construyo, ajusto y superviso cada detalle de tu proceso.</p>
+        <div style='background:rgba(212,175,55,.08); border:1px solid rgba(212,175,55,.3); border-radius:6px; padding:16px; margin-bottom:24px;'>
+          <strong style='color:var(--gold); display:block; margin-bottom:8px; font-size:0.95rem; text-transform:uppercase; letter-spacing:1px;'>&#9888; Politica Estricta</strong>
+          <p style='color:#fff; font-size:0.9rem; line-height:1.6; margin:0;'>Al acceder al coaching, entiendo que Freddy Carreño <strong>solo trabaja con personas comprometidas</strong>. Si no cumplo con minimo 3 checks dentro del mes junto con el llenado de mis datos de entrenamiento/nutricion, acepto que se puede dar de baja mi membresia sin reembolso para que otra persona pueda aprovechar mi espacio.</p>
+        </div>
+        <div class='pc-price' style='display:flex; flex-direction:column; gap:14px; text-align:left; padding:10px 0;'>
+          <!-- Mensual -->
+          <div style='display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:14px;'>
+            <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
+              <span class='plbl' style='margin:0;'>Mensual</span>
+            </div>
+            <div style='display:flex; justify-content:space-between; align-items:baseline;'>
+              <span class='pval' style='font-size:2rem; line-height:1;'>1,199 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span id='usd-op2-m' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
+            </div>
+          </div>
+          <!-- Trimestral -->
+          <div style='display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:14px;'>
+            <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
+              <span class='plbl' style='margin:0;'>Trimestral <span style='background:rgba(212,175,55,0.15);color:var(--gold);padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0;'>-16%</span></span>
+              <span style='text-decoration:line-through; color:var(--text3); font-size:0.9rem; font-weight:600;'>$2,999</span>
+            </div>
+            <div style='display:flex; justify-content:space-between; align-items:baseline;'>
+              <span class='pval' style='font-size:2rem; line-height:1;'>2,499 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span id='usd-op2-t' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
+            </div>
+          </div>
+          <!-- Semestral -->
+          <div style='display:flex; flex-direction:column;'>
+            <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
+              <span class='plbl' style='margin:0;'>Semestral <span style='background:rgba(212,175,55,0.15);color:var(--gold);padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0;'>-25%</span></span>
+              <span style='text-decoration:line-through; color:var(--text3); font-size:0.9rem; font-weight:600;'>$5,489</span>
+            </div>
+            <div style='display:flex; justify-content:space-between; align-items:baseline;'>
+              <span class='pval' style='font-size:2rem; line-height:1;'>4,099 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span id='usd-op2-s' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
+            </div>
+          </div>
+        </div>
+        <ul class='pc-feats'>
+          <li>Acceso a la app de coaching</li>
+          <li>Plan de Entrenamiento 100% personalizado</li>
+          <li>Plan Alimenticio con tus gustos y tiempos</li>
+          <li>Guia de Suplementacion</li>
+          <li>Check-ins semanales analizados por mi</li>
+          <li>Soporte directo por Telegram</li>
+          <li>Ajustes manuales segun tu progreso</li>
+        </ul>
+        <a href='https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A' class='btn-pc' target='_blank'>Aplicar a Coaching 1:1</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.form-sec{padding:90px 24px;background:var(--bg);border-top:1px solid var(--border);}
+.form-wrap{max-width:680px;margin:52px auto 0;background:var(--bg2);border:1px solid var(--borderg);padding:48px 40px;}
+@media(max-width:600px){.form-wrap{padding:32px 20px;}}
+.fsi-bar{display:flex;margin-bottom:36px;border:1px solid var(--border);}
+.fsi{flex:1;padding:11px 6px;text-align:center;font-family:'Teko';font-size:.95rem;letter-spacing:1px;color:var(--text3);transition:.3s;}
+.fsi.active{background:var(--gold);color:#000;}
+.fsi.done{background:rgba(212,175,55,.14);color:var(--gold);}
+.fstep{display:none;}
+.fstep.active{display:block;}
+.fstep h3{font-size:2rem;margin-bottom:8px;}
+.fstep-sub{color:var(--text2);font-size:.9rem;margin-bottom:26px;line-height:1.6;}
+.fg{margin-bottom:20px;}
+.fg label{display:block;font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin-bottom:7px;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:#fff;padding:12px 15px;font-family:'Manrope';font-size:.97rem;outline:none;transition:.3s;border-radius:3px;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--borderg);}
+.fg select option{background:#111;}
+.fg textarea{resize:vertical;min-height:90px;}
+.rg{display:flex;flex-direction:column;gap:9px;}
+.ri{display:flex;align-items:center;gap:11px;padding:11px 14px;border:1px solid var(--border);border-radius:5px;cursor:pointer;transition:.3s;}
+.ri:hover{border-color:var(--borderg);}
+.ri input{accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;}
+.ri label{cursor:pointer;font-size:.94rem;color:var(--text2);}
+.rg2{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:500px){.frow{grid-template-columns:1fr;}.rg2{grid-template-columns:1fr 1fr;}}
+.btn-fnext,.btn-fback,.btn-fsub{padding:14px 30px;font-family:'Teko';font-size:1.35rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:.3s;width:100%;margin-top:20px;display:block;}
+.btn-fnext,.btn-fsub{background:var(--gold);color:#000;}
+.btn-fnext:hover,.btn-fsub:hover{background:#fff;}
+.btn-fback{background:transparent;border:1px solid var(--border);color:var(--text2);margin-top:10px;}
+.btn-fback:hover{border-color:#fff;color:#fff;}
+.chk-box{display:flex;align-items:flex-start;gap:11px;padding:13px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:5px;}
+.chk-box input{accent-color:var(--gold);width:17px;height:17px;flex-shrink:0;margin-top:2px;}
+.chk-box label{font-size:.87rem;color:var(--text2);line-height:1.5;cursor:pointer;}
+.fsuccess{display:none;text-align:center;padding:36px 0;}
+.fsuc-icon{width:64px;height:64px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.fsuccess h3{font-size:2.2rem;margin-bottom:11px;}
+.fsuccess p{color:var(--text2);line-height:1.7;font-size:.97rem;}
+.faq-sec{padding:90px 24px;max-width:760px;margin:0 auto;}
+.faq-sec h2{text-align:center;font-size:clamp(2.3rem,5vw,3.6rem);margin-bottom:44px;}
+details{border-bottom:1px solid var(--border);padding:22px 0;cursor:pointer;}
+details>summary{list-style:none;}
+details>summary::-webkit-details-marker{display:none;}
+summary{font-family:'Teko';font-size:1.65rem;font-weight:500;color:#fff;outline:none;display:flex;justify-content:space-between;align-items:center;letter-spacing:.5px;}
+details p{color:var(--text2);font-size:1rem;margin-top:16px;line-height:1.75;}
+footer{text-align:center;padding:56px 24px;border-top:1px solid var(--border);background:var(--bg);}
+footer img{width:44px;height:44px;border-radius:50%;object-fit:cover;opacity:.85;display:block;margin:0 auto;}
+.ft-brand{font-family:'Teko';font-size:1.7rem;letter-spacing:2px;color:#fff;margin:16px 0 7px;}
+footer p{color:var(--text3);font-size:.85rem;}
+.ft-social{display:flex;justify-content:center;gap:14px;margin-top:18px;}
+.ft-social a{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--text3);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:7px 14px;border:1px solid var(--border);transition:.3s;}
+.ft-social a:hover{border-color:var(--gold);color:var(--gold);}
+.ftg{position:fixed;bottom:26px;right:26px;background:var(--gold);color:#000;padding:10px 18px;border-radius:50px;display:flex;align-items:center;gap:9px;box-shadow:0 4px 20px rgba(212,175,55,.3);z-index:1000;transition:.3s;text-decoration:none;}
+.ftg:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(212,175,55,.5);background:#fff;}
+.ftg svg{width:18px;height:18px;}
+.ftg span{font-family:'Manrope';font-weight:700;font-size:.82rem;white-space:nowrap;}
+@media(max-width:768px){.ftg{bottom:18px;right:18px;padding:12px;border-radius:50%;}.ftg span{display:none;}}
+</style>
+
+<style>
+.coach-sec{padding:90px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);}
+.coach-in{max-width:940px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:52px;align-items:center;}
+@media(min-width:768px){.coach-in{grid-template-columns:300px 1fr;}}
+.coach-photo-box{position:relative;max-width:300px;}
+.coach-photo-ph{width:100%;aspect-ratio:3/4;background:var(--bg3);border:2px dashed var(--borderg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text3);font-size:.82rem;gap:10px;}
+.cbadge{position:absolute;bottom:-18px;right:-10px;background:var(--gold);padding:11px 16px;text-align:center;}
+.cbadge .cv{font-family:'Teko';font-size:2rem;font-weight:700;color:#000;line-height:1;}
+.cbadge .cl{font-size:.6rem;font-weight:700;letter-spacing:1px;color:#000;text-transform:uppercase;}
+.coach-nm{font-size:clamp(2.8rem,6vw,4.2rem);margin-bottom:6px;}
+.coach-rl{font-family:'Manrope';font-size:.88rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block;}
+.coach-bio{color:var(--text2);font-size:1rem;line-height:1.75;margin-bottom:28px;}
+.cstats{display:flex;gap:20px;flex-wrap:wrap;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:28px;}
+.cst .csv{font-family:'Teko';font-size:1.9rem;color:var(--gold);font-weight:700;line-height:1;}
+.cst .csl{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.certs{display:flex;flex-direction:column;gap:9px;}
+.cert{display:flex;align-items:flex-start;gap:11px;padding:11px 14px;background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.12);border-radius:7px;}
+.cert svg{width:15px;height:15px;color:var(--gold);flex-shrink:0;margin-top:2px;}
+.cert .cn{font-size:.88rem;font-weight:700;color:#fff;line-height:1.3;}
+.cert .ci{font-size:.75rem;color:var(--text3);}
+.ig-btn{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:9px 20px;border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:.3s;}
+.ig-btn:hover{border-color:var(--gold);color:var(--gold);}
+</style>
+<section class='coach-sec reveal' id='coach'>
+  <div class='container'>
+    <div style='text-align:center;margin-bottom:52px;'>
+      <span class='slbl'>Tu Coach</span>
+      <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);'>Quien <span style='color:var(--gold)'>Soy</span></h2>
+    </div>
+    <div class='coach-in'>
+      <div class='coach-photo-box'>
+        <img src='img/photo_2026-06-27_03-15-27.jpg' alt='Freddy Carreno - Coach' style='width:100%;border-radius:4px;display:block;border:1px solid var(--borderg);'>
+      </div>
+      <div>
+        <h2 class='coach-nm'>Freddy <span style='color:var(--gold)'>Carreno</span></h2>
+        <span class='coach-rl'>Coach Fitness Online &amp; Creador de Contenido</span>
+        <p class='coach-bio'>Llevo a&ntilde;os estudiando la ciencia detr&aacute;s del cuerpo humano para que no tengas que hacerlo t&uacute;. No soy un influencer que vende planes gen&eacute;ricos &mdash; soy el coach que revisa tu caso y construye una estrategia &uacute;nica para ti.</p>
+        <div class='cstats'>
+          <div class='cst'><div class='csv'>3</div><div class='csl'>Certificaciones</div></div>
+        </div>
+        <div class='certs'>
+          <div class='cert'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89L17 22l-5-3-5 3 1.523-9.11'/></svg>
+            <div><div class='cn'>Nutricion Fitness y Deportiva</div><div class='ci'>Instituto IIAF</div></div>
+          </div>
+          <div class='cert'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89L17 22l-5-3-5 3 1.523-9.11'/></svg>
+            <div><div class='cn'>Especialista en Programacion para la Hipertrofia</div><div class='ci'>APEKS Performance</div></div>
+          </div>
+          <div class='cert'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='8' r='6'/><path d='M15.477 12.89L17 22l-5-3-5 3 1.523-9.11'/></svg>
+            <div><div class='cn'>Especializacion en Intensificacion de Gluteo</div><div class='ci'>Certificacion Especializada</div></div>
+          </div>
+        </div>
+        <a href='https://www.instagram.com/el.freddca/' target='_blank' class='ig-btn'>
+          <svg width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='5'/><circle cx='12' cy='12' r='4'/><circle cx='17.5' cy='6.5' r='1' fill='currentColor'/></svg>
+          @el.freddca
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='faq-sec reveal' id='faq'>
+  <h2>Preguntas <span style='color:var(--text3)'>Frecuentes</span></h2>
+  <details class='reveal delay-1'><summary>Necesito experiencia previa? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>No. Mis planes se adaptan a tu nivel, seas principiante o avanzado. Ajusto todo a tu biotipo, estilo de vida y equipo disponible en tu gym.</p></details>
+  <details class='reveal delay-2'><summary>Como empiezo? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Me escribes por WhatsApp &rarr; en menos de 24h te respondo &rarr; hablamos de tu caso &rarr; si hay match, haces el pago y en 48h tienes acceso a tu app con todo listo.</p></details>
+  <details class='reveal delay-3'><summary>Cuanto cuesta? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>El Coaching 1:1 cuesta $1,199 MXN al mes. Si pagas por adelantado ahorras: $2,499 MXN por 3 meses o $4,099 MXN por 6 meses.</p></details>
+  <details class='reveal delay-4'><summary>Que incluye el coaching? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Acceso a la app de coaching, plan de entrenamiento y alimentacion personalizados, guia de suplementacion, check-ins semanales revisados por mi, ajustes manuales segun tu progreso y soporte directo por Telegram.</p></details>
+  <details class='reveal delay-5'><summary>Que pasa si no cumplo con mis check-ins? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Trabajo con personas comprometidas. Si no completas minimo 3 checks en el mes junto con tus datos de entrenamiento y nutricion, tu membresia puede darse de baja sin reembolso para darle el lugar a otra persona.</p></details>
+</section>
+<footer class='reveal'>
+  <img src='img/logo_icon.jpg' alt='Freddy Carreño' width='44' height='44' style='border-radius:50%;object-fit:cover;display:block;margin:0 auto;'>
+  <div class='ft-brand'>FREDDY CARREÑO</div>
+  <p>&copy; <span id='yr'>2026</span> Freddy Carreño. Todos los derechos reservados.</p>
+  <div class='ft-social'>
+    <a href='https://www.instagram.com/el.freddca/' target='_blank'>
+      <svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='5'/><circle cx='12' cy='12' r='4'/></svg>Instagram
+    </a>
+    <a href='https://t.me/elfreddca' target='_blank'>
+      <svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><line x1='22' y1='2' x2='11' y2='13'/><polygon points='22 2 15 22 11 13 2 9 22 2'/></svg>Telegram
+    </a>
+  </div>
+</footer>
+
+<script>
+// Live USD Conversion
+fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/mxn.json')
+  .then(res => res.json())
+  .then(data => {
+    const rate = data.mxn.usd;
+    document.getElementById('usd-op2-m').innerHTML = `(~$${Math.round(1199 * rate)} USD)`;
+    document.getElementById('usd-op2-t').innerHTML = `(~$${Math.round(2499 * rate)} USD)`;
+    document.getElementById('usd-op2-s').innerHTML = `(~$${Math.round(4099 * rate)} USD)`;
+  })
+  .catch(err => console.log('Error USD:', err));
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>50));
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.hero>*:not(.hero-glow)').forEach((el,i)=>{
+    setTimeout(()=>{el.style.opacity='1';el.style.transform='none';},120*i);
+  });
+});
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('active');}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+</script>
+</body>
+</html>
