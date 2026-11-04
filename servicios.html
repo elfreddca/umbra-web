@@ -2,7 +2,7 @@
 <html lang='es'>
 <head>
 <meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
 <title>UMBRA TRAINING | Coaching Fitness Online Elite</title>
 <meta name='description' content='Coaching fitness online personalizado basado en ciencia. Solo para personas comprometidas. Aplica con Freddy Carreno.'>
 <meta property='og:title' content='UMBRA TRAINING | Coaching Fitness Online Elite'>
@@ -149,12 +149,12 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
       <div class='how-card reveal delay-1'>
         <div class='snum'>1</div>
         <div class='stit'>Aplica al Coaching</div>
-        <div class='sdesc'>Llena el formulario de aplicacion. Me cuentas tu situacion, objetivos y cual plan te interesa.</div>
+        <div class='sdesc'>Me escribes por WhatsApp. Me cuentas tu situacion, tus objetivos y cual plan te interesa.</div>
       </div>
       <div class='how-card reveal delay-2'>
         <div class='snum'>2</div>
         <div class='stit'>Te Contacto Personalmente</div>
-        <div class='sdesc'>En menos de 24h te escribo por Telegram para conocer tu caso a fondo y ver si hacemos match.</div>
+        <div class='sdesc'>En menos de 24h te respondo para conocer tu caso a fondo y ver si hacemos match.</div>
       </div>
       <div class='how-card reveal delay-3'>
         <div class='snum'>3</div>
@@ -424,14 +424,15 @@ footer p{color:var(--text3);font-size:.85rem;}
 <section class='faq-sec reveal' id='faq'>
   <h2>Preguntas <span style='color:var(--text3)'>Frecuentes</span></h2>
   <details class='reveal delay-1'><summary>Necesito experiencia previa? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>No. Mis planes se adaptan a tu nivel, seas principiante o avanzado. Ajusto todo a tu biotipo, estilo de vida y equipo disponible en tu gym.</p></details>
-  <details class='reveal delay-2'><summary>Como funciona el proceso de aplicacion? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Llenas el formulario arriba &rarr; en menos de 24h te escribo por Telegram &rarr; hablamos de tu caso &rarr; si hay match, procedes con el pago y en 48h tienes acceso a UMBRA APP con todo listo.</p></details>
-  <details class='reveal delay-3'><summary>En cuanto tiempo me contactan? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Maximo 24 horas. Reviso cada aplicacion personalmente antes de contactarte.</p></details>
-  <details class='reveal delay-4'><summary>Cual es la diferencia entre los dos planes? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>La Opcion 1 usa la inteligencia de UMBRA APP para generar y ajustar tus planes automaticamente segun tus checks &mdash; sin contacto directo conmigo. La Opcion 2 (1:1 Elite) incluye mi atencion directa, ajustes manuales y soporte por Telegram.</p></details>
+  <details class='reveal delay-2'><summary>Como empiezo? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Me escribes por WhatsApp &rarr; en menos de 24h te respondo &rarr; hablamos de tu caso &rarr; si hay match, haces el pago y en 48h tienes acceso a UMBRA APP con todo listo.</p></details>
+  <details class='reveal delay-3'><summary>Cuanto cuesta? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>El Coaching 1:1 cuesta $1,199 MXN al mes. Si pagas por adelantado ahorras: $2,499 MXN por 3 meses o $4,099 MXN por 6 meses.</p></details>
+  <details class='reveal delay-4'><summary>Que incluye el coaching? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Acceso a UMBRA APP, plan de entrenamiento y alimentacion personalizados, guia de suplementacion, check-ins semanales revisados por mi, ajustes manuales segun tu progreso y soporte directo por Telegram.</p></details>
+  <details class='reveal delay-5'><summary>Que pasa si no cumplo con mis check-ins? <span style='font-size:1rem;color:var(--gold)'>&#9660;</span></summary><p>Trabajo con personas comprometidas. Si no completas minimo 3 checks en el mes junto con tus datos de entrenamiento y nutricion, tu membresia puede darse de baja sin reembolso para darle el lugar a otra persona.</p></details>
 </section>
 <footer class='reveal'>
   <img src='img/logo_icon.jpg' alt='Umbra Training' width='44' height='44' style='border-radius:50%;object-fit:cover;display:block;margin:0 auto;'>
   <div class='ft-brand'>UMBRA TRAINING</div>
-  <p>&copy; 2025 UMBRA TRAINING by Freddy Carreno. Todos los derechos reservados.</p>
+  <p>&copy; <span id='yr'>2026</span> UMBRA TRAINING by Freddy Carreno. Todos los derechos reservados.</p>
   <div class='ft-social'>
     <a href='https://www.instagram.com/el.freddca/' target='_blank'>
       <svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='5'/><circle cx='12' cy='12' r='4'/></svg>Instagram
@@ -454,6 +455,7 @@ fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenci
   })
   .catch(err => console.log('Error USD:', err));
 
+document.getElementById('yr').textContent=new Date().getFullYear();
 const nb=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>50));
 window.addEventListener('load',()=>{
