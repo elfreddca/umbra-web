@@ -222,6 +222,18 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
 .btn-pc:hover{background:#fff;color:#000;border-color:#fff;}
 .pc.elite .btn-pc{border-color:var(--gold);color:var(--gold);}
 .pc.elite .btn-pc:hover{background:var(--gold);color:#000;}
+.pp-row{display:flex;flex-direction:column;gap:6px;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:14px;}
+.pp-rec-row{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.35);border-radius:6px;padding:12px;}
+.pp-top,.pp-mid,.pp-bot{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.pp-mid{align-items:baseline;}
+.pp-off,.pp-rec{background:rgba(212,175,55,0.15);color:var(--gold);padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0;}
+.pp-rec{background:var(--gold);color:#000;}
+.pp-was{text-decoration:line-through;color:var(--text3);font-size:0.9rem;font-weight:600;}
+.pp-usd{font-size:0.95rem;color:var(--gold);font-weight:600;}
+.pp-permo{font-size:.8rem;color:var(--text3);}
+.pp-pay{flex-shrink:0;padding:8px 16px;font-family:'Teko';font-size:1.15rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;background:var(--gold);color:#000;border:2px solid var(--gold);transition:.3s;}
+.pp-pay:hover{background:transparent;color:var(--gold);}
+.pp-note{font-size:.8rem;color:var(--text3);line-height:1.5;margin:4px 0 0;}
 .results{padding:90px 24px;background:var(--bg2);border-top:1px solid var(--border);}
 .res-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:700px;margin:52px auto 0;}
 @media(min-width:600px){.res-grid{grid-template-columns:repeat(2,1fr);max-width:940px;}}
@@ -237,7 +249,7 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
   <div class='container'>
     <span class='slbl'>Nuestros Planes</span>
     <h2 style='font-size:clamp(2.5rem,5vw,3.8rem);margin-bottom:12px;'>Elige tu <span style='color:var(--gold)'>Nivel</span></h2>
-    <p style='color:var(--text2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.7;'>Aplica primero &mdash; hablamos y elegimos juntos lo que mas te conviene.</p>
+    <p style='color:var(--text2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.7;'>Paga tu plan directo con tarjeta o a meses sin intereses. &iquest;Prefieres hablar antes? Aplica por WhatsApp.</p>
     <div class='plans-note'>&#9733; Solo trabajo con personas comprometidas &mdash; plazas limitadas</div>
     <div class='plans-wr'>
 
@@ -251,37 +263,66 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
         </div>
         <div class='pc-price' style='display:flex; flex-direction:column; gap:14px; text-align:left; padding:10px 0;'>
           <!-- Mensual -->
-          <div style='display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:14px;'>
-            <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
-              <span class='plbl' style='margin:0;'>Mensual</span>
+          <div class='pp-row'>
+            <div class='pp-top'>
+              <span class='plbl' style='margin:0;'>Mensual </span>
+              
             </div>
-            <div style='display:flex; justify-content:space-between; align-items:baseline;'>
+            <div class='pp-mid'>
               <span class='pval' style='font-size:2rem; line-height:1;'>1,199 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
-              <span id='usd-op2-m' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
+              <span id='usd-1m' class='pp-usd'></span>
+            </div>
+            <div class='pp-bot'>
+              <span class='pp-permo'>Pago unico</span>
+              <a href='https://pago.clip.mx/v3/270e5d0a-e1e1-44ed-83ee-7809a8c3ee10' class='pp-pay' target='_blank' rel='noopener' data-plan='1 mes' data-price='1199'>Pagar 1 mes</a>
             </div>
           </div>
           <!-- Trimestral -->
-          <div style='display:flex; flex-direction:column; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:14px;'>
-            <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
-              <span class='plbl' style='margin:0;'>Trimestral <span style='background:rgba(212,175,55,0.15);color:var(--gold);padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0;'>-16%</span></span>
-              <span style='text-decoration:line-through; color:var(--text3); font-size:0.9rem; font-weight:600;'>$2,999</span>
+          <div class='pp-row'>
+            <div class='pp-top'>
+              <span class='plbl' style='margin:0;'>Trimestral <span class='pp-off'>-17%</span></span>
+              <span class='pp-was'>$3,597</span>
             </div>
-            <div style='display:flex; justify-content:space-between; align-items:baseline;'>
-              <span class='pval' style='font-size:2rem; line-height:1;'>2,499 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
-              <span id='usd-op2-t' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
+            <div class='pp-mid'>
+              <span class='pval' style='font-size:2rem; line-height:1;'>2,999 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span id='usd-3m' class='pp-usd'></span>
+            </div>
+            <div class='pp-bot'>
+              <span class='pp-permo'>~$1,000 / mes</span>
+              <a href='https://pago.clip.mx/v3/703b2973-4216-411d-b0cd-8f00d27972e0' class='pp-pay' target='_blank' rel='noopener' data-plan='3 meses' data-price='2999'>Pagar 3 meses</a>
             </div>
           </div>
           <!-- Semestral -->
-          <div style='display:flex; flex-direction:column;'>
-            <div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;'>
-              <span class='plbl' style='margin:0;'>Semestral <span style='background:rgba(212,175,55,0.15);color:var(--gold);padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0;'>-25%</span></span>
-              <span style='text-decoration:line-through; color:var(--text3); font-size:0.9rem; font-weight:600;'>$5,489</span>
+          <div class='pp-row pp-rec-row'>
+            <div class='pp-top'>
+              <span class='plbl' style='margin:0;'>Semestral <span class='pp-off'>-31%</span><span class='pp-rec'>RECOMENDADO</span></span>
+              <span class='pp-was'>$7,194</span>
             </div>
-            <div style='display:flex; justify-content:space-between; align-items:baseline;'>
-              <span class='pval' style='font-size:2rem; line-height:1;'>4,099 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
-              <span id='usd-op2-s' style='font-size:0.95rem; color:var(--gold); font-weight:600;'></span>
+            <div class='pp-mid'>
+              <span class='pval' style='font-size:2rem; line-height:1;'>4,999 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span id='usd-6m' class='pp-usd'></span>
+            </div>
+            <div class='pp-bot'>
+              <span class='pp-permo'>~$833 / mes</span>
+              <a href='https://pago.clip.mx/v3/60203e0d-c806-42c9-bb7e-191015b90825' class='pp-pay' target='_blank' rel='noopener' data-plan='6 meses' data-price='4999'>Pagar 6 meses</a>
             </div>
           </div>
+          <!-- Anual -->
+          <div class='pp-row'>
+            <div class='pp-top'>
+              <span class='plbl' style='margin:0;'>Anual <span class='pp-off'>-37%</span></span>
+              <span class='pp-was'>$14,388</span>
+            </div>
+            <div class='pp-mid'>
+              <span class='pval' style='font-size:2rem; line-height:1;'>8,999 <span style='font-size:1rem;color:var(--text3);'>MXN</span></span>
+              <span id='usd-12m' class='pp-usd'></span>
+            </div>
+            <div class='pp-bot'>
+              <span class='pp-permo'>~$750 / mes</span>
+              <a href='https://pago.clip.mx/v3/47b013f1-4456-49ab-98a9-47fb80aeee99' class='pp-pay' target='_blank' rel='noopener' data-plan='12 meses' data-price='8999'>Pagar 12 meses</a>
+            </div>
+          </div>
+          <p class='pp-note'>&#128179; Pago seguro con Clip &middot; tarjeta de debito o credito. <strong>Meses sin intereses</strong> con tarjetas de credito participantes.</p>
         </div>
         <ul class='pc-feats'>
           <li>Acceso a UMBRA APP</li>
@@ -292,7 +333,7 @@ h1,h2,h3,h4{font-family:'Teko',sans-serif;text-transform:uppercase;line-height:.
           <li>Soporte directo por Telegram</li>
           <li>Ajustes manuales segun tu progreso</li>
         </ul>
-        <a href='https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A' class='btn-pc' target='_blank'>Aplicar a Coaching 1:1</a>
+        <a href='https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A' class='btn-pc' target='_blank'>&iquest;Dudas? Aplica por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -447,12 +488,17 @@ fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenci
   .then(res => res.json())
   .then(data => {
     const rate = data.mxn.usd;
-    document.getElementById('usd-op1').innerHTML = `&sim;$${Math.round(599 * rate)} USD / mes`;
-    document.getElementById('usd-op2-m').innerHTML = `(~$${Math.round(1199 * rate)} USD)`;
-    document.getElementById('usd-op2-t').innerHTML = `(~$${Math.round(2499 * rate)} USD)`;
-    document.getElementById('usd-op2-s').innerHTML = `(~$${Math.round(4099 * rate)} USD)`;
+    const setUsd = (id, mxn) => { const el = document.getElementById(id); if (el) el.innerHTML = `(~$${Math.round(mxn * rate)} USD)`; };
+    setUsd('usd-1m', 1199);
+    setUsd('usd-3m', 2999);
+    setUsd('usd-6m', 4999);
+    setUsd('usd-12m', 8999);
   })
   .catch(err => console.log('Error USD:', err));
+
+document.querySelectorAll('.pp-pay').forEach(a => a.addEventListener('click', () => {
+  if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency: 'MXN', value: Number(a.dataset.price), items: [{ item_name: 'Coaching 1:1 ' + a.dataset.plan }] });
+}));
 
 const nb=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>50));
