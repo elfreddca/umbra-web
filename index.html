@@ -103,6 +103,30 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 .titulares li{padding:12px 0;border-bottom:1px solid var(--linea);font:500 .6rem/1.55 var(--titulo);letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
 .solo-ancho{display:none}
 
+/* Oferta de entrada: el protocolo en PDF es lo primero que se ve, con el precio y el botón en la primera pantalla */
+.oferta{padding:calc(64px + clamp(26px,5vw,64px)) var(--margen) clamp(56px,8vw,110px);background:radial-gradient(120% 70% at 0% 0%,rgba(254,3,0,.16),rgba(254,3,0,0) 60%)}
+.oferta-cuerpo{display:grid;gap:44px}
+.oferta-titulo{margin-top:12px;font-size:clamp(1.85rem,6vw,4.2rem);line-height:1.02}
+.oferta-titulo b{display:block}
+.oferta .bajada{margin-top:14px}
+.precio{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-top:22px}
+.precio-monto{font:900 clamp(3.4rem,13vw,6rem)/1 var(--titulo);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.precio-monto small{font:500 .78rem/1 var(--titulo);letter-spacing:.12em;color:var(--humo)}
+.descuento{padding:9px 11px;border-radius:2px;background:var(--rojo);color:var(--negro);font:800 1.05rem/1 var(--titulo);transform:rotate(-5deg)}
+.precio-antes{flex-basis:100%;color:var(--humo)}
+.oferta .btn-rojo{width:100%;max-width:380px;margin-top:20px}
+.oferta .pago{max-width:46ch}
+.fichas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.fichas a{padding:11px 14px;border:1px solid var(--linea);border-radius:2px;font:500 .62rem/1 var(--titulo);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:border-color .2s}
+.fichas a:hover{border-color:var(--blanco)}
+.oferta-portada{max-width:340px}
+.oferta-portada img{width:100%;border:1px solid var(--linea);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.oferta-portada figcaption{margin-top:12px}
+.oferta-detalle{display:grid;gap:44px;margin-top:clamp(56px,7vw,96px)}
+.oferta-detalle h3{margin-bottom:4px}
+.oferta-detalle p{max-width:52ch;margin-top:12px;color:var(--humo)}
+.oferta-detalle .incluye{margin-top:14px}
+
 /* Secciones */
 .seccion{padding:clamp(72px,11vw,150px) var(--margen);border-top:1px solid var(--linea)}
 .contenedor{max-width:1180px;margin:0 auto}
@@ -200,6 +224,9 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 }
 @media (min-width:900px){
   .nav ul{display:flex}
+  .oferta-cuerpo{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(48px,7vw,110px);align-items:center}
+  .oferta-portada{max-width:none;transform:rotate(3deg)}
+  .oferta-detalle{grid-template-columns:1fr 1fr;gap:clamp(48px,7vw,110px)}
   /* en ancho la cabecera entra al flujo: el texto queda abajo y nunca se le encima, mida lo que mida */
   .portada{display:flex;flex-direction:column;min-height:min(100svh,920px);padding:80px var(--margen) 48px}
   .escena{top:0;left:auto;right:0;width:52vw;height:100%}
@@ -257,9 +284,10 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 <a class="salto" href="#contenido">Ir al contenido</a>
 
 <header class="nav" id="navbar">
-  <a class="marca" href="#inicio" aria-label="KUROGANE METHOD, inicio"><img src="img/logo.webp" alt="" width="34" height="34"><span>KUROGANE <b>METHOD</b></span></a>
+  <a class="marca" href="#protocolo" aria-label="KUROGANE METHOD, inicio"><img src="img/logo.webp" alt="" width="34" height="34"><span>KUROGANE <b>METHOD</b></span></a>
   <nav aria-label="Secciones">
     <ul>
+      <li><a href="#protocolo">Protocolo</a></li>
       <li><a href="#coach">El coach</a></li>
       <li><a href="#metodo">El método</a></li>
       <li><a href="#resultados">Resultados</a></li>
@@ -272,7 +300,51 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 
 <main id="contenido">
 
-<section class="portada" id="inicio">
+<section class="oferta" id="protocolo">
+  <div class="contenedor oferta-cuerpo">
+    <div>
+      <p class="fila"><b>Protocolo en PDF</b> · Hombres · 12 semanas</p>
+      <h2 class="oferta-titulo">Hipertrofia progresiva. <b>12 semanas<span class="punto">.</span></b></h2>
+      <p class="bajada">Mi programa de hipertrofia para hombres: <strong>6 días por semana, 4 fases</strong> y cada serie con su RIR. Lo descargas al pagar.</p>
+      <div class="precio">
+        <span class="precio-monto">$350 <small>MXN</small></span>
+        <span class="descuento">−42%</span>
+        <span class="precio-antes"><s>antes $600</s></span>
+      </div>
+      <!-- PENDIENTE: cambiar este href por el link del producto en Gumroad. Mientras tanto la venta entra por WhatsApp. -->
+      <a class="btn btn-rojo" id="comprar-protocolo" href="https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20el%20Protocolo%20de%2012%20semanas%20para%20hombres%20(%24350%20MXN)." target="_blank" rel="noopener">¡Lo quiero!</a>
+      <p class="pago">Pago único. Es un PDF: lo abres en tu celular o lo imprimes.</p>
+      <div class="fichas">
+        <a href="#protocolo-incluye">¿Qué incluye?</a>
+        <a href="#protocolo-para-ti">¿Es para ti?</a>
+        <a href="#inicio">Coaching 1:1</a>
+      </div>
+    </div>
+    <figure class="oferta-portada">
+      <img src="img/protocolo-hombres-portada.webp" width="800" height="1132" alt="Primera página del protocolo: Men, Hipertrofia Progresiva, de Kurogane Method">
+      <figcaption class="fila">Así se ve por dentro</figcaption>
+    </figure>
+  </div>
+  <div class="contenedor oferta-detalle">
+    <div id="protocolo-incluye">
+      <p class="fila">Qué incluye</p>
+      <ul class="incluye">
+        <li>Rutina de 6 días: Piernas, Push y Pull, dos veces por semana</li>
+        <li>4 fases en 12 semanas: acumulación, intensificación, overreaching y descarga</li>
+        <li>Series, repeticiones y RIR de cada ejercicio, fase por fase</li>
+        <li>Guía de nutrición y suplementación, con macros por kilo de peso</li>
+        <li>Calentamiento, cardio, cómo registrar tus cargas y sustituciones de ejercicios</li>
+      </ul>
+    </div>
+    <div id="protocolo-para-ti">
+      <p class="fila">¿Es para ti?</p>
+      <p><strong>Sí</strong>, si eres hombre, entrenas en un gimnasio con máquinas y poleas, y puedes ir 6 días a la semana.</p>
+      <p><strong>No</strong>, si buscas un plan hecho a tu medida, con alimentación personalizada y alguien que revise tu progreso. Eso es el <a href="#planes">coaching 1:1</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="portada" id="inicio" style="border-top:1px solid var(--linea)">
   <div class="escena">
     <img class="escena-fondo" src="img/portada-800.webp" srcset="img/portada-800.webp 800w, img/portada-1250.webp 1250w" sizes="(min-width:900px) 52vw, 100vw" width="1250" height="1532" alt="Freddy Carreño haciendo curl con mancuerna en el gimnasio, iluminado de lado" fetchpriority="high">
     <img class="escena-silueta" src="img/portada-silueta-800.webp" srcset="img/portada-silueta-800.webp 800w, img/portada-silueta-1250.webp 1250w" sizes="(min-width:900px) 52vw, 100vw" width="1250" height="1532" alt="" aria-hidden="true">
@@ -470,6 +542,10 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
     <h2>Preguntas <b>frecuentes</b></h2>
     <div class="faq">
       <details>
+        <summary>¿Cómo recibo el protocolo de 12 semanas?</summary>
+        <p>Es un PDF. Al completar tu pago lo descargas en ese momento y también te llega al correo que pongas al comprar.</p>
+      </details>
+      <details>
         <summary>¿Necesito experiencia previa?</summary>
         <p>No. Mis planes se adaptan a tu nivel, seas principiante o avanzado. Ajusto todo a tu biotipo, estilo de vida y equipo disponible en tu gym.</p>
       </details>
@@ -534,6 +610,11 @@ fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenci
     setUsd('usd-12m', 8999);
   })
   .catch(err => console.log('Error USD:', err));
+
+// Analytics: inicio de pago del protocolo
+document.getElementById('comprar-protocolo').addEventListener('click', () => {
+  if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency: 'MXN', value: 350, items: [{ item_name: 'Protocolo Hombres 12 semanas (PDF)' }] });
+});
 
 // Analytics: inicio de pago
 document.querySelectorAll('.pp-pay').forEach(a => a.addEventListener('click', () => {
