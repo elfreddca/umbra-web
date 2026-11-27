@@ -461,6 +461,32 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
       <p class="fila"><b>Política estricta</b></p>
       <p>Al acceder al coaching, entiendo que Kurogane Method <strong>solo trabaja con personas comprometidas</strong>. Si no cumplo con mínimo 3 checks dentro del mes junto con el llenado de mis datos de entrenamiento/nutrición, acepto que se puede dar de baja mi membresía sin reembolso para que otra persona pueda aprovechar mi espacio.</p>
     </div>
+
+    <div class="plan" id="protocolo">
+      <div>
+        <span class="sello">Por tu cuenta</span>
+        <h3 class="plan-nombre">Protocolo de Hipertrofia · 12 semanas</h3>
+        <p class="plan-desc">El programa completo, fase por fase, con sus series, sus repeticiones y su RIR. Es el mismo para todos: si quieres que se ajuste a ti, eso es el coaching 1:1.</p>
+        <ul class="incluye">
+          <li>12 semanas en 4 fases · 6 días por semana</li>
+          <li>31 ejercicios con sus claves y sustituciones</li>
+          <li>Cuánto comer, sueño, pasos y suplementos con respaldo</li>
+          <li>PDF de 50 páginas para tu celular</li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="tarifas">
+          <li class="tarifa">
+            <div class="t-nombre"><h4>Pago único</h4></div>
+            <div class="t-precio"><span class="monto">$400 <small>MXN</small></span></div>
+            <div class="t-detalle"><span>Te llega a tu correo al pagar</span></div>
+            <a class="btn btn-claro pp-pay" href="https://elfreddca.gumroad.com/l/protocolo-hipertrofia" target="_blank" rel="noopener" data-item="Protocolo de Hipertrofia" data-price="400">Comprar protocolo</a>
+          </li>
+        </ul>
+        <p class="pago">Pago seguro con Gumroad · tarjeta de débito o crédito.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -537,7 +563,7 @@ fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenci
 
 // Analytics: inicio de pago
 document.querySelectorAll('.pp-pay').forEach(a => a.addEventListener('click', () => {
-  if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency: 'MXN', value: Number(a.dataset.price), items: [{ item_name: 'Coaching 1:1 ' + a.dataset.plan }] });
+  if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency: 'MXN', value: Number(a.dataset.price), items: [{ item_name: a.dataset.item || 'Coaching 1:1 ' + a.dataset.plan }] });
 }));
 </script>
 </body>
