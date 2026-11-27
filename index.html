@@ -72,6 +72,18 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 
 /* Barra superior */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--margen);border-bottom:1px solid transparent;transition:background-color .3s,border-color .3s}
+/* Franja del protocolo: fija encima del menú, visible desde el primer segundo */
+.franja{position:fixed;inset:0 0 auto 0;z-index:60;height:36px;display:flex;align-items:center;overflow:hidden;background:var(--rojo);color:var(--negro);font:600 .62rem/1 var(--titulo);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.franja b{font-weight:800}
+.franja-cinta{display:flex;align-items:center;flex:none;animation:cinta 26s linear infinite}
+.franja-cinta span{padding:0 1.1em}
+.franja-cinta i{flex:none;width:5px;height:5px;border-radius:50%;background:currentColor}
+.franja:hover .franja-cinta{animation-play-state:paused}
+@keyframes cinta{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.franja-cinta{animation:none}}
+body{padding-top:36px}
+html{scroll-padding-top:110px}
+.nav{top:36px}
 .nav.scrolled{background:rgba(14,14,14,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--linea)}
 .marca{display:flex;align-items:center;gap:10px;font:800 .8rem/1.12 var(--titulo);letter-spacing:.06em;text-decoration:none}
 .marca b{display:block;font-weight:300}
@@ -162,6 +174,22 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 .t-detalle span{display:block}
 .tarifa .btn{grid-area:boton;min-width:170px;min-height:46px;padding:0 1.1em;font-size:.66rem}
 .pago{margin-top:16px;font-size:.84rem;color:var(--humo)}
+/* Tarjetas de precio: más contraste para que se vean como lo que se compra */
+.tarifas{display:grid;gap:12px;border-top:0}
+.tarifa{padding:22px;border:1px solid var(--linea);border-radius:6px;background:#141414;transition:border-color .2s,transform .2s}
+.tarifa:hover{border-color:rgba(253,253,253,.45);transform:translateY(-2px)}
+.tarifa.recomendada{margin-left:0;padding-left:22px;border:2px solid var(--rojo);background:linear-gradient(160deg,rgba(254,3,0,.16),rgba(254,3,0,.03) 60%),#141414;box-shadow:0 0 44px rgba(254,3,0,.18)}
+.t-nombre .fila{display:inline-block;margin-top:8px;padding:5px 9px;white-space:nowrap;border:1px solid currentColor;border-radius:999px;line-height:1;color:var(--humo)}
+.recomendada .t-nombre .fila{border-color:var(--rojo);background:var(--rojo);color:var(--negro)}
+.monto{font-size:2rem}
+/* Protocolo: el PDF se enseña como libro (referencia: guías de Ana Díaz) */
+.producto{display:grid;gap:24px;margin-top:clamp(56px,7vw,90px);padding:clamp(20px,4vw,44px);border:1px solid var(--linea);border-radius:6px;background:radial-gradient(110% 80% at 15% 10%,rgba(254,3,0,.16),transparent 62%),#121212}
+.producto-img img{display:block;width:100%;height:auto;max-width:640px;margin:0 auto}
+.producto-compra{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 24px;margin-top:26px;padding-top:22px;border-top:1px solid var(--blanco)}
+.producto-compra .fila{display:block;margin-bottom:8px}
+.producto-compra .monto{font-size:2.6rem}
+.producto-compra .btn{flex:1 1 220px;min-height:56px}
+@media (min-width:980px){.producto{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:clamp(32px,4vw,64px)}}
 .compromiso{max-width:70ch;margin-top:clamp(56px,7vw,90px);padding:2px 0 2px 22px;border-left:2px solid var(--rojo)}
 .compromiso p{margin-top:10px}
 
@@ -221,13 +249,13 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
   .titulares{margin-top:22px}
 }
 /* La tabla de precios pasa a cuatro columnas según el ancho que tiene ELLA, no la pantalla */
-@container (min-width:680px){
+@container (min-width:900px){
   .tarifa{grid-template-columns:minmax(130px,1fr) minmax(170px,1.1fr) minmax(150px,1.1fr) 170px;grid-template-areas:"nombre precio detalle boton"}
   .tarifa .btn{width:100%}
   .t-precio{text-align:left}
 }
-/* Celulares muy angostos (320 px): la fila de precio se apila para que nada se salga de la pantalla */
-@container (max-width:317px){
+/* Celulares: cada tarjeta en una columna (nombre, precio, detalle, botón) para que nada se salga de la pantalla */
+@container (max-width:520px){
   .tarifa{grid-template-columns:1fr;grid-template-areas:"nombre" "precio" "detalle" "boton"}
   .tarifa .btn{width:100%}
   .t-precio{text-align:left}
@@ -256,6 +284,7 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 <body>
 <a class="salto" href="#contenido">Ir al contenido</a>
 
+<a class="franja" href="protocolo/" aria-label="Protocolo de Hipertrofia, 12 semanas, $400 MXN. Ver"><span class="franja-cinta" aria-hidden="true"><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i><span>Protocolo de Hipertrofia</span><i></i><span>12 semanas</span><i></i><span><b>$400 MXN</b></span><i></i><span>Ver →</span><i></i></span></a>
 <header class="nav" id="navbar">
   <a class="marca" href="#inicio" aria-label="KUROGANE METHOD, inicio"><img src="img/logo.webp" alt="" width="34" height="34"><span>KUROGANE <b>METHOD</b></span></a>
   <nav aria-label="Secciones">
@@ -462,8 +491,12 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
       <p>Al acceder al coaching, entiendo que Kurogane Method <strong>solo trabaja con personas comprometidas</strong>. Si no cumplo con mínimo 3 checks dentro del mes junto con el llenado de mis datos de entrenamiento/nutrición, acepto que se puede dar de baja mi membresía sin reembolso para que otra persona pueda aprovechar mi espacio.</p>
     </div>
 
-    <div class="plan" id="protocolo">
-      <div>
+    <div class="producto" id="protocolo">
+      <picture class="producto-img">
+        <source media="(max-width:700px)" srcset="img/protocolo_libro-900.webp">
+        <img src="img/protocolo_libro.webp" alt="Protocolo de Hipertrofia en PDF: la portada y dos páginas de adentro" width="1293" height="800" loading="lazy" decoding="async">
+      </picture>
+      <div class="producto-info">
         <span class="sello">Por tu cuenta</span>
         <h3 class="plan-nombre">Protocolo de Hipertrofia · 12 semanas</h3>
         <p class="plan-desc">El programa completo, fase por fase, con sus series, sus repeticiones y su RIR. Es el mismo para todos: si quieres que se ajuste a ti, eso es el coaching 1:1.</p>
@@ -473,18 +506,15 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
           <li>Cuánto comer, sueño, pasos y suplementos con respaldo</li>
           <li>PDF de 50 páginas para tu celular</li>
         </ul>
-      </div>
-
-      <div>
-        <ul class="tarifas">
-          <li class="tarifa">
-            <div class="t-nombre"><h4>Pago único</h4></div>
-            <div class="t-precio"><span class="monto">$400 <small>MXN</small></span></div>
-            <div class="t-detalle"><span>Te llega a tu correo al pagar</span></div>
-            <a class="btn btn-claro pp-pay" href="https://payhip.com/b/7hO0o" target="_blank" rel="noopener" data-item="Protocolo de Hipertrofia" data-price="400">Comprar protocolo</a>
-          </li>
-        </ul>
-        <p class="pago">Pago seguro con Stripe · tarjeta de débito o crédito.</p>
+        <div class="producto-compra">
+          <div>
+            <span class="fila"><b>Pago único</b></span>
+            <span class="monto">$400 <small>MXN</small></span>
+            <span id="usd-proto" class="pp-usd"></span>
+          </div>
+          <a class="btn btn-rojo pp-pay" href="https://payhip.com/b/7hO0o" target="_blank" rel="noopener" data-item="Protocolo de Hipertrofia" data-price="400">Comprar protocolo</a>
+        </div>
+        <p class="pago">Te llega a tu correo al pagar · pago seguro con Stripe, tarjeta de débito o crédito.</p>
       </div>
     </div>
   </div>
@@ -558,6 +588,7 @@ fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenci
     setUsd('usd-3m', 2999);
     setUsd('usd-6m', 4999);
     setUsd('usd-12m', 8999);
+    setUsd('usd-proto', 400);
   })
   .catch(err => console.log('Error USD:', err));
 
