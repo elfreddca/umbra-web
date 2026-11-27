@@ -73,11 +73,11 @@ h3{font:500 1.02rem/1.35 var(--titulo);letter-spacing:-.01em}
 /* Barra superior */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--margen);border-bottom:1px solid transparent;transition:background-color .3s,border-color .3s}
 /* Franja del protocolo: fija encima del menú, visible desde el primer segundo */
-.franja{position:fixed;inset:0 0 auto 0;z-index:60;height:36px;display:flex;align-items:center;overflow:hidden;background:var(--rojo);color:var(--negro);font:600 .62rem/1 var(--titulo);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.franja{position:fixed;inset:0 0 auto 0;z-index:60;height:36px;display:flex;align-items:center;overflow:hidden;background:#1b1a19;color:var(--blanco);border-bottom:1px solid var(--linea);font:600 .62rem/1 var(--titulo);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
 .franja b{font-weight:800}
 .franja-cinta{display:flex;align-items:center;flex:none;animation:cinta 26s linear infinite}
 .franja-cinta span{padding:0 1.1em}
-.franja-cinta i{flex:none;width:5px;height:5px;border-radius:50%;background:currentColor}
+.franja-cinta i{flex:none;width:4px;height:4px;border-radius:50%;background:var(--humo)}
 .franja:hover .franja-cinta{animation-play-state:paused}
 @keyframes cinta{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.franja-cinta{animation:none}}
@@ -178,12 +178,12 @@ html{scroll-padding-top:110px}
 .tarifas{display:grid;gap:12px;border-top:0}
 .tarifa{padding:22px;border:1px solid var(--linea);border-radius:6px;background:#141414;transition:border-color .2s,transform .2s}
 .tarifa:hover{border-color:rgba(253,253,253,.45);transform:translateY(-2px)}
-.tarifa.recomendada{margin-left:0;padding-left:22px;border:2px solid var(--rojo);background:linear-gradient(160deg,rgba(254,3,0,.16),rgba(254,3,0,.03) 60%),#141414;box-shadow:0 0 44px rgba(254,3,0,.18)}
+.tarifa.recomendada{margin-left:0;padding-left:22px;border:1px solid rgba(253,253,253,.75);background:#1b1b1b;box-shadow:none}
 .t-nombre .fila{display:inline-block;margin-top:8px;padding:5px 9px;white-space:nowrap;border:1px solid currentColor;border-radius:999px;line-height:1;color:var(--humo)}
-.recomendada .t-nombre .fila{border-color:var(--rojo);background:var(--rojo);color:var(--negro)}
+.recomendada .t-nombre .fila{border-color:var(--blanco);background:var(--blanco);color:var(--negro)}
 .monto{font-size:2rem}
 /* Protocolo: el PDF se enseña como libro (referencia: guías de Ana Díaz) */
-.producto{display:grid;gap:24px;margin-top:clamp(56px,7vw,90px);padding:clamp(20px,4vw,44px);border:1px solid var(--linea);border-radius:6px;background:radial-gradient(110% 80% at 15% 10%,rgba(254,3,0,.16),transparent 62%),#121212}
+.producto{display:grid;gap:24px;margin-top:clamp(56px,7vw,90px);padding:clamp(20px,4vw,44px);border:1px solid var(--linea);border-radius:6px;background:radial-gradient(110% 80% at 15% 10%,rgba(253,253,253,.06),transparent 62%),#121212}
 .producto-img img{display:block;width:100%;height:auto;max-width:640px;margin:0 auto}
 .producto-compra{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 24px;margin-top:26px;padding-top:22px;border-top:1px solid var(--blanco)}
 .producto-compra .fila{display:block;margin-bottom:8px}
@@ -296,7 +296,7 @@ html{scroll-padding-top:110px}
       <li><a href="#faq">Preguntas</a></li>
     </ul>
   </nav>
-  <a class="btn btn-claro btn-chico" href="https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A" target="_blank" rel="noopener">Aplicar</a>
+  <a class="btn btn-claro btn-chico" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3jCahuGgfph31205Tt-wlHNhJ_hXhgsWSqUfywuQsQ-OV245SOcjatlbE25cGzwJ3UJIjXC3_P" target="_blank" rel="noopener">Agendar</a>
 </header>
 
 <main id="contenido">
@@ -312,7 +312,7 @@ html{scroll-padding-top:110px}
     <h1>No nací con genética. <b>Me construí<span class="punto">.</span></b></h1>
     <p class="bajada">Te ayudo a construir <strong>el físico que realmente quieres</strong> sin perder más el tiempo. Sudar no es progresar.</p>
     <div class="acciones">
-      <a class="btn btn-rojo" href="https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A" target="_blank" rel="noopener">Aplicar por WhatsApp</a>
+      <a class="btn btn-claro" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3jCahuGgfph31205Tt-wlHNhJ_hXhgsWSqUfywuQsQ-OV245SOcjatlbE25cGzwJ3UJIjXC3_P" target="_blank" rel="noopener">Agenda tu videollamada</a>
       <a class="enlace" href="#planes">Ver planes</a>
     </div>
   </div>
@@ -379,7 +379,7 @@ html{scroll-padding-top:110px}
     <ol class="pasos">
       <li>
         <h3>Aplica al coaching</h3>
-        <p>Escríbeme por WhatsApp. Me cuentas tu situación, tus objetivos y tu disponibilidad.</p>
+        <p>Agenda una videollamada conmigo. Me cuentas tu situación, tus objetivos y tu disponibilidad.</p>
       </li>
       <li>
         <h3>Te contacto personalmente</h3>
@@ -435,7 +435,7 @@ html{scroll-padding-top:110px}
   <div class="contenedor">
     <p class="fila"><b>04</b> — Nuestros planes</p>
     <h2>Elige tu <b>nivel</b></h2>
-    <p class="entrada">Paga tu plan directo con tarjeta o a meses sin intereses. ¿Prefieres hablar antes? Aplica por WhatsApp.</p>
+    <p class="entrada">Paga tu plan directo con tarjeta o a meses sin intereses. ¿Prefieres hablar antes? Agenda una videollamada.</p>
     <p class="fila aviso"><b>Solo trabajo con personas comprometidas</b> — <span class="junto">empiezas en 48&nbsp;h</span></p>
 
     <div class="plan">
@@ -452,7 +452,7 @@ html{scroll-padding-top:110px}
           <li>Soporte directo por Telegram</li>
           <li>Ajustes manuales según tu progreso</li>
         </ul>
-        <a class="btn btn-linea" href="https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A" target="_blank" rel="noopener">¿Dudas? Aplica por WhatsApp</a>
+        <a class="btn btn-linea" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3jCahuGgfph31205Tt-wlHNhJ_hXhgsWSqUfywuQsQ-OV245SOcjatlbE25cGzwJ3UJIjXC3_P" target="_blank" rel="noopener">¿Dudas? Agenda una videollamada</a>
       </div>
 
       <div>
@@ -473,7 +473,7 @@ html{scroll-padding-top:110px}
             <div class="t-nombre"><h4>Semestral</h4><span class="fila">Recomendado · Ahorras 31%</span></div>
             <div class="t-precio"><span class="monto">$4,999 <small>MXN</small></span><span id="usd-6m" class="pp-usd"></span></div>
             <div class="t-detalle"><span>Hasta 6 MSI de $833</span><span><s>$7,194</s> antes</span></div>
-            <a class="btn btn-rojo pp-pay" href="https://pago.clip.mx/v3/60203e0d-c806-42c9-bb7e-191015b90825" target="_blank" rel="noopener" data-plan="6 meses" data-price="4999">Pagar 6 meses</a>
+            <a class="btn btn-claro pp-pay" href="https://pago.clip.mx/v3/60203e0d-c806-42c9-bb7e-191015b90825" target="_blank" rel="noopener" data-plan="6 meses" data-price="4999">Pagar 6 meses</a>
           </li>
           <li class="tarifa">
             <div class="t-nombre"><h4>Anual</h4><span class="fila">Ahorras 37%</span></div>
@@ -494,7 +494,7 @@ html{scroll-padding-top:110px}
     <div class="producto" id="protocolo">
       <picture class="producto-img">
         <source media="(max-width:700px)" srcset="img/protocolo_libro-900.webp">
-        <img src="img/protocolo_libro.webp" alt="Protocolo de Hipertrofia en PDF: la portada y dos páginas de adentro" width="1293" height="800" loading="lazy" decoding="async">
+        <img src="img/protocolo_libro.webp" alt="Protocolo de Hipertrofia en PDF: la portada y dos páginas de adentro" width="1291" height="794" loading="lazy" decoding="async">
       </picture>
       <div class="producto-info">
         <span class="sello">Por tu cuenta</span>
@@ -512,7 +512,7 @@ html{scroll-padding-top:110px}
             <span class="monto">$400 <small>MXN</small></span>
             <span id="usd-proto" class="pp-usd"></span>
           </div>
-          <a class="btn btn-rojo pp-pay" href="https://payhip.com/b/7hO0o" target="_blank" rel="noopener" data-item="Protocolo de Hipertrofia" data-price="400">Comprar protocolo</a>
+          <a class="btn btn-claro pp-pay" href="https://payhip.com/b/7hO0o" target="_blank" rel="noopener" data-item="Protocolo de Hipertrofia" data-price="400">Comprar protocolo</a>
         </div>
         <p class="pago">Te llega a tu correo al pagar · pago seguro con Stripe, tarjeta de débito o crédito.</p>
       </div>
@@ -531,7 +531,7 @@ html{scroll-padding-top:110px}
       </details>
       <details>
         <summary>¿Cómo funciona el proceso de aplicación?</summary>
-        <p>Me escribes por WhatsApp con tus datos, en menos de 24 h te respondo y hablamos de tu caso. Si hay match, procedes con el pago y en 48 h tienes acceso a Kurogane Method App con todo listo.</p>
+        <p>Agendas una videollamada, me cuentas tus datos y hablamos de tu caso. Si hay match, procedes con el pago y en 48 h tienes acceso a Kurogane Method App con todo listo.</p>
       </details>
       <details>
         <summary>¿En cuánto tiempo me contactan?</summary>
@@ -551,7 +551,7 @@ html{scroll-padding-top:110px}
       <h2>Tu última <b>transformación física<span class="punto">.</span></b></h2>
       <p class="entrada">Sudar no es progresar.</p>
       <div class="acciones">
-        <a class="btn btn-rojo" href="https://wa.me/528332051472?text=Hola%20Freddy%2C%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20quiero%20aplicar%20al%20Coaching%201%3A1%20VIP%20Elite.%20Aqu%C3%AD%20te%20dejo%20mis%20datos%20r%C3%A1pidos%20para%20ver%20si%20aplicamos%20para%20trabajar%20juntos%3A%0ANombre%3A%0AEdad%3A%0AMi%20mayor%20problema%20actual%20es%3A%0AMi%20objetivo%20a%2012%20semanas%20es%3A%0AMi%20disponibilidad%20de%20tiempo%20es%3A" target="_blank" rel="noopener">Aplicar por WhatsApp</a>
+        <a class="btn btn-claro" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3jCahuGgfph31205Tt-wlHNhJ_hXhgsWSqUfywuQsQ-OV245SOcjatlbE25cGzwJ3UJIjXC3_P" target="_blank" rel="noopener">Agenda tu videollamada</a>
         <a class="enlace" href="#planes">Ver planes</a>
       </div>
     </div>
